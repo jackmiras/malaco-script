@@ -145,16 +145,20 @@ if [[ $resposta =~ "11" ]]; then
 fi
 
 if [[ $resposta =~ "12" ]]; then
-	# Installugin Mysql Workbench
+	# Downloading MySQL Workbench.
 	wget -P $HOME/Download http://cdn.mysql.com//Downloads/MySQLGUITools/mysql-workbench-community-6.3.8-1ubu1604-amd64.deb
+	# Installing MySQL Workbench.
 	cd $HOME/Download && sudo dpkg -i mysql-workbench-community-6.3.8-1ubu1604-amd64.deb && sudo apt-get install -f
+	# Updating Ubuntu dependencies.
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
 if [[ $resposta =~ "13" ]]; then
-	# Installing PostgreSQL.
+	# Adding PostgreSQL on Ubuntu souces.list.
 	sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
+	# Downloading PostgreSQL key.
 	wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
+	# Installing PostgreSQL.
 	sudo apt-get update && sudo apt-get install postgresql-common && sudo apt-get install postgresql-9.5 libpq-dev
 fi
 
