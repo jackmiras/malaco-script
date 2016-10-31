@@ -170,20 +170,21 @@ fi
 if [[ $resposta =~ "15" ]]; then
 	# Installing Vim.
 	sudo apt-get update && sudo apt-get install vim
-	# Getting and setting up Vim configs from github.
+	# Downloading Vim configs from github.
 	cd $HOME/Projects && git clone git@github.com:jackmiras/vim.git && cd $HOME
 	# Creating a symbolic link of Vim configurations into the Home folder of Ubuntu.
 	ln -s $HOME/Projects/vim/.vimrc $HOME/.vimrc
 fi
 
 if [[ $resposta =~ "16" ]]; then
-  # Installing Sublime Text 3.
-  sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
-  sudo apt-get update
+  # Adding Sublime Text 3 respository.
+  sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 && sudo apt-get update
+	# Installing Sublime Text 3.
   sudo apt-get -y install sublime-text-installer
-
-	# Getting and setting up Sublime Text 3 configs from github.
-	cd $HOME/.config && git clone git@github.com:jackmiras/sublime-text-3.git && cd $HOME
+	# Downloading Sublime Text 3 configs from Github.
+	cd $HOME/Projects && git clone git@github.com:jackmiras/sublime-text-3.git && cd $HOME
+	# Creating a symbolic link of Sublime Text 3 configs into the Home/.config folder of Ubuntu.
+	ln -s $HOME/Projects/sublime-text-3 $HOME/.config
 fi
 
 if [[ $resposta =~ "17" ]]; then
