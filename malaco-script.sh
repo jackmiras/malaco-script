@@ -247,19 +247,20 @@ if [[ $resposta =~ "18" ]];then
 fi
 
 if [[ $resposta =~ "19" ]]; then
-	# Downloading Chrome key to add as key of system repositories.
+	# Downloading Google Chrome key to add as key of system repositories.
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-
-	# Adding Chrome to the source list.
+	# Adding Google Chrome to the source list.
   sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-  sudo apt-get update
-  sudo apt-get install -y google-chrome-stable
+	# Installing the stable version of Google Chrome.
+  sudo apt-get update && sudo apt-get install -y google-chrome-stable
 fi
 
 if [[ $resposta =~ "20" ]]; then
-	# Installing Opera.
+	# Downloading Opera into the Download folder.
 	wget -P $HOME/Download http://download4.operacdn.com/pub/opera/desktop/41.0.2353.46/linux/opera-stable_41.0.2353.46_amd64.deb
+	# Installing the stable version Opera.
 	sudo dpkg -i $HOME/Download/opera-stable_41.0.2353.46_amd64.deb && sudo apt-get install -f
+	# Updating Ubuntu dependencies. 
 	sudo ap-get update && sudo apt-get upgrade
 fi
 
