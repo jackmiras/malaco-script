@@ -265,11 +265,14 @@ if [[ $resposta =~ "20" ]]; then
 fi
 
 if [[ $resposta =~ "21" ]]; then
-	# Installing Dropbox.
+	# Download dropbox_2015.10.28_amd64.deb into the Download folder.
 	wget -P $HOME/Download https://linux.dropbox.com/packages/ubuntu/dropbox_2015.10.28_amd64.deb
+	# Installing Dropbox.
 	sudo dpkg -i $HOME/Download/dropbox_2015.10.28_amd64.deb && sudo apt-get install -f
-	sudo apt-get update && sudo apt-get upgrade
+	# Removing dropbox_2015.10.28_amd64.deb from Download folder.
 	rm -rf $HOME/Download/dropbox_2015.10.28_amd64.deb
+	# Updating Ubuntu dependencies.
+	sudo apt-get update && sudo apt-get upgrade
 fi
 
 if [[ $resposta =~ "22" ]]; then
