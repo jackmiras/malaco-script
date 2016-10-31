@@ -156,7 +156,7 @@ fi
 if [[ $resposta =~ "13" ]]; then
 	# Adding PostgreSQL on Ubuntu souces.list.
 	sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
-	# Downloading PostgreSQL key.
+	# Downloading PostgreSQL key to add as key of system repositories.
 	wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
 	# Installing PostgreSQL.
 	sudo apt-get update && sudo apt-get install postgresql-common && sudo apt-get install postgresql-9.5 libpq-dev
@@ -188,10 +188,11 @@ if [[ $resposta =~ "16" ]]; then
 fi
 
 if [[ $resposta =~ "17" ]]; then
-	# Installing Android Studio.
-	sudo apt-get update && sudo apt-get upgrade
+	# Downloading Android Studio.
 	wget -P $HOME/Download https://dl.google.com/dl/android/studio/ide-zips/2.2.2.0/android-studio-ide-145.3360264-linux.zip
+	# Extracting android-studio-ide-145.3360264-linux.zip into Download folder.
 	unzip $HOME/Download/android-studio-ide-145.3360264-linux.zip -d $HOME/Download
+	# Moving android-studio folder from Download to the opt folder.
 	sudo mv $HOME/Download/android-studio /opt/
 
 	# Setting up the Android Studio launcher on Ubuntu dash.
@@ -206,21 +207,24 @@ if [[ $resposta =~ "17" ]]; then
 	echo "Terminal=false" >> ~/.local/share/applications/jetbrains-studio.desktop
 	echo "StartupWMClass=jetbrains-studio" >> ~/.local/share/applications/jetbrains-studio.desktop
 
-	# Executing Android Studio
+	# Executing Android Studio to generate the .AndroidStudio folder.
 	sh /opt/android-studio/bin/studio.sh
-
-	# Getting and setting up Android Studio configs from github.
+	# Downloading custom configs of Android Studio from Github.
 	cd $HOME/Projects && git clone git@github.com:jackmiras/android-studio-config.git && cd $HOME
-	rm -rf $HOME/.AndroidStudio2.2/config && ln -s $HOME/Projects/android-studio-config $HOME/.AndroidStudio2.2/config
-
+	# Removing current configurations of Android Studio.
+	rm -rf $HOME/.AndroidStudio2.2/config
+	# Creating a symbolic link of the new Android Studio configurations into .AndroidStudio folder.
+	ln -s $HOME/Projects/android-studio-config $HOME/.AndroidStudio2.2/config
 	# Removing Android Studio zip file from Download folder.
 	rm -rf $HOME/Download/android-studio-ide-145.3360264-linux.zip
 fi
 
 if [[ $resposta =~ "18" ]];then
-	#Installing Eclipse.
+	# Downloading Eclipse.
 	wget -P $HOME/Download http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/neon/1a/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
+	# Extracting eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz into Download folder.
 	tar -vzxf $HOME/Download/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz -C $HOME/Download
+	# Moving eclipse folder  from Download to the opt folder.
 	sudo mv $HOME/Download/eclipse /opt/
 
 	# Setting up Eclipse launcher on Ubuntu dash.
