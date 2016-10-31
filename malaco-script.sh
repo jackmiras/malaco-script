@@ -45,7 +45,7 @@ resposta=$(zenity --list --text "Este é um script malaco criado para economizar
 		TRUE "36 - Unity Tweek Tool"\
 		TRUE "37 - Get repositories from Github and Bitbucket"\
     TRUE "38 - Restricted-Extras (Codecs de áudio e vídeo, plugin flash, java entre outros)"\
-		TRUE "39 - 7Zip, Rar, Unrar"/
+		TRUE "39 - 7zip, Rar, Unrar"/
 		TRUE "40 - Syspeek"/
 		TRUE "41 - Linuxbrew"
     --separator=":" --width=750 --height=700
@@ -224,7 +224,7 @@ if [[ $resposta =~ "18" ]];then
 	#Installing Eclipse.
 	sudo apt-get update && sudo apt-get upgrade
 	wget -P $HOME/Download http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/neon/1a/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
-	tar -vzxf $HOME/Download/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz -d $HOME/Download
+	tar -vzxf $HOME/Download/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz -C $HOME/Download
 	sudo mv $HOME/Download/eclipse /opt/
 
 	# Setting up Eclipse launcher on Ubuntu dash.
@@ -258,12 +258,17 @@ fi
 
 if [[ $resposta =~ "20" ]]; then
 	# Installing Opera.
-	sudo apt-get update
+	wget -P $HOME/Download http://download4.operacdn.com/pub/opera/desktop/41.0.2353.46/linux/opera-stable_41.0.2353.46_amd64.deb
+	sudo dpkg -i $HOME/Download/opera-stable_41.0.2353.46_amd64.deb && sudo apt-get install -f
+	sudo ap-get update && sudo apt-get upgrade
 fi
 
 if [[ $resposta =~ "21" ]]; then
 	# Installing Dropbox.
-	sudo apt-get update
+	wget -P $HOME/Download https://linux.dropbox.com/packages/ubuntu/dropbox_2015.10.28_amd64.deb
+	sudo dpkg -i $HOME/Download/dropbox_2015.10.28_amd64.deb && sudo apt-get install -f
+	sudo apt-get update && sudo apt-get upgrade
+	rm -rf $HOME/Download/dropbox_2015.10.28_amd64.deb
 fi
 
 if [[ $resposta =~ "22" ]]; then
