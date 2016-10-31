@@ -53,8 +53,7 @@ resposta=$(zenity --list --text "Este é um script malaco criado para economizar
 
 if [[ $resposta =~ "1" ]]; then
 	# Installing git.
-	sudo apt-get update
-	sudo apt-get install -y git
+	sudo apt-get update && sudo apt-get install -y git
 
 	# Configuring git.
 	git config --global color.ui true
@@ -222,7 +221,6 @@ fi
 
 if [[ $resposta =~ "18" ]];then
 	#Installing Eclipse.
-	sudo apt-get update && sudo apt-get upgrade
 	wget -P $HOME/Download http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/neon/1a/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
 	tar -vzxf $HOME/Download/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz -C $HOME/Download
 	sudo mv $HOME/Download/eclipse /opt/
