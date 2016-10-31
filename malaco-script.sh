@@ -76,8 +76,7 @@ fi
 
 if [[ $resposta =~ "4" ]]; then
 	# Installing Tmux.
-	sudo apt-get update
-	sudo apt-get install -y tmux
+	sudo apt-get update && sudo apt-get install -y tmux
 fi
 
 if [[ $resposta =~ "5" ]]; then
