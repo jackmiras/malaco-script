@@ -82,10 +82,8 @@ fi
 if [[ $resposta =~ "5" ]]; then
 	# Installing Zsh.
 	sudo apt-get update && sudo apt-get install -y zsh && chsh -s $(which zsh)
-
 	# Downloading Zsh configs from github.
 	cd &HOME/Projects && git clone git@github.com:jackmiras/zshrc-config.git && cd $HOME/
-
 	# Creating symbolic link of Zsh configs into the home of computer.
 	ln -s $HOME/Projects/zshrc-config/.zshrc $HOME/.zshrc
 fi
@@ -98,13 +96,10 @@ fi
 if [[ $resposta =~ "7" ]]; then
 	# Adding Oracle Java 8 repository.
   sudo add-apt-repository -y ppa:webupd8team/java && sudo apt-get update
-
 	# Installing Oracle Java 8.
   sudo apt-get -y install oracle-java8-installer
-
 	# Setting Oracle Java 8 as default JDK.
   sudo update-java-alternatives -s java-8-oracle && sudo apt-get -y install oracle-java8-set-default
-
   # Removing Open JDK 7.
   sudo apt-get -y purge openjdk-7-jre openjdk-7-jre-lib openjdk-7-jre-headless
 fi
@@ -115,12 +110,11 @@ if [[ $resposta =~ "8" ]]; then
 fi
 
 if [[ $resposta =~ "9" ]]; then
-  # Installing Node.
-  sudo add-apt-repository -y ppa:chris-lea/node.js
-  sudo apt-get update
+  # Adding Node Js repository.
+  sudo add-apt-repository -y ppa:chris-lea/node.js && sudo apt-get update
+	# Installing Node.
   sudo apt-get install -y nodejs
-
-	# Setting up to not need sudo permission.
+	# Setting up to not need sudo permission when Node Js was executed.
   echo prefix = ~/.node >> ~/.npmrc
   echo 'export PATH=$HOME/.node/bin:$PATH' >> ~/.bashrc
   echo 'export PATH=$HOME/.node/bin:$PATH' >> ~/.zshrc
