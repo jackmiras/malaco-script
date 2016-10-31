@@ -66,14 +66,12 @@ fi
 
 if [[ $resposta =~ "2" ]]; then
 	# Installing Git-flow.
-	sudo apt-get update
-	sudo apt-get install -y git-flow
+	sudo apt-get update && sudo apt-get install -y git-flow
 fi
 
 if [[ $resposta =~ "3" ]]; then
 	# Installing Htop.
-  sudo apt-get update
-  sudo apt-get install -y htop
+  sudo apt-get update && sudo apt-get install -y htop
 fi
 
 if [[ $resposta =~ "4" ]]; then
