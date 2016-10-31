@@ -256,7 +256,7 @@ if [[ $resposta =~ "19" ]]; then
 fi
 
 if [[ $resposta =~ "20" ]]; then
-	# Downloading Opera into the Download folder.
+	# Downloading opera-stable_41.0.2353.46_amd64.deb into the Download folder.
 	wget -P $HOME/Download http://download4.operacdn.com/pub/opera/desktop/41.0.2353.46/linux/opera-stable_41.0.2353.46_amd64.deb
 	# Installing the stable version Opera.
 	sudo dpkg -i $HOME/Download/opera-stable_41.0.2353.46_amd64.deb && sudo apt-get install -f
