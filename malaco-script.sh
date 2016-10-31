@@ -170,9 +170,9 @@ fi
 if [[ $resposta =~ "15" ]]; then
 	# Installing Vim.
 	sudo apt-get update && sudo apt-get install vim
-
-	# Getting and setting up vim configs from github.
+	# Getting and setting up Vim configs from github.
 	cd $HOME/Projects && git clone git@github.com:jackmiras/vim.git && cd $HOME
+	# Creating a symbolic link of Vim configurations into the Home folder of Ubuntu.
 	ln -s $HOME/Projects/vim/.vimrc $HOME/.vimrc
 fi
 
