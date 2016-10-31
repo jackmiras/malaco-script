@@ -81,11 +81,12 @@ fi
 
 if [[ $resposta =~ "5" ]]; then
 	# Installing Zsh.
-	sudo apt-get update && sudo apt-get install -y zsh
-	chsh -s $(which zsh)
+	sudo apt-get update && sudo apt-get install -y zsh && chsh -s $(which zsh)
 
-	# Getting and setting up Zsh configs from github.
+	# Downloading Zsh configs from github.
 	cd &HOME/Projects && git clone git@github.com:jackmiras/zshrc-config.git && cd $HOME/
+
+	# Creating symbolic link of Zsh configs into the home of computer.
 	ln -s $HOME/Projects/zshrc-config/.zshrc $HOME/.zshrc
 fi
 
