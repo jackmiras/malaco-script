@@ -81,8 +81,7 @@ fi
 
 if [[ $resposta =~ "5" ]]; then
 	# Installing Zsh.
-	sudo apt-get update
-	sudo apt-get install -y zsh
+	sudo apt-get update && sudo apt-get install -y zsh
 	chsh -s $(which zsh)
 
 	# Getting and setting up Zsh configs from github.
