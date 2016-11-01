@@ -61,7 +61,7 @@ else
 			TRUE "35 - Skype"\
 			TRUE "36 - Simplenote"\
 			TRUE "37 - Unetbootin"\
-			TRUE "38 - Unity Tweek Tool"\
+			TRUE "38 - Unity Tweak Tool"\
 			TRUE "39 - Restricted-Extras (Codecs de áudio e vídeo, plugin flash, java entre outros)"\
 			TRUE "40 - Syspeek"\
 			TRUE "41 - Linuxbrew"\
