@@ -394,23 +394,35 @@ fi
 
 if [[ $resposta =~ "32" ]]; then
 	# Downloading Slack.
-	wget -P https://downloads.slack-edge.com/linux_releases/slack-desktop-2.2.1-amd64.deb
+	wget -P $HOME/Download/ https://downloads.slack-edge.com/linux_releases/slack-desktop-2.2.1-amd64.deb
 	# Installing Slack.
-	sudo dkpg -i slack-desktop-2.2.1-amd64.deb && sudo apt-get install -f
-	# Updating Ubuntu dependencies.
+	sudo dkpg -i $HOME/Download/slack-desktop-2.2.1-amd64.deb && sudo apt-get install -f
+	# Removing slack-desktop-2.2.1-amd64.deb file.
+	rm -rf $HOME/Download/slack-desktop-2.2.1-amd64.deb
+	# Updating Ubuntu softwares and dependencies.
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
 if [[ $resposta =~ "33" ]]; then
+	# Downloading Skype.
+	wget -P $HOME/Download/ https://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
 	# Installing Skype.
-  sudo sh -c 'echo "deb http://archive.canonical.com/ubuntu trusty partner" >> /etc/apt/sources.list.d/canonical_partner.list'
-  sudo apt-get update
-  sudo apt-get install -y skype
+	sudo dpkg -i $HOME/Download/skype-ubuntu-precise_4.3.0.37-1_i386.deb && sudo apt-get install -f
+	# Removing skype-ubuntu-precise_4.3.0.37-1_i386.deb file.
+	rm -rf $HOME/Download/skype-ubuntu-precise_4.3.0.37-1_i386.deb
+	# Updating Ubuntu softwares and dependencies.
+	sudo apt-get update && sudo apt-get upgrade
 fi
 
 if [[ $resposta =~ "34" ]]; then
+	# Downloading Simplenote.
+	wget -P $HOME/Download/ https://github-cloud.s3.amazonaws.com/releases/41199577/01797bea-955b-11e6-9af1-68f30e6a2dfb.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161101%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161101T143306Z&X-Amz-Expires=300&X-Amz-Signature=7737a9fbdb911fc1c2c6dce6c5847f060e72ab9520b64ea88ccb3f608e8fe1ab&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dsimplenote-1.0.5.deb&response-content-type=application%2Foctet-stream
 	# Installing Simplenote.
-	sudo apt-get update
+	sudo dpkg -i $HOME/Download/simplenote-1.0.5.deb && sudo apt-get install -f
+	# Removing simplenote-1.0.5.deb file.
+	rm -rf $HOME/Download/simplenote-1.0.5.deb
+	# Updating Ubuntu softwares and dependencies.
+	sudo apt-get update && sudo apt-get upgrade
 fi
 
 if [[ $resposta =~ "35" ]]; then
