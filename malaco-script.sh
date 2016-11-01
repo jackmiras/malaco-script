@@ -356,14 +356,12 @@ fi
 
 if [[ $resposta =~ "30" ]]; then
 	# Installing Gimp.
-	sudo apt-get update
-  sudo apt-get -y install gimp
+	sudo apt-get update && sudo apt-get -y install gimp
 fi
 
 if [[ $resposta =~ "31" ]]; then
 	# Installing Inkscape.
-	sudo apt-get update
-  sudo apt-get -y install inkscape
+	sudo apt-get update && sudo apt-get -y install inkscape
 fi
 
 if [[ $resposta =~ "32" ]]; then
