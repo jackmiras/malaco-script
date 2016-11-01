@@ -9,43 +9,43 @@
 resposta=$(zenity --list --text "Este é um script malaco criado para economizar o seu tempo, escolha a baixo os software que você deseja instalar." --checklist  --column "Instalar" --column "Softwares"\
 	TRUE "1 - Git"\
 	TRUE "2 - Git-flow"\
-	TRUE "3 - Htop"\
-	TRUE "4 - Tmux"\
-	TRUE "5 - Zsh"\
-	TRUE "6 - Zsh Syntax Highlighting"\
-	TRUE "7 - Java 8"\
-	TRUE "8 - Python"\
-	TRUE "9 - Node Js"\
-	TRUE "10 - Ruby, RVM, Rails"\
-	TRUE "11 - MySQL"\
-	FALSE "12 - MySQL Workbench"
-	TRUE "13 - PostgreSQL"\
-	TRUE "14 - PgAdmin3"\
-	TRUE "15 - Vim"\
-	TRUE "16 - Sublime Text 3"\
-	TRUE "17 - Android Studio"\
-	FALSE "18 - Eclipse"
-	TRUE "19 - Google Chrome"\
-	TRUE "20 - Opera"\
-	TRUE "21 - Dropbox"\
-	TRUE "22 - pCloud"\
-	TRUE "23 - qBittorrent"\
-	TRUE "24 - Google Play Music"\
-	FALSE "25 - Spotfy"\
-	TRUE "26 - Clementine"\
-	TRUE "27 - Vocal"\
-	TRUE "28 - VLC"\
-	TRUE "29 - Stremio"\
-	TRUE "30 - Gimp"\
-	TRUE "31 - Inkscape"\
-	TRUE "32 - Slack"\
-	TRUE "33 - Skype"\
-	TRUE "34 - Simplenote"\
-	TRUE "35 - Unetbootin"\
-	TRUE "36 - Unity Tweek Tool"\
-	TRUE "37 - Get repositories from Github and Bitbucket"\
-	TRUE "38 - Restricted-Extras (Codecs de áudio e vídeo, plugin flash, java entre outros)"\
-	TRUE "39 - 7zip, Rar, Unrar"/
+	TRUE "3 - Get repositories from Github and Bitbucket"\
+	TRUE "4 - Htop"\
+	TRUE "5 - Tmux"\
+	TRUE "6 - Zsh"\
+	TRUE "7 - Zsh Syntax Highlighting"\
+	TRUE "8 - 7zip, Rar, Unrar"/
+	TRUE "9 - Java 8"\
+	TRUE "10 - Python"\
+	TRUE "11 - Node Js"\
+	TRUE "12 - Ruby, RVM, Rails"\
+	TRUE "13 - MySQL"\
+	FALSE "14 - MySQL Workbench"
+	TRUE "15 - PostgreSQL"\
+	TRUE "16 - PgAdmin3"\
+	TRUE "17 - Vim"\
+	TRUE "18 - Sublime Text 3"\
+	TRUE "19 - Android Studio"\
+	FALSE "20 - Eclipse"
+	TRUE "21 - Google Chrome"\
+	TRUE "22 - Opera"\
+	TRUE "23 - Dropbox"\
+	TRUE "24 - pCloud"\
+	TRUE "25 - qBittorrent"\
+	TRUE "26 - Google Play Music"\
+	FALSE "27 - Spotfy"\
+	TRUE "28 - Clementine"\
+	TRUE "29 - Vocal"\
+	TRUE "30 - VLC"\
+	TRUE "31 - Stremio"\
+	TRUE "32 - Gimp"\
+	TRUE "33 - Inkscape"\
+	TRUE "34 - Slack"\
+	TRUE "35 - Skype"\
+	TRUE "36 - Simplenote"\
+	TRUE "37 - Unetbootin"\
+	TRUE "38 - Unity Tweek Tool"\
+	TRUE "39 - Restricted-Extras (Codecs de áudio e vídeo, plugin flash, java entre outros)"\
 	TRUE "40 - Syspeek"/
 	TRUE "41 - Linuxbrew"
 	--separator=":" --width=750 --height=700
@@ -70,16 +70,22 @@ if [[ $resposta =~ "2" ]]; then
 fi
 
 if [[ $resposta =~ "3" ]]; then
+	# Getting repositories from Github and Bitbucket.
+	mkdir ~/Projects
+	cd ~/Projects
+fi
+
+if [[ $resposta =~ "4" ]]; then
 	# Installing Htop.
 	sudo apt-get update && sudo apt-get install -y htop
 fi
 
-if [[ $resposta =~ "4" ]]; then
+if [[ $resposta =~ "5" ]]; then
 	# Installing Tmux.
 	sudo apt-get update && sudo apt-get install -y tmux
 fi
 
-if [[ $resposta =~ "5" ]]; then
+if [[ $resposta =~ "6" ]]; then
 	# Installing Zsh.
 	sudo apt-get update && sudo apt-get install -y zsh && chsh -s $(which zsh)
 	# Downloading Zsh configs from github.
@@ -88,12 +94,17 @@ if [[ $resposta =~ "5" ]]; then
 	ln -s $HOME/Projects/zshrc-config/.zshrc $HOME/.zshrc
 fi
 
-if [[ $resposta =~ "6" ]]; then
+if [[ $resposta =~ "7" ]]; then
 	# Installing Zsh Syntax Highlighting.
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
 
-if [[ $resposta =~ "7" ]]; then
+if [[ $resposta =~ "8" ]]; then
+	# Instalar compactadores de arquivos.
+  sudo apt-get -y install p7zip p7zip-full p7zip-rar unrar rar unace-nonfree
+fi
+
+if [[ $resposta =~ "9" ]]; then
 	# Adding Oracle Java 8 repository.
 	sudo add-apt-repository -y ppa:webupd8team/java && sudo apt-get update
 	# Installing Oracle Java 8.
@@ -104,12 +115,12 @@ if [[ $resposta =~ "7" ]]; then
 	sudo apt-get -y purge openjdk-7-jre openjdk-7-jre-lib openjdk-7-jre-headless
 fi
 
-if [[ $resposta =~ "8" ]]; then
+if [[ $resposta =~ "10" ]]; then
 	# Installing Python.
 	sudo apt-get install -y python-software-properties python g++ make && sudo apt-get install idle-python3.4
 fi
 
-if [[ $resposta =~ "9" ]]; then
+if [[ $resposta =~ "11" ]]; then
 	# Adding Node Js repository.
 	sudo add-apt-repository -y ppa:chris-lea/node.js && sudo apt-get update
 	# Installing Node.
@@ -120,7 +131,7 @@ if [[ $resposta =~ "9" ]]; then
 	echo 'export PATH=$HOME/.node/bin:$PATH' >> ~/.zshrc
 fi
 
-if [[ $resposta =~ "10" ]]; then
+if [[ $resposta =~ "12" ]]; then
 	# Installing Ruby dependencies.
 	sudo apt-get update && sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
 
@@ -139,12 +150,12 @@ if [[ $resposta =~ "10" ]]; then
 	gem install rails -v 4.2.6
 fi
 
-if [[ $resposta =~ "11" ]]; then
+if [[ $resposta =~ "13" ]]; then
 	# Installing MySQL.
 	sudo apt-get update && sudo apt-get install mysql-server mysql-client libmysqlclient-dev
 fi
 
-if [[ $resposta =~ "12" ]]; then
+if [[ $resposta =~ "14" ]]; then
 	# Downloading MySQL Workbench.
 	wget -P $HOME/Download http://cdn.mysql.com//Downloads/MySQLGUITools/mysql-workbench-community-6.3.8-1ubu1604-amd64.deb
 	# Installing MySQL Workbench.
@@ -153,7 +164,7 @@ if [[ $resposta =~ "12" ]]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [[ $resposta =~ "13" ]]; then
+if [[ $resposta =~ "15" ]]; then
 	# Adding PostgreSQL on Ubuntu souces.list.
 	sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
 	# Downloading PostgreSQL key to add as key of system repositories.
@@ -162,12 +173,12 @@ if [[ $resposta =~ "13" ]]; then
 	sudo apt-get update && sudo apt-get install postgresql-common && sudo apt-get install postgresql-9.5 libpq-dev
 fi
 
-if [[ $resposta =~ "14" ]]; then
+if [[ $resposta =~ "16" ]]; then
 	# Installing PgAdmin3.
 	sudo apt-get update && sudo apt-get install pgadmin3
 fi
 
-if [[ $resposta =~ "15" ]]; then
+if [[ $resposta =~ "17" ]]; then
 	# Installing Vim.
 	sudo apt-get update && sudo apt-get install vim
 	# Downloading Vim configs from github.
@@ -176,7 +187,7 @@ if [[ $resposta =~ "15" ]]; then
 	ln -s $HOME/Projects/vim/.vimrc $HOME/.vimrc
 fi
 
-if [[ $resposta =~ "16" ]]; then
+if [[ $resposta =~ "18" ]]; then
 	# Adding Sublime Text 3 respository.
 	sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 && sudo apt-get update
 	# Installing Sublime Text 3.
@@ -187,7 +198,7 @@ if [[ $resposta =~ "16" ]]; then
 	ln -s $HOME/Projects/sublime-text-3 $HOME/.config
 fi
 
-if [[ $resposta =~ "17" ]]; then
+if [[ $resposta =~ "19" ]]; then
 	# Downloading Android Studio.
 	wget -P $HOME/Download https://dl.google.com/dl/android/studio/ide-zips/2.2.2.0/android-studio-ide-145.3360264-linux.zip
 	# Extracting android-studio-ide-145.3360264-linux.zip into Download folder.
@@ -219,7 +230,7 @@ if [[ $resposta =~ "17" ]]; then
 	rm -rf $HOME/Download/android-studio-ide-145.3360264-linux.zip
 fi
 
-if [[ $resposta =~ "18" ]];then
+if [[ $resposta =~ "20" ]];then
 	# Downloading Eclipse.
 	wget -P $HOME/Download http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/neon/1a/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
 	# Extracting eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz into Download folder.
@@ -246,7 +257,7 @@ if [[ $resposta =~ "18" ]];then
 	rm -rf $HOME/Download/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
 fi
 
-if [[ $resposta =~ "19" ]]; then
+if [[ $resposta =~ "21" ]]; then
 	# Downloading Google Chrome key to add as key of system repositories.
 	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 	# Adding Google Chrome to the source list.
@@ -255,7 +266,7 @@ if [[ $resposta =~ "19" ]]; then
 	sudo apt-get update && sudo apt-get install -y google-chrome-stable
 fi
 
-if [[ $resposta =~ "20" ]]; then
+if [[ $resposta =~ "22" ]]; then
 	# Downloading opera-stable_41.0.2353.46_amd64.deb into the Download folder.
 	wget -P $HOME/Download http://download4.operacdn.com/pub/opera/desktop/41.0.2353.46/linux/opera-stable_41.0.2353.46_amd64.deb
 	# Installing the stable version Opera.
@@ -264,7 +275,7 @@ if [[ $resposta =~ "20" ]]; then
 	sudo ap-get update && sudo apt-get upgrade
 fi
 
-if [[ $resposta =~ "21" ]]; then
+if [[ $resposta =~ "23" ]]; then
 	# Download dropbox_2015.10.28_amd64.deb into the Download folder.
 	wget -P $HOME/Download https://linux.dropbox.com/packages/ubuntu/dropbox_2015.10.28_amd64.deb
 	# Installing Dropbox.
@@ -275,7 +286,7 @@ if [[ $resposta =~ "21" ]]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [[ $resposta =~ "22" ]]; then
+if [[ $resposta =~ "24" ]]; then
 	# Downloading pCloud to the Download folder.
 	wget -P $HOME/Download https://c75.pcloud.com/dHZ8IsmSZJvU4uZZZmMutt7ZHkZZGNRZkZ5LUXZssw368uiJLjYQDTAP0KEsS2b0egy/pCloud_Linux_amd64_3.1.1.deb
 	# Installing pCloud.
@@ -286,14 +297,14 @@ if [[ $resposta =~ "22" ]]; then
 	rm -rf $HOME/Download/pCloud_Linux_amd64_3.1.1.deb
 fi
 
-if [[ $resposta =~ "23" ]]; then
+if [[ $resposta =~ "25" ]]; then
 	# Adding qBittorrent repository.
 	sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
 	# Installing qBittorrent.
 	sudo apt-get update && sudo apt-get install qbittorrent
 fi
 
-if [[ $resposta =~ "24" ]]; then
+if [[ $resposta =~ "26" ]]; then
 	# Downloading Google Play Music to the download folder.
 	wget -P $HOME/Download https://github-cloud.s3.amazonaws.com/releases/40008106/42e05a06-9491-11e6-885c-b9b3588ff9a0.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161031%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161031T184825Z&X-Amz-Expires=300&X-Amz-Signature=0d1c4b89a84149d1e40dd61045ffec11e8e52ea531f8c94809e5c02f25a15c63&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dgoogle-play-music-desktop-player_4.0.1_amd64.deb&response-content-type=application%2Foctet-stream
 	# Installing Google Play Music.
@@ -304,7 +315,7 @@ if [[ $resposta =~ "24" ]]; then
 	rm -rf $HOME/Download/google-play-music-desktop-player_4.0.1_amd64.deb
 fi
 
-if [[ $resposta =~ "25" ]]; then
+if [[ $resposta =~ "27" ]]; then
 	# Downloading Spotfy client.
 	wget -P $HOME/Download http://repository.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb
 	# Installing Spotfy client.
@@ -315,14 +326,14 @@ if [[ $resposta =~ "25" ]]; then
 	rm -rf $HOME/Download/spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb
 fi
 
-if [[ $resposta =~ "26" ]]; then
+if [[ $resposta =~ "28" ]]; then
 	# Adding Clementaine repository.
 	sudo add-apt-repository ppa:me-davidsansome/clementine
 	# Installing Clementine.
 	sudo apt-get update && sudo apt-get install clementine
 fi
 
-if [[ $resposta =~ "27" ]]; then
+if [[ $resposta =~ "29" ]]; then
 	# Downloading Vocal.
 	wget -P $HOME/Download http://ufpr.dl.sourceforge.net/project/vocalpodcast/vocal_1.0_amd64.deb
 	# Downloading Vocal dependencies.
@@ -341,7 +352,7 @@ if [[ $resposta =~ "27" ]]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [[ $resposta =~ "28" ]]; then
+if [[ $resposta =~ "30" ]]; then
 	# Adding VLC repositories
 	sudo add-apt-repository ppa:videolan/stable-daily
 	sudo add-apt-repository ppa:nicola-onorata/desktop
@@ -349,7 +360,7 @@ if [[ $resposta =~ "28" ]]; then
 	sudo apt-get update && sudo apt-get install vlc
 fi
 
-if [[ $resposta =~ "29" ]]; then
+if [[ $resposta =~ "31" ]]; then
 	# Downloading Stremio
 	wget -P $HOME/Download http://dl.strem.io/Stremio3.6.5.linux.tar.gz 
 	# Creating stremio folder.
@@ -382,17 +393,17 @@ if [[ $resposta =~ "29" ]]; then
 	rm -rf $HOME/Download/Stremio3.6.5.linux.tar.gz
 fi
 
-if [[ $resposta =~ "30" ]]; then
+if [[ $resposta =~ "32" ]]; then
 	# Installing Gimp.
 	sudo apt-get update && sudo apt-get -y install gimp
 fi
 
-if [[ $resposta =~ "31" ]]; then
+if [[ $resposta =~ "33" ]]; then
 	# Installing Inkscape.
 	sudo apt-get update && sudo apt-get -y install inkscape
 fi
 
-if [[ $resposta =~ "32" ]]; then
+if [[ $resposta =~ "34" ]]; then
 	# Downloading Slack.
 	wget -P $HOME/Download/ https://downloads.slack-edge.com/linux_releases/slack-desktop-2.2.1-amd64.deb
 	# Installing Slack.
@@ -403,7 +414,7 @@ if [[ $resposta =~ "32" ]]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [[ $resposta =~ "33" ]]; then
+if [[ $resposta =~ "35" ]]; then
 	# Downloading Skype.
 	wget -P $HOME/Download/ https://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
 	# Installing Skype.
@@ -414,7 +425,7 @@ if [[ $resposta =~ "33" ]]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [[ $resposta =~ "34" ]]; then
+if [[ $resposta =~ "36" ]]; then
 	# Downloading Simplenote.
 	wget -P $HOME/Download/ https://github-cloud.s3.amazonaws.com/releases/41199577/01797bea-955b-11e6-9af1-68f30e6a2dfb.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161101%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161101T143306Z&X-Amz-Expires=300&X-Amz-Signature=7737a9fbdb911fc1c2c6dce6c5847f060e72ab9520b64ea88ccb3f608e8fe1ab&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dsimplenote-1.0.5.deb&response-content-type=application%2Foctet-stream
 	# Installing Simplenote.
@@ -425,34 +436,31 @@ if [[ $resposta =~ "34" ]]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [[ $resposta =~ "35" ]]; then
+if [[ $resposta =~ "37" ]]; then
 	# Adding Unetbootin repository.
 	sudo add-apt-repository ppa:gezakovacs/ppa
 	# Installing Unetbootin
 	sudo apt-get update && sudo apt-get install unetbootin
 fi
 
-if [[ $resposta =~ "36" ]]; then
+if [[ $resposta =~ "38" ]]; then
 	# Installing Unity Tweek Tool
 	sudo apt-get update && sudo apt-get install unity-tweak-tool
 fi
 
-# This need to be executed after git-flow installation.
-if [[ $resposta =~ "37" ]]; then
-	# Getting repositories from Github and Bitbucket.
-	mkdir ~/Projects
-	cd ~/Projects
-fi
-
-if [[ $resposta =~ "38" ]]; then
+if [[ $resposta =~ "39" ]]; then
 	# Installing Restricted-Extras.
 	sudo apt-get -y install ubuntu-restricted-extras
 fi
 
-# This need to be installed before Android Studio.
-if [[ $resposta =~ "39" ]]; then
-	# Instalar compactadores de arquivos.
-  sudo apt-get -y install p7zip p7zip-full p7zip-rar unrar rar unace-nonfree
+if [[ $resposta =~ "40" ]]; then
+	# Installing Syspeek.
+	sudo apt-get -y install ubuntu-restricted-extras
+fi
+
+if [[ $resposta =~ "41" ]]; then
+	# Installing Linuxbrew.
+	sudo apt-get -y install ubuntu-restricted-extras
 fi
 
 # Desinstalando aplicativos padrões do Ubuntu.
