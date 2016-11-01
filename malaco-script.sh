@@ -7,48 +7,48 @@
 # Esse script utiliza o zenity para a construção da interface gráfica.
 
 resposta=$(zenity --list --text "Este é um script malaco criado para economizar o seu tempo, escolha a baixo os software que você deseja instalar." --checklist  --column "Instalar" --column "Softwares"\
-		TRUE "1 - Git"\
-		TRUE "2 - Git-flow"\
-		TRUE "3 - Htop"\
-		TRUE "4 - Tmux"\
-		TRUE "5 - Zsh"\
-		TRUE "6 - Zsh Syntax Highlighting"\
-		TRUE "7 - Java 8"\
-		TRUE "8 - Python"\
-		TRUE "9 - Node Js"\
-		TRUE "10 - Ruby, RVM, Rails"\
-		TRUE "11 - MySQL"\
-		FALSE "12 - MySQL Workbench"
-		TRUE "13 - PostgreSQL"\
-		TRUE "14 - PgAdmin3"\
-		TRUE "15 - Vim"\
-		TRUE "16 - Sublime Text 3"\
-		TRUE "17 - Android Studio"\
-		FALSE "18 - Eclipse"
-		TRUE "19 - Google Chrome"\
-		TRUE "20 - Opera"\
-		TRUE "21 - Dropbox"\
-		TRUE "22 - pCloud"\
-		TRUE "23 - qBittorrent"\
-		TRUE "24 - Google Play Music"\
-		FALSE "25 - Spotfy"\
-		TRUE "26 - Clementine"\
-		TRUE "27 - Vocal"\
-		TRUE "28 - VLC"\
-		TRUE "29 - Stremio"\
-		TRUE "30 - Gimp"\
-		TRUE "31 - Inkscape"\
-		TRUE "32 - Slack"\
-		TRUE "33 - Skype"\
-		TRUE "34 - Simplenote"\
-		TRUE "35 - Unetbootin"\
-		TRUE "36 - Unity Tweek Tool"\
-		TRUE "37 - Get repositories from Github and Bitbucket"\
-    TRUE "38 - Restricted-Extras (Codecs de áudio e vídeo, plugin flash, java entre outros)"\
-		TRUE "39 - 7zip, Rar, Unrar"/
-		TRUE "40 - Syspeek"/
-		TRUE "41 - Linuxbrew"
-    --separator=":" --width=750 --height=700
+	TRUE "1 - Git"\
+	TRUE "2 - Git-flow"\
+	TRUE "3 - Htop"\
+	TRUE "4 - Tmux"\
+	TRUE "5 - Zsh"\
+	TRUE "6 - Zsh Syntax Highlighting"\
+	TRUE "7 - Java 8"\
+	TRUE "8 - Python"\
+	TRUE "9 - Node Js"\
+	TRUE "10 - Ruby, RVM, Rails"\
+	TRUE "11 - MySQL"\
+	FALSE "12 - MySQL Workbench"
+	TRUE "13 - PostgreSQL"\
+	TRUE "14 - PgAdmin3"\
+	TRUE "15 - Vim"\
+	TRUE "16 - Sublime Text 3"\
+	TRUE "17 - Android Studio"\
+	FALSE "18 - Eclipse"
+	TRUE "19 - Google Chrome"\
+	TRUE "20 - Opera"\
+	TRUE "21 - Dropbox"\
+	TRUE "22 - pCloud"\
+	TRUE "23 - qBittorrent"\
+	TRUE "24 - Google Play Music"\
+	FALSE "25 - Spotfy"\
+	TRUE "26 - Clementine"\
+	TRUE "27 - Vocal"\
+	TRUE "28 - VLC"\
+	TRUE "29 - Stremio"\
+	TRUE "30 - Gimp"\
+	TRUE "31 - Inkscape"\
+	TRUE "32 - Slack"\
+	TRUE "33 - Skype"\
+	TRUE "34 - Simplenote"\
+	TRUE "35 - Unetbootin"\
+	TRUE "36 - Unity Tweek Tool"\
+	TRUE "37 - Get repositories from Github and Bitbucket"\
+	TRUE "38 - Restricted-Extras (Codecs de áudio e vídeo, plugin flash, java entre outros)"\
+	TRUE "39 - 7zip, Rar, Unrar"/
+	TRUE "40 - Syspeek"/
+	TRUE "41 - Linuxbrew"
+	--separator=":" --width=750 --height=700
 )
 
 if [[ $resposta =~ "1" ]]; then
@@ -71,7 +71,7 @@ fi
 
 if [[ $resposta =~ "3" ]]; then
 	# Installing Htop.
-  sudo apt-get update && sudo apt-get install -y htop
+	sudo apt-get update && sudo apt-get install -y htop
 fi
 
 if [[ $resposta =~ "4" ]]; then
@@ -95,29 +95,29 @@ fi
 
 if [[ $resposta =~ "7" ]]; then
 	# Adding Oracle Java 8 repository.
-  sudo add-apt-repository -y ppa:webupd8team/java && sudo apt-get update
+	sudo add-apt-repository -y ppa:webupd8team/java && sudo apt-get update
 	# Installing Oracle Java 8.
-  sudo apt-get -y install oracle-java8-installer
+	sudo apt-get -y install oracle-java8-installer
 	# Setting Oracle Java 8 as default JDK.
-  sudo update-java-alternatives -s java-8-oracle && sudo apt-get -y install oracle-java8-set-default
-  # Removing Open JDK 7.
-  sudo apt-get -y purge openjdk-7-jre openjdk-7-jre-lib openjdk-7-jre-headless
+	sudo update-java-alternatives -s java-8-oracle && sudo apt-get -y install oracle-java8-set-default
+	# Removing Open JDK 7.
+	sudo apt-get -y purge openjdk-7-jre openjdk-7-jre-lib openjdk-7-jre-headless
 fi
 
 if [[ $resposta =~ "8" ]]; then
 	# Installing Python.
-  sudo apt-get install -y python-software-properties python g++ make && sudo apt-get install idle-python3.4
+	sudo apt-get install -y python-software-properties python g++ make && sudo apt-get install idle-python3.4
 fi
 
 if [[ $resposta =~ "9" ]]; then
-  # Adding Node Js repository.
-  sudo add-apt-repository -y ppa:chris-lea/node.js && sudo apt-get update
+	# Adding Node Js repository.
+	sudo add-apt-repository -y ppa:chris-lea/node.js && sudo apt-get update
 	# Installing Node.
-  sudo apt-get install -y nodejs
+	sudo apt-get install -y nodejs
 	# Setting up to not need sudo permission when Node Js was executed.
-  echo prefix = ~/.node >> ~/.npmrc
-  echo 'export PATH=$HOME/.node/bin:$PATH' >> ~/.bashrc
-  echo 'export PATH=$HOME/.node/bin:$PATH' >> ~/.zshrc
+	echo prefix = ~/.node >> ~/.npmrc
+	echo 'export PATH=$HOME/.node/bin:$PATH' >> ~/.bashrc
+	echo 'export PATH=$HOME/.node/bin:$PATH' >> ~/.zshrc
 fi
 
 if [[ $resposta =~ "10" ]]; then
@@ -177,10 +177,10 @@ if [[ $resposta =~ "15" ]]; then
 fi
 
 if [[ $resposta =~ "16" ]]; then
-  # Adding Sublime Text 3 respository.
-  sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 && sudo apt-get update
+	# Adding Sublime Text 3 respository.
+	sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 && sudo apt-get update
 	# Installing Sublime Text 3.
-  sudo apt-get -y install sublime-text-installer
+	sudo apt-get -y install sublime-text-installer
 	# Downloading Sublime Text 3 configs from Github.
 	cd $HOME/Projects && git clone git@github.com:jackmiras/sublime-text-3.git && cd $HOME
 	# Creating a symbolic link of Sublime Text 3 configs into the Home/.config folder of Ubuntu.
@@ -248,11 +248,11 @@ fi
 
 if [[ $resposta =~ "19" ]]; then
 	# Downloading Google Chrome key to add as key of system repositories.
-  wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 	# Adding Google Chrome to the source list.
-  sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+	sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 	# Installing the stable version of Google Chrome.
-  sudo apt-get update && sudo apt-get install -y google-chrome-stable
+	sudo apt-get update && sudo apt-get install -y google-chrome-stable
 fi
 
 if [[ $resposta =~ "20" ]]; then
