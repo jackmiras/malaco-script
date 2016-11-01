@@ -303,11 +303,14 @@ if [[ $resposta =~ "24" ]]; then
 fi
 
 if [[ $resposta =~ "25" ]]; then
-	# Installing Spotify.
-  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
-  echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-  sudo apt-get update
-  sudo apt-get install -y spotify-client
+	# Downloading Spotfy client.
+	wget -P $HOME/Download http://repository.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb
+	# Installing Spotfy client.
+	sudo dpkg -i spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb && sudo apt-get install -f
+	# Updating Ubuntu dependencies.
+	sudo apt-get install && sudo apt-get upgrade
+	# Removing Spotfy file from Download folder.
+	rm -rf $HOME/Download/spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb
 fi
 
 if [[ $resposta =~ "26" ]]; then
