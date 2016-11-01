@@ -350,8 +350,36 @@ if [[ $resposta =~ "28" ]]; then
 fi
 
 if [[ $resposta =~ "29" ]]; then
-	# Installing Stremio.
-	sudo apt-get update
+	# Downloading Stremio
+	wget -P $HOME/Download http://dl.strem.io/Stremio3.6.5.linux.tar.gz 
+	# Creating stremio folder.
+	mkdir Download/stremio/
+	# Extracting the Stremio3.6.5.linux.tar.gz files into stremio folder.
+	tar -vzxf $HOME/Download/Stremio3.6.5.linux.tar.gz -C $HOME/Download/stremio
+	# Moving stremio folder from Download to opt folder.
+	sudo mv $HOME/Download/stremio /opt/
+	# Downloading the image icon.
+	wget -P /opt/stremio http://www.strem.io/3.0/stremio-white-small.png
+	# Renaming the image icon.
+	sudo mv /opt/stremio/stremio-white-small.png /opt/stremio/icon.png
+
+	# Setting up Stremio launcher on Ubuntu dash.
+	echo "[Desktop Entry]" >> ~/.local/share/applications/stremio.desktop
+	echo "Version=1.0" >> ~/.local/share/applications/stremio.desktop
+	echo "Name=Stremio" >> ~/.local/share/applications/stremio.desktop
+	echo "Exec=/opt/Stremio/Stremio.sh" >> ~/.local/share/applications/stremio.desktop
+	echo "Terminal=false" >> ~/.local/share/applications/stremio.desktop
+	echo "Icon=/opt/Stremio/icon.png" >> ~/.local/share/applications/stremio.desktop
+	echo "Type=Application" >> ~/.local/share/applications/stremio.desktop
+	echo "Categories=Video" >> ~/.local/share/applications/stremio.desktop
+	echo "X-Ayatana-Desktop-Shortcuts=NewWindow" >> ~/.local/share/applications/stremio.desktop
+	echo "[NewWindow Shortcut Group]" >> ~/.local/share/applications/stremio.desktop
+	echo "Name=New Window" >> ~/.local/share/applications/stremio.desktop
+	echo "Exec=/opt/Stremio/Stremio.sh" >> ~/.local/share/applications/stremio.desktop
+	echo "TargetEnvironment=Unity" >> ~/.local/share/applications/stremio.desktop
+
+	# Removing Stremio3.6.5.linux.tar.gz file.
+	rm -rf $HOME/Download/Stremio3.6.5.linux.tar.gz
 fi
 
 if [[ $resposta =~ "30" ]]; then
