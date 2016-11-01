@@ -342,8 +342,11 @@ if [[ $resposta =~ "27" ]]; then
 fi
 
 if [[ $resposta =~ "28" ]]; then
+	# Adding VLC repositories
+	sudo add-apt-repository ppa:videolan/stable-daily
+	sudo add-apt-repository ppa:nicola-onorata/desktop
 	# Installing VLC.
-	sudo apt-get update
+	sudo apt-get update && sudo apt-get install vlc
 fi
 
 if [[ $resposta =~ "29" ]]; then
