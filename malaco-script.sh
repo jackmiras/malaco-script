@@ -426,13 +426,15 @@ if [[ $resposta =~ "34" ]]; then
 fi
 
 if [[ $resposta =~ "35" ]]; then
+	# Adding Unetbootin repository.
+	sudo add-apt-repository ppa:gezakovacs/ppa
 	# Installing Unetbootin
-	sudo apt-get update
+	sudo apt-get update && sudo apt-get install unetbootin
 fi
 
 if [[ $resposta =~ "36" ]]; then
 	# Installing Unity Tweek Tool
-	sudo apt-get update
+	sudo apt-get update && sudo apt-get install unity-tweak-tool
 fi
 
 # This need to be executed after git-flow installation.
