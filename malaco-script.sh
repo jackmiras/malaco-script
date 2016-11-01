@@ -454,8 +454,10 @@ if [[ $resposta =~ "39" ]]; then
 fi
 
 if [[ $resposta =~ "40" ]]; then
+	# Adding Syspeek repository.
+	sudo add-apt-repository ppa:nilarimogard/webupd8
 	# Installing Syspeek.
-	sudo apt-get -y install ubuntu-restricted-extras
+	sudo apt-get update && sudo apt-get install syspeek
 fi
 
 if [[ $resposta =~ "41" ]]; then
