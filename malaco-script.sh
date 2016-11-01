@@ -316,8 +316,10 @@ if [[ $resposta =~ "25" ]]; then
 fi
 
 if [[ $resposta =~ "26" ]]; then
+	# Adding Clementaine repository.
+	sudo add-apt-repository ppa:me-davidsansome/clementine
 	# Installing Clementine.
-	sudo apt-get update
+	sudo apt-get update && sudo apt-get install clementine
 fi
 
 if [[ $resposta =~ "27" ]]; then
