@@ -287,8 +287,10 @@ if [[ $resposta =~ "22" ]]; then
 fi
 
 if [[ $resposta =~ "23" ]]; then
+	# Adding qBittorrent repository.
+	sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
 	# Installing qBittorrent.
-	sudo apt-get update
+	sudo apt-get update && sudo apt-get install qbittorrent
 fi
 
 if [[ $resposta =~ "24" ]]; then
