@@ -393,8 +393,12 @@ if [[ $resposta =~ "31" ]]; then
 fi
 
 if [[ $resposta =~ "32" ]]; then
+	# Downloading Slack.
+	wget -P https://downloads.slack-edge.com/linux_releases/slack-desktop-2.2.1-amd64.deb
 	# Installing Slack.
-	sudo apt-get update
+	sudo dkpg -i slack-desktop-2.2.1-amd64.deb && sudo apt-get install -f
+	# Updating Ubuntu dependencies.
+	sudo apt-get update && sudo apt-get upgrade
 fi
 
 if [[ $resposta =~ "33" ]]; then
