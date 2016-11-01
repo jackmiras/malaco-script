@@ -327,12 +327,12 @@ if [[ $resposta =~ "27" ]]; then
 	wget -P $HOME/Download http://ufpr.dl.sourceforge.net/project/vocalpodcast/vocal_1.0_amd64.deb
 	# Downloading Vocal dependencies.
 	wget -P $HOME/Download https://launchpadlibrarian.net/201478397/libgranite2_0.3.0+r850+pkg80~ubuntu0.3.1_amd64.deb
-	wget -p $HOME/Download https://launchpadlibrarian.net/201478393/libgranite-common_0.3.0+r850+pkg80~ubuntu0.3.1_all.deb
+	wget -P $HOME/Download https://launchpadlibrarian.net/201478393/libgranite-common_0.3.0+r850+pkg80~ubuntu0.3.1_all.deb
 	# Installing Vocal dependencies.
-	sudo dpkg -i libgranite2_0.3.0+r850+pkg80~ubuntu0.3.1_amd64.deb && sudo apt-get install -f
-	sudo dpkg -i libgranite-common_0.3.0+r850+pkg80~ubuntu0.3.1_all.deb && sudo apt-get install -f
+	sudo dpkg -i $HOME/Download/libgranite2_0.3.0+r850+pkg80~ubuntu0.3.1_amd64.deb && sudo apt-get install -f
+	sudo dpkg -i $HOME/Download/libgranite-common_0.3.0+r850+pkg80~ubuntu0.3.1_all.deb && sudo apt-get install -f
 	# Installing Vocal.
-	sudo dpkg -i vocal_1.0_amd64.deb && sudo apt-get install -f
+	sudo dpkg -i $HOME/Download/vocal_1.0_amd64.deb && sudo apt-get install -f
 	# Removing Vocal and his dependencies files.
 	rm -rf $HOME/Download/vocal_1.0_amd64.deb
 	rm -rf $HOME/Download/libgranite2_0.3.0+r850+pkg80~ubuntu0.3.1_amd64.deb
