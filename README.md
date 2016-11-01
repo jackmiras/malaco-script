@@ -2,7 +2,7 @@
 
 *This are a shell scrip written to install software on Ubuntu in a simpler way and hi is inspired on [Fedy](http://folkswithhats.org/). Fedy is a software built to easy install another software on Fedora.*
 
-*The problem is that haven't used Fedora for almos 3 years and I really really enjoy the experience and the time saving that's provided by fedy. With this in mind I've decided to write my own version of fedy but focused on Ubuntu that is my current Linux distribution.*
+*The problem is that haven't used Fedora for almos 3 years and I really really enjoy the experience and the time saving that's provided by Fedy. With this in mind I've decided to write my own version of fedy but focused on Ubuntu that is my current Linux distribution.*
 
 
 ## Software list:
