@@ -4,6 +4,7 @@ FILE="/tmp/out.$$"
 GREP="/bin/grep"
 
 # Script written by: Jackson Miras.
+#
 # This is a script inspired on fedy(http://folkswithhats.org/) that is software
 # builted to easy install another software on Fedora. The problem is that haven't
 # used Fedora for almos 3 years and I realy realy enjoy the experience and the time
@@ -487,10 +488,10 @@ else
 		echo "export INFOPATH='$HOME/.linuxbrew/share/info:$INFOPATH'" >> ~/.bashrc
 	fi
 
-	# Desinstalando aplicativos padrões do Ubuntu.
-	# Códigos de desinstalação a partir desta linha!!!
+	# Uninstalling unused softwares from Ubuntu.
+	# Uninstall script will go down below this line!!!
 
-	# Removendo os pacotes não necessários.
+	# Removing unecessary packages.
 	sudo apt-get autoremove
 	
 	zenity --info --title "Installation finished" --text "Installation finished with success!"
