@@ -22,7 +22,7 @@ if [ "$(id -u)" != "0" ]; then
 else
 	resposta=$(zenity --list\
 		--text "This is a script written to save time, choose down below the softwares that you want to install."\
-		--checklist  --column "Instalar"
+		--checklist  --column "Instalar"\
 		--column "Softwares"\
 			TRUE "1 - Git"\
 			TRUE "2 - Git-flow"\
