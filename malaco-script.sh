@@ -88,8 +88,9 @@ else
 
 	if [[ $selected_item =~ "3" ]]; then
 		# Getting repositories from Github and Bitbucket.
-		mkdir ~/Projects
-		cd ~/Projects
+		mkdir $HOME/Projects/
+		chown $USER $HOME/Projects/
+		cd $HOME/Projects/
 	fi
 
 	if [[ $selected_item =~ "4" ]]; then
