@@ -176,7 +176,7 @@ else
 		# Downloading MySQL Workbench.
 		wget -P $HOME/Download http://cdn.mysql.com//Downloads/MySQLGUITools/mysql-workbench-community-6.3.8-1ubu1604-amd64.deb
 		# Installing MySQL Workbench.
-		cd $HOME/Download && sudo dpkg -i mysql-workbench-community-6.3.8-1ubu1604-amd64.deb && sudo apt-get install -f
+		cd $HOME/Download && sudo dpkg -i mysql-workbench-community-6.3.8-1ubu1604-amd64.deb && sudo apt-get -f install
 		# Updating Ubuntu dependencies.
 		sudo apt-get update && sudo apt-get upgrade
 	fi
@@ -287,7 +287,7 @@ else
 		# Downloading opera-stable_41.0.2353.46_amd64.deb into the Download folder.
 		wget -P $HOME/Download http://download4.operacdn.com/pub/opera/desktop/41.0.2353.46/linux/opera-stable_41.0.2353.46_amd64.deb
 		# Installing the stable version Opera.
-		sudo dpkg -i $HOME/Download/opera-stable_41.0.2353.46_amd64.deb && sudo apt-get install -f
+		sudo dpkg -i $HOME/Download/opera-stable_41.0.2353.46_amd64.deb && sudo apt-get -f install
 		# Updating Ubuntu dependencies. 
 		sudo ap-get update && sudo apt-get upgrade
 	fi
@@ -296,7 +296,7 @@ else
 		# Download dropbox_2015.10.28_amd64.deb into the Download folder.
 		wget -P $HOME/Download https://linux.dropbox.com/packages/ubuntu/dropbox_2015.10.28_amd64.deb
 		# Installing Dropbox.
-		sudo dpkg -i $HOME/Download/dropbox_2015.10.28_amd64.deb && sudo apt-get install -f
+		sudo dpkg -i $HOME/Download/dropbox_2015.10.28_amd64.deb && sudo apt-get -f install
 		# Removing dropbox_2015.10.28_amd64.deb from Download folder.
 		rm -rf $HOME/Download/dropbox_2015.10.28_amd64.deb
 		# Updating Ubuntu dependencies.
@@ -307,7 +307,7 @@ else
 		# Downloading pCloud to the Download folder.
 		wget -P $HOME/Download https://c75.pcloud.com/dHZ8IsmSZJvU4uZZZmMutt7ZHkZZGNRZkZ5LUXZssw368uiJLjYQDTAP0KEsS2b0egy/pCloud_Linux_amd64_3.1.1.deb
 		# Installing pCloud.
-		sudo dpkg -i $HOME/Download/pCloud_Linux_amd64_3.1.1.deb && sudo apt-get install -f
+		sudo dpkg -i $HOME/Download/pCloud_Linux_amd64_3.1.1.deb && sudo apt-get -f install
 		# Updating Ubuntu dependencies and softwares.
 		sudo apt-get update && sudo apt-get upgrade
 		# Removing pCloud_Linux_amd64_3.1.1.deb file from Download folder.
@@ -325,7 +325,7 @@ else
 		# Downloading Google Play Music to the download folder.
 		wget -P $HOME/Download https://github-cloud.s3.amazonaws.com/releases/40008106/42e05a06-9491-11e6-885c-b9b3588ff9a0.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161031%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161031T184825Z&X-Amz-Expires=300&X-Amz-Signature=0d1c4b89a84149d1e40dd61045ffec11e8e52ea531f8c94809e5c02f25a15c63&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dgoogle-play-music-desktop-player_4.0.1_amd64.deb&response-content-type=application%2Foctet-stream
 		# Installing Google Play Music.
-		sudo dpkg -i $HOME/Download/google-play-music-desktop-player_4.0.1_amd64.deb && sudo apt-get install -f
+		sudo dpkg -i $HOME/Download/google-play-music-desktop-player_4.0.1_amd64.deb && sudo apt-get -f install
 		# Updating Ubuntu dependencies and softwares.
 		sudo apt-get update && sudo apt-get upgrade
 		# Removing google-play-music-desktop-player_4.0.1_amd64.deb file.
@@ -336,7 +336,7 @@ else
 		# Downloading Spotfy client.
 		wget -P $HOME/Download http://repository.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb
 		# Installing Spotfy client.
-		sudo dpkg -i spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb && sudo apt-get install -f
+		sudo dpkg -i spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb && sudo apt-get -f install
 		# Updating Ubuntu dependencies.
 		sudo apt-get install && sudo apt-get upgrade
 		# Removing Spotfy file from Download folder.
@@ -357,10 +357,10 @@ else
 		wget -P $HOME/Download https://launchpadlibrarian.net/201478397/libgranite2_0.3.0+r850+pkg80~ubuntu0.3.1_amd64.deb
 		wget -P $HOME/Download https://launchpadlibrarian.net/201478393/libgranite-common_0.3.0+r850+pkg80~ubuntu0.3.1_all.deb
 		# Installing Vocal dependencies.
-		sudo dpkg -i $HOME/Download/libgranite2_0.3.0+r850+pkg80~ubuntu0.3.1_amd64.deb && sudo apt-get install -f
-		sudo dpkg -i $HOME/Download/libgranite-common_0.3.0+r850+pkg80~ubuntu0.3.1_all.deb && sudo apt-get install -f
+		sudo dpkg -i $HOME/Download/libgranite2_0.3.0+r850+pkg80~ubuntu0.3.1_amd64.deb && sudo apt-get -f install
+		sudo dpkg -i $HOME/Download/libgranite-common_0.3.0+r850+pkg80~ubuntu0.3.1_all.deb && sudo apt-get -f install
 		# Installing Vocal.
-		sudo dpkg -i $HOME/Download/vocal_1.0_amd64.deb && sudo apt-get install -f
+		sudo dpkg -i $HOME/Download/vocal_1.0_amd64.deb && sudo apt-get -f install
 		# Removing Vocal and his dependencies files.
 		rm -rf $HOME/Download/vocal_1.0_amd64.deb
 		rm -rf $HOME/Download/libgranite2_0.3.0+r850+pkg80~ubuntu0.3.1_amd64.deb
@@ -424,7 +424,7 @@ else
 		# Downloading Slack.
 		wget -P $HOME/Download/ https://downloads.slack-edge.com/linux_releases/slack-desktop-2.2.1-amd64.deb
 		# Installing Slack.
-		sudo dkpg -i $HOME/Download/slack-desktop-2.2.1-amd64.deb && sudo apt-get install -f
+		sudo dkpg -i $HOME/Download/slack-desktop-2.2.1-amd64.deb && sudo apt-get -f install
 		# Removing slack-desktop-2.2.1-amd64.deb file.
 		rm -rf $HOME/Download/slack-desktop-2.2.1-amd64.deb
 		# Updating Ubuntu softwares and dependencies.
@@ -435,7 +435,7 @@ else
 		# Downloading Skype.
 		wget -P $HOME/Download/ https://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
 		# Installing Skype.
-		sudo dpkg -i $HOME/Download/skype-ubuntu-precise_4.3.0.37-1_i386.deb && sudo apt-get install -f
+		sudo dpkg -i $HOME/Download/skype-ubuntu-precise_4.3.0.37-1_i386.deb && sudo apt-get -f install
 		# Removing skype-ubuntu-precise_4.3.0.37-1_i386.deb file.
 		rm -rf $HOME/Download/skype-ubuntu-precise_4.3.0.37-1_i386.deb
 		# Updating Ubuntu softwares and dependencies.
@@ -446,7 +446,7 @@ else
 		# Downloading Simplenote.
 		wget -P $HOME/Download/ https://github-cloud.s3.amazonaws.com/releases/41199577/01797bea-955b-11e6-9af1-68f30e6a2dfb.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161101%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161101T143306Z&X-Amz-Expires=300&X-Amz-Signature=7737a9fbdb911fc1c2c6dce6c5847f060e72ab9520b64ea88ccb3f608e8fe1ab&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dsimplenote-1.0.5.deb&response-content-type=application%2Foctet-stream
 		# Installing Simplenote.
-		sudo dpkg -i $HOME/Download/simplenote-1.0.5.deb && sudo apt-get install -f
+		sudo dpkg -i $HOME/Download/simplenote-1.0.5.deb && sudo apt-get -f install
 		# Removing simplenote-1.0.5.deb file.
 		rm -rf $HOME/Download/simplenote-1.0.5.deb
 		# Updating Ubuntu softwares and dependencies.
