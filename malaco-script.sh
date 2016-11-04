@@ -218,6 +218,8 @@ else
 	fi
 
 	if [[ $selected_item =~ "19" ]]; then
+		# Installing Android Studio dependencies.
+		sudo apt-get install lib32z1 lib32ncurses5 lib32stdc++6
 		# Downloading Android Studio.
 		wget -P $HOME/Download https://dl.google.com/dl/android/studio/ide-zips/2.2.2.0/android-studio-ide-145.3360264-linux.zip
 		# Extracting android-studio-ide-145.3360264-linux.zip into Download folder.
