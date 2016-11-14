@@ -201,9 +201,9 @@ else
 		# Installing Vim.
 		sudo apt-get update && sudo apt-get install vim
 		# Downloading Vim configs from github.
-		cd $HOME/Projects && git clone git@github.com:jackmiras/vim.git && cd $HOME
+		cd $HOME/Projects && git clone git@github.com:jackmiras/vim-config.git && cd $HOME
 		# Creating a symbolic link of Vim configurations into the Home folder of Ubuntu.
-		ln -s $HOME/Projects/vim/.vimrc $HOME/.vimrc
+		ln -s $HOME/Projects/vim-config/.vimrc $HOME/.vimrc
 	fi
 
 	if [[ $selected_item =~ "18" ]]; then
