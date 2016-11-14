@@ -212,9 +212,9 @@ else
 		# Installing Sublime Text 3.
 		sudo apt-get -y install sublime-text-installer
 		# Downloading Sublime Text 3 configs from Github.
-		cd $HOME/Projects && git clone git@github.com:jackmiras/sublime-text-3.git && cd $HOME
+		cd $HOME/Projects && git clone git@github.com:jackmiras/sublime-text-3-config.git && cd $HOME
 		# Creating a symbolic link of Sublime Text 3 configs into the Home/.config folder of Ubuntu.
-		ln -s $HOME/Projects/sublime-text-3 $HOME/.config
+		ln -s $HOME/Projects/sublime-text-3-config $HOME/.config/sublime-text-3
 	fi
 
 	if [[ $selected_item =~ "19" ]]; then
