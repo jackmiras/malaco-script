@@ -113,8 +113,14 @@ if [ "$selected_item" == "5 - Tmux" ]; then
 fi
 
 if [ "$selected_item" == "6 - Zsh" ]; then
-	# Installing Zsh.
-	sudo apt-get update && sudo apt-get install -y zsh && chsh -s $(which zsh)
+	# Installing zsh.
+	sudo apt-get update && sudo apt-get install -y zsh
+	# Making zsh the default shell.
+	chsh -s $(which zsh)
+	# Installing oh-my-zsh
+	 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+	# Removing the default .zshrc file.
+	rm -rf $HOME/.zshrc
 	# Downloading Zsh configs from github.
 	cd &HOME/Projects && git clone git@github.com:jackmiras/zshrc-config.git && cd $HOME/
 	# Creating symbolic link of Zsh configs into the home of computer.
