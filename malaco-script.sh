@@ -17,7 +17,7 @@ GREP="/bin/grep"
 
 selected_item=$(zenity --list\
 	--text "This is a script written to save time, choose down below the softwares that you want to install."\
-	--checklist  --column "Instalar"\
+	--checklist  --column "Install"\
 	--column "Softwares"\
 		FALSE "1 - Git"\
 		FALSE "2 - Git-flow"\
