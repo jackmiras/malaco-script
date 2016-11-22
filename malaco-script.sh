@@ -505,37 +505,37 @@ if [[ $selected_item =~ "42" ]]; then
 fi
 
 #################Uninstalling unused softwares from Ubuntu.##################
-if wich onboard >/dev/null; then
+if which onboard >/dev/null; then
 # Removing Onboard from the system.
 	sudo apt-get remove --purge onboard
 fi
 
-if wich gnome-mahjongg >/dev/null; then
+if which gnome-mahjongg >/dev/null; then
 	# Removing GNOME Mahjongg.
 	sudo apt-get remove --purge gnome-mahjongg
 fi
 
-if wich gnome-sudoku >/dev/null; then
+if which gnome-sudoku >/dev/null; then
 	# Removing GNOME Sudoku.
 	sudo apt-get remove --purge gnome-sudoku
 fi
 
-if wich gnome-orca >/dev/null; then
+if which gnome-orca >/dev/null; then
 	# Removing GNOME Orca.
 	sudo apt-get remove --purge gnome-orca
 fi
 
-if wich gnome-mines>/dev/null; then
+if which gnome-mines>/dev/null; then
 	# Removing GNOME Mines.
 	sudo apt-get remove --purge gnome-mines
 fi
 
-if wich rhythmbox >/dev/null; then
+if which rhythmbox >/dev/null; then
 	# Removing Rhythmbox.
 	sudo apt-get remove --purge rhythmbox
 fi
 
-if wich thunderbird >/dev/null; then
+if which thunderbird >/dev/null; then
 	# Removing Thunderbird.
 	sudo apt-get remove --purge thunderbird*
 fi
