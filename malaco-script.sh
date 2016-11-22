@@ -122,7 +122,7 @@ if [ "$selected_item" == "6 - Zsh" ]; then
 	# Removing the default .zshrc file.
 	rm -rf $HOME/.zshrc
 	# Downloading Zsh configs from github.
-	cd &HOME/Projects && git clone git@github.com:jackmiras/zshrc-config.git && cd $HOME/
+	cd $HOME/Projects && git clone git@github.com:jackmiras/zshrc-config.git && cd $HOME/
 	# Creating symbolic link of Zsh configs into the home of computer.
 	ln -s $HOME/Projects/zshrc-config/.zshrc $HOME/.zshrc
 fi
@@ -471,11 +471,11 @@ fi
 
 if [ "$selected_item" == "36 - Simplenote" ]; then
 	# Downloading Simplenote.
-	wget -P $HOME/Download/ https://github-cloud.s3.amazonaws.com/releases/41199577/01797bea-955b-11e6-9af1-68f30e6a2dfb.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161101%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161101T143306Z&X-Amz-Expires=300&X-Amz-Signature=7737a9fbdb911fc1c2c6dce6c5847f060e72ab9520b64ea88ccb3f608e8fe1ab&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dsimplenote-1.0.5.deb&response-content-type=application%2Foctet-stream
+	wget -P $HOME/Downloads/ https://github.com/Automattic/simplenote-electron/releases/download/v1.0.6/simplenote-1.0.6.deb
 	# Installing Simplenote.
-	sudo dpkg -i $HOME/Download/simplenote-1.0.5.deb && sudo apt-get -f install
-	# Removing simplenote-1.0.5.deb file.
-	rm -rf $HOME/Download/simplenote-1.0.5.deb
+	sudo dpkg -i $HOME/Download/simplenote-1.0.6.deb && sudo apt-get -f install
+	# Removing simplenote-1.0.6.deb file.
+	rm -rf $HOME/Download/simplenote-1.0.6.deb
 	# Updating Ubuntu softwares and dependencies.
 	sudo apt-get update && sudo apt-get upgrade
 fi
