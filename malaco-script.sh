@@ -17,8 +17,7 @@ GREP="/bin/grep"
 
 selected_item=$(zenity --list\
 	--text "This is a script written to save time, choose down below the softwares that you want to install."\
-	--checklist  --column "Install"\
-	--column "Softwares"\
+	--checklist  --column "Install" --column "Softwares"\
 		FALSE "1 - Git"\
 		FALSE "2 - Git-flow"\
 		FALSE "3 - Get repositories from Github and Bitbucket"\
@@ -85,8 +84,22 @@ fi
 if [ "$selected_item" == "3 - Get repositories from Github and Bitbucket" ]; then
 	# Getting repositories from Github and Bitbucket.
 	mkdir $HOME/Projects/
-	chown $USER $HOME/Projects/
 	cd $HOME/Projects/
+
+	# Cloning the repositories.
+	git clone git@github.com:jackmiras/android-studio-config.git
+	git clone git@github.com:jackmiras/malaco-script.git
+	git clone git@github.com:jackmiras/vim-config.git
+	git clone git@github.com:jackmiras/placeholderj.git
+	git clone git@github.com:jackmiras/logger.git
+	git clone git@github.com:jackmiras/sublime-text-3-config.git
+	git clone git@github.com:jackmiras/zshrc-config.git
+	git clone git@github.com:jackmiras/AntennaPod.git
+	git clone git@bitbucket.org:JacksonFlorentino/desafio-android.git
+	git clone git@bitbucket.org:JacksonFlorentino/series-track-android.git
+	git clone git@bitbucket.org:personalorcs/orcamento-android.git
+	git clone git@bitbucket.org:personalorcs/orcamento-api.git
+	git clone git@bitbucket.org:JacksonFlorentino/nubank-assignment-android.git
 fi
 
 if [ "$selected_item" == "4 - Htop" ]; then
