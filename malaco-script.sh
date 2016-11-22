@@ -532,39 +532,43 @@ fi
 if which onboard >/dev/null; then
 # Removing Onboard from the system.
 	sudo apt-get remove --purge onboard
+	sudo apt-get autoremove
 fi
 
 if which gnome-mahjongg >/dev/null; then
 	# Removing GNOME Mahjongg.
 	sudo apt-get remove --purge gnome-mahjongg
+	sudo apt-get autoremove
 fi
 
 if which gnome-sudoku >/dev/null; then
 	# Removing GNOME Sudoku.
 	sudo apt-get remove --purge gnome-sudoku
+	sudo apt-get autoremove
 fi
 
 if which gnome-orca >/dev/null; then
 	# Removing GNOME Orca.
 	sudo apt-get remove --purge gnome-orca
+	sudo apt-get autoremove
 fi
 
 if which gnome-mines>/dev/null; then
 	# Removing GNOME Mines.
 	sudo apt-get remove --purge gnome-mines
+	sudo apt-get autoremove
 fi
 
 if which rhythmbox >/dev/null; then
 	# Removing Rhythmbox.
 	sudo apt-get remove --purge rhythmbox
+	sudo apt-get autoremove
 fi
 
 if which thunderbird >/dev/null; then
 	# Removing Thunderbird.
 	sudo apt-get remove --purge thunderbird*
+	sudo apt-get autoremove
 fi
-
- Removing unecessary packages.
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove
 
 zenity --info --title "Installation finished" --text "Installation finished with success!"
