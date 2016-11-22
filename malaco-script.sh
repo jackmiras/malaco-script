@@ -217,7 +217,12 @@ if [ "$selected_item" == "17 - Vim" ]; then
 	# Downloading Vim configs from github.
 	cd $HOME/Projects && git clone git@github.com:jackmiras/vim-config.git && cd $HOME
 	# Creating a symbolic link of Vim configurations into the Home folder of Ubuntu.
+	ln -s $HOME/Projects/vim-config/ $HOME/.vim
 	ln -s $HOME/Projects/vim-config/vimrc $HOME/.vimrc
+	# Installing vim plugins.
+	cd $HOME/.vim
+	git submodule init
+	git submodule update --recursive
 fi
 
 if [ "$selected_item" == "18 - Sublime Text 3" ]; then
