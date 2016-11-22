@@ -19,48 +19,48 @@ selected_item=$(zenity --list\
 	--text "This is a script written to save time, choose down below the softwares that you want to install."\
 	--checklist  --column "Instalar"\
 	--column "Softwares"\
-		TRUE "1 - Git"\
-		TRUE "2 - Git-flow"\
-		TRUE "3 - Get repositories from Github and Bitbucket"\
-		TRUE "4 - Htop"\
-		TRUE "5 - Tmux"\
-		TRUE "6 - Zsh"\
-		TRUE "7 - Zsh Syntax Highlighting"\
-		TRUE "8 - 7zip, Rar, Unrar"\
-		TRUE "9 - Java 8"\
-		TRUE "10 - Python"\
-		TRUE "11 - Node Js"\
-		TRUE "12 - Ruby, RVM, Rails"\
-		TRUE "13 - MySQL"\
+		FALSE "1 - Git"\
+		FALSE "2 - Git-flow"\
+		FALSE "3 - Get repositories from Github and Bitbucket"\
+		FALSE "4 - Htop"\
+		FALSE "5 - Tmux"\
+		FALSE "6 - Zsh"\
+		FALSE "7 - Zsh Syntax Highlighting"\
+		FALSE "8 - 7zip, Rar, Unrar"\
+		FALSE "9 - Java 8"\
+		FALSE "10 - Python"\
+		FALSE "11 - Node Js"\
+		FALSE "12 - Ruby, RVM, Rails"\
+		FALSE "13 - MySQL"\
 		FALSE "14 - MySQL Workbench"\
-		TRUE "15 - PostgreSQL"\
-		TRUE "16 - PgAdmin3"\
-		TRUE "17 - Vim"\
-		TRUE "18 - Sublime Text 3"\
-		TRUE "19 - Android Studio"\
+		FALSE "15 - PostgreSQL"\
+		FALSE "16 - PgAdmin3"\
+		FALSE "17 - Vim"\
+		FALSE "18 - Sublime Text 3"\
+		FALSE "19 - Android Studio"\
 		FALSE "20 - Eclipse"\
-		TRUE "21 - Google Chrome"\
-		TRUE "22 - Opera"\
-		TRUE "23 - Dropbox"\
-		TRUE "24 - pCloud"\
-		TRUE "25 - qBittorrent"\
-		TRUE "26 - Google Play Music"\
+		FALSE "21 - Google Chrome"\
+		FALSE "22 - Opera"\
+		FALSE "23 - Dropbox"\
+		FALSE "24 - pCloud"\
+		FALSE "25 - qBittorrent"\
+		FALSE "26 - Google Play Music"\
 		FALSE "27 - Spotfy"\
-		TRUE "28 - Clementine"\
-		TRUE "29 - Vocal"\
-		TRUE "30 - VLC"\
-		TRUE "31 - Stremio"\
-		TRUE "32 - Gimp"\
+		FALSE "28 - Clementine"\
+		FALSE "29 - Vocal"\
+		FALSE "30 - VLC"\
+		FALSE "31 - Stremio"\
+		FALSE "32 - Gimp"\
 		FALSE "33 - Inkscape"\
-		TRUE "34 - Slack"\
-		TRUE "35 - Skype"\
-		TRUE "36 - Simplenote"\
-		TRUE "37 - Unetbootin"\
-		TRUE "38 - Unity Tweak Tool"\
-		TRUE "39 - Restricted-Extras"\
-		TRUE "40 - Syspeek"\
-		TRUE "41 - Linuxbrew"\
-		TRUE "42 - Toggl"\
+		FALSE "34 - Slack"\
+		FALSE "35 - Skype"\
+		FALSE "36 - Simplenote"\
+		FALSE "37 - Unetbootin"\
+		FALSE "38 - Unity Tweak Tool"\
+		FALSE "39 - Restricted-Extras"\
+		FALSE "40 - Syspeek"\
+		FALSE "41 - Linuxbrew"\
+		FALSE "42 - Toggl"\
 	--separator=":" --width=1024 --height=768
 )
 
