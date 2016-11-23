@@ -28,38 +28,39 @@ selected_item=$(zenity --list\
 		FALSE "8 - 7zip, Rar, Unrar"\
 		FALSE "9 - Java 8"\
 		FALSE "10 - Python"\
-		FALSE "11 - Node Js"\
-		FALSE "12 - Ruby, RVM, Rails"\
-		FALSE "13 - MySQL"\
-		FALSE "14 - MySQL Workbench"\
-		FALSE "15 - PostgreSQL"\
-		FALSE "16 - PgAdmin3"\
-		FALSE "17 - Vim"\
-		FALSE "18 - Sublime Text 3"\
-		FALSE "19 - Android Studio"\
-		FALSE "20 - Eclipse"\
-		FALSE "21 - Google Chrome"\
-		FALSE "22 - Opera"\
-		FALSE "23 - Dropbox"\
-		FALSE "24 - pCloud"\
-		FALSE "25 - qBittorrent"\
-		FALSE "26 - Google Play Music"\
-		FALSE "27 - Spotfy"\
-		FALSE "28 - Clementine"\
-		FALSE "29 - Vocal"\
-		FALSE "30 - VLC"\
-		FALSE "31 - Stremio"\
-		FALSE "32 - Gimp"\
-		FALSE "33 - Inkscape"\
-		FALSE "34 - Slack"\
-		FALSE "35 - Skype"\
-		FALSE "36 - Simplenote"\
-		FALSE "37 - Unetbootin"\
-		FALSE "38 - Unity Tweak Tool"\
-		FALSE "39 - Restricted-Extras"\
-		FALSE "40 - Syspeek"\
-		FALSE "41 - Linuxbrew"\
-		FALSE "42 - Toggl"\
+		FALSE "11 - NVM"\
+		FALSE "12 - Node Js"\
+		FALSE "13 - Ruby, RVM, Rails"\
+		FALSE "14 - MySQL"\
+		FALSE "15 - MySQL Workbench"\
+		FALSE "16 - PostgreSQL"\
+		FALSE "17 - PgAdmin3"\
+		FALSE "18 - Vim"\
+		FALSE "19 - Sublime Text 3"\
+		FALSE "20 - Android Studio"\
+		FALSE "21 - Eclipse"\
+		FALSE "22 - Google Chrome"\
+		FALSE "23 - Opera"\
+		FALSE "24 - Dropbox"\
+		FALSE "25 - pCloud"\
+		FALSE "26 - qBittorrent"\
+		FALSE "27 - Google Play Music"\
+		FALSE "28 - Spotfy"\
+		FALSE "29 - Clementine"\
+		FALSE "30 - Vocal"\
+		FALSE "31 - VLC"\
+		FALSE "32 - Stremio"\
+		FALSE "33 - Gimp"\
+		FALSE "34 - Inkscape"\
+		FALSE "35 - Slack"\
+		FALSE "36 - Skype"\
+		FALSE "37 - Simplenote"\
+		FALSE "38 - Unetbootin"\
+		FALSE "39 - Unity Tweak Tool"\
+		FALSE "40 - Restricted-Extras"\
+		FALSE "41 - Syspeek"\
+		FALSE "42 - Linuxbrew"\
+		FALSE "43 - Toggl"\
 	--separator=":" --width=1024 --height=768
 )
 
@@ -149,22 +150,49 @@ if [ "$selected_item" == "9 - Java 8" ]; then
 fi
 
 if [ "$selected_item" == "10 - Python" ]; then
+	# Installing Python dependencies.
+	sudo apt-get install libssl-dev openssl
+	# Downloading Python files.
+	wget -P $HOME/Downloads/ https://www.python.org/ftp/python/3.5.2/Python-3.5.2.tar.xz
+	# Upacking Python files.
+	tar xpvf $HOME/Downloads/Python-3.5.2.tar.xz -C $HOME/Downloads/
 	# Installing Python.
-	sudo apt-get install -y python-software-properties python g++ make && sudo apt-get install idle-python2.7*
+	sudo mv $HOME/Downloads/Python-3.5.2 /opt/
+	cd /opt/Python-3.5.2
+	./configure
+	make
+	sudo -H make install
+	sudo ln -fs /opt/Python-3.5.2/Python /usr/bin/python3.5
+	# Installing Python IDLE.
+	sudo apt-get install idle-python3
 fi
 
-if [ "$selected_item" == "11 - Node Js" ]; then
-	# Adding Node Js repository.
-	sudo add-apt-repository -y ppa:chris-lea/node.js && sudo apt-get update
+if [ "$selected_item" == "11 - NVM" ]; then
+	# Installing Node build essential.
+	sudo apt-get update && sudo apt-get install build-essential libssl-dev
+	# Downloading nvm script.
+	curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh -o install_nvm.sh
+	# Installing nvm.
+	bash install_nvm.sh
+
+	zenity --info --text="Close and reopen the terminal."
+fi
+
+if [ "$selected_item" == "12 - Node Js" ]; then
+	# Enabling the nvm.sh script to run in bash scripts.
+	. ~/.nvm/nvm.sh
+	. ~/.profile
+	. ~/.bashrc
+	. ~/.zshrc
 	# Installing Node.
-	sudo apt-get install -y nodejs
-	# Setting up to not need sudo permission when Node Js was executed.
-	echo prefix = ~/.node >> ~/.npmrc
-	echo 'export PATH=$HOME/.node/bin:$PATH' >> ~/.bashrc
-	echo 'export PATH=$HOME/.node/bin:$PATH' >> ~/.zshrc
+	nvm install 7.2.0
+	nvm use 7.2.0
+	nvm alias default 7.2.0
+	# Intalling npm.
+	sudo apt-get install npm
 fi
 
-if [ "$selected_item" == "12 - Ruby, RVM, Rails" ]; then
+if [ "$selected_item" == "13 - Ruby, RVM, Rails" ]; then
 	# Installing Ruby dependencies.
 	sudo apt-get update && sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
 
@@ -183,12 +211,12 @@ if [ "$selected_item" == "12 - Ruby, RVM, Rails" ]; then
 	gem install rails -v 4.2.6
 fi
 
-if [ "$selected_item" == "13 - MySQL" ]; then
+if [ "$selected_item" == "14 - MySQL" ]; then
 	# Installing MySQL.
 	sudo apt-get update && sudo apt-get install mysql-server mysql-client libmysqlclient-dev
 fi
 
-if [ "$selected_item" == "14 - MySQL Workbench" ]; then
+if [ "$selected_item" == "15 - MySQL Workbench" ]; then
 	# Downloading MySQL Workbench.
 	wget -P $HOME/Downloads/ http://cdn.mysql.com//Downloads/MySQLGUITools/mysql-workbench-community-6.3.8-1ubu1604-amd64.deb
 	# Installing MySQL Workbench.
@@ -199,7 +227,7 @@ if [ "$selected_item" == "14 - MySQL Workbench" ]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [ "$selected_item" == "15 - PostgreSQL" ]; then
+if [ "$selected_item" == "16 - PostgreSQL" ]; then
 	# Adding PostgreSQL on Ubuntu souces.list.
 	sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
 	# Downloading PostgreSQL key to add as key of system repositories.
@@ -208,12 +236,12 @@ if [ "$selected_item" == "15 - PostgreSQL" ]; then
 	sudo apt-get update && sudo apt-get install postgresql-common && sudo apt-get install postgresql-9.5 libpq-dev
 fi
 
-if [ "$selected_item" == "16 - PgAdmin3" ]; then
+if [ "$selected_item" == "17 - PgAdmin3" ]; then
 	# Installing PgAdmin3.
 	sudo apt-get update && sudo apt-get install pgadmin3
 fi
 
-if [ "$selected_item" == "17 - Vim" ]; then
+if [ "$selected_item" == "18 - Vim" ]; then
 	# Installing Vim.
 	sudo apt-get update && sudo apt-get install vim
 	if [ ! -d "$HOME/Projects/vim-config" ]; then
@@ -229,7 +257,7 @@ if [ "$selected_item" == "17 - Vim" ]; then
 	git submodule update --recursive
 fi
 
-if [ "$selected_item" == "18 - Sublime Text 3" ]; then
+if [ "$selected_item" == "19 - Sublime Text 3" ]; then
 	# Adding Sublime Text 3 respository.
 	sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 && sudo apt-get update
 	# Installing Sublime Text 3.
@@ -242,7 +270,7 @@ if [ "$selected_item" == "18 - Sublime Text 3" ]; then
 	ln -s $HOME/Projects/sublime-text-3-config $HOME/.config/sublime-text-3
 fi
 
-if [ "$selected_item" == "19 - Android Studio" ]; then
+if [ "$selected_item" == "20 - Android Studio" ]; then
 	# Installing Android Studio dependencies.
 	sudo apt-get install lib32z1 lib32ncurses5 lib32stdc++6
 	# Downloading Android Studio.
@@ -283,11 +311,11 @@ if [ "$selected_item" == "19 - Android Studio" ]; then
 	rm -rf $HOME/Downloads/android-studio-ide-145.3360264-linux.zip
 fi
 
-if [ "$selected_item" == "20 - Eclipse" ];then
+if [ "$selected_item" == "21 - Eclipse" ];then
 	# Downloading Eclipse.
 	wget -P $HOME/Downloads/ http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/neon/1a/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
 	# Extracting eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz into Download folder.
-	tar -vzxf $HOME/Downloads/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz -C $HOME/Download
+	tar -vzxf $HOME/Downloads/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz -C $HOME/Downloads/
 	# Moving eclipse folder  from Download to the opt folder.
 	sudo mv $HOME/Downloads/eclipse /opt/
 
@@ -310,7 +338,7 @@ if [ "$selected_item" == "20 - Eclipse" ];then
 	rm -rf $HOME/Downloads/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
 fi
 
-if [ "$selected_item" == "21 - Google Chrome" ]; then
+if [ "$selected_item" == "22 - Google Chrome" ]; then
 	# Downloading Google Chrome key to add as key of system repositories.
 	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 	# Adding Google Chrome to the source list.
@@ -319,7 +347,7 @@ if [ "$selected_item" == "21 - Google Chrome" ]; then
 	sudo apt-get update && sudo apt-get install -y google-chrome-stable && sudo apt-get -f install
 fi
 
-if [ "$selected_item" == "22 - Opera" ]; then
+if [ "$selected_item" == "23 - Opera" ]; then
 	# Downloading opera-stable_41.0.2353.46_amd64.deb into the Download folder.
 	wget -P $HOME/Downloads/ http://download4.operacdn.com/pub/opera/desktop/41.0.2353.46/linux/opera-stable_41.0.2353.46_amd64.deb
 	# Installing the stable version Opera.
@@ -328,7 +356,7 @@ if [ "$selected_item" == "22 - Opera" ]; then
 	sudo ap-get update && sudo apt-get upgrade
 fi
 
-if [ "$selected_item" == "23 - Dropbox" ]; then
+if [ "$selected_item" == "24 - Dropbox" ]; then
 	# Download dropbox_2015.10.28_amd64.deb into the Download folder.
 	wget -P $HOME/Downloads/ https://linux.dropbox.com/packages/ubuntu/dropbox_2015.10.28_amd64.deb
 	# Installing Dropbox.
@@ -339,7 +367,7 @@ if [ "$selected_item" == "23 - Dropbox" ]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [ "$selected_item" == "24 - pCloud" ]; then
+if [ "$selected_item" == "25 - pCloud" ]; then
 	# Downloading pCloud to the Download folder.
 	wget -P $HOME/Downloads/ https://c75.pcloud.com/dHZ8IsmSZJvU4uZZZmMutt7ZHkZZGNRZkZ5LUXZssw368uiJLjYQDTAP0KEsS2b0egy/pCloud_Linux_amd64_3.1.1.deb
 	# Installing pCloud.
@@ -350,14 +378,14 @@ if [ "$selected_item" == "24 - pCloud" ]; then
 	rm -rf $HOME/Downloads/pCloud_Linux_amd64_3.1.1.deb
 fi
 
-if [ "$selected_item" == "25 - qBittorrent" ]; then
+if [ "$selected_item" == "26 - qBittorrent" ]; then
 	# Adding qBittorrent repository.
 	sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
 	# Installing qBittorrent.
 	sudo apt-get update && sudo apt-get install qbittorrent
 fi
 
-if [ "$selected_item" == "26 - Google Play Music" ]; then
+if [ "$selected_item" == "27 - Google Play Music" ]; then
 	# Downloading Google Play Music to the download folder.
 	wget -P $HOME/Downloads/ https://github-cloud.s3.amazonaws.com/releases/40008106/42e05a06-9491-11e6-885c-b9b3588ff9a0.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161031%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161031T184825Z&X-Amz-Expires=300&X-Amz-Signature=0d1c4b89a84149d1e40dd61045ffec11e8e52ea531f8c94809e5c02f25a15c63&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dgoogle-play-music-desktop-player_4.0.1_amd64.deb&response-content-type=application%2Foctet-stream
 	# Installing Google Play Music.
@@ -368,7 +396,7 @@ if [ "$selected_item" == "26 - Google Play Music" ]; then
 	rm -rf $HOME/Downloads/google-play-music-desktop-player_4.0.1_amd64.deb
 fi
 
-if [ "$selected_item" == "27 - Spotfy" ]; then
+if [ "$selected_item" == "28 - Spotfy" ]; then
 	# Downloading Spotfy client.
 	wget -P $HOME/Downloads/ http://repository.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb
 	# Installing Spotfy client.
@@ -379,14 +407,14 @@ if [ "$selected_item" == "27 - Spotfy" ]; then
 	rm -rf $HOME/Downloads/spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb
 fi
 
-if [ "$selected_item" == "28 - Clementine" ]; then
+if [ "$selected_item" == "29 - Clementine" ]; then
 	# Adding Clementaine repository.
 	sudo add-apt-repository ppa:me-davidsansome/clementine
 	# Installing Clementine.
 	sudo apt-get update && sudo apt-get install clementine
 fi
 
-if [ "$selected_item" == "29 - Vocal" ]; then
+if [ "$selected_item" == "30 - Vocal" ]; then
 	# Downloading Vocal.
 	wget -P $HOME/Downloads/ http://ufpr.dl.sourceforge.net/project/vocalpodcast/vocal_1.0_amd64.deb
 	# Downloading Vocal dependencies.
@@ -405,7 +433,7 @@ if [ "$selected_item" == "29 - Vocal" ]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [ "$selected_item" == "30 - VLC" ]; then
+if [ "$selected_item" == "31 - VLC" ]; then
 	# Adding VLC repositories
 	sudo add-apt-repository ppa:videolan/stable-daily
 	sudo add-apt-repository ppa:nicola-onorata/desktop
@@ -413,7 +441,7 @@ if [ "$selected_item" == "30 - VLC" ]; then
 	sudo apt-get update && sudo apt-get install vlc
 fi
 
-if [ "$selected_item" == "31 - Stremio" ]; then
+if [ "$selected_item" == "32 - Stremio" ]; then
 	# Downloading Stremio
 	wget -P $HOME/Downloads/ http://dl.strem.io/Stremio3.6.5.linux.tar.gz 
 	# Creating stremio folder.
@@ -446,17 +474,17 @@ if [ "$selected_item" == "31 - Stremio" ]; then
 	rm -rf $HOME/Downloads/Stremio3.6.5.linux.tar.gz
 fi
 
-if [ "$selected_item" == "32 - Gimp" ]; then
+if [ "$selected_item" == "33 - Gimp" ]; then
 	# Installing Gimp.
 	sudo apt-get update && sudo apt-get -y install gimp
 fi
 
-if [ "$selected_item" == "33 - Inkscape" ]; then
+if [ "$selected_item" == "34 - Inkscape" ]; then
 	# Installing Inkscape.
 	sudo apt-get update && sudo apt-get -y install inkscape
 fi
 
-if [ "$selected_item" == "34 - Slack" ]; then
+if [ "$selected_item" == "35 - Slack" ]; then
 	# Downloading Slack.
 	wget -P $HOME/Downloads/ https://downloads.slack-edge.com/linux_releases/slack-desktop-2.2.1-amd64.deb
 	# Installing Slack.
@@ -467,7 +495,7 @@ if [ "$selected_item" == "34 - Slack" ]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [ "$selected_item" == "35 - Skype" ]; then
+if [ "$selected_item" == "36 - Skype" ]; then
 	# Downloading Skype.
 	wget -P $HOME/Downloads/ https://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
 	# Installing Skype.
@@ -478,7 +506,7 @@ if [ "$selected_item" == "35 - Skype" ]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [ "$selected_item" == "36 - Simplenote" ]; then
+if [ "$selected_item" == "37 - Simplenote" ]; then
 	# Downloading Simplenote.
 	wget -P $HOME/Downloads/ https://github.com/Automattic/simplenote-electron/releases/download/v1.0.6/simplenote-1.0.6.deb
 	# Installing Simplenote.
@@ -489,31 +517,31 @@ if [ "$selected_item" == "36 - Simplenote" ]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [ "$selected_item" = "37 - Unetbootin" ]; then
+if [ "$selected_item" = "38 - Unetbootin" ]; then
 	# Adding Unetbootin repository.
 	sudo add-apt-repository ppa:gezakovacs/ppa
 	# Installing Unetbootin
 	sudo apt-get update && sudo apt-get install unetbootin
 fi
 
-if [ "$selected_item"	== "38 - Unity Tweak Tool" ]; then
+if [ "$selected_item"	== "39 - Unity Tweak Tool" ]; then
 	# Installing Unity Tweek Tool
 	sudo apt-get update && sudo apt-get install unity-tweak-tool
 fi
 
-if [ "$selected_item" == "39 - Restricted-Extras" ]; then
+if [ "$selected_item" == "40 - Restricted-Extras" ]; then
 	# Installing Restricted-Extras.
 	sudo apt-get -y install ubuntu-restricted-extras
 fi
 
-if [ "$selected_item" == "40 - Syspeek" ]; then
+if [ "$selected_item" == "41 - Syspeek" ]; then
 	# Adding Syspeek repository.
 	sudo add-apt-repository ppa:nilarimogard/webupd8
 	# Installing Syspeek.
 	sudo apt-get update && sudo apt-get install syspeek
 fi
 
-if [ "$selected_item" == "41 - Linuxbrew" ]; then
+if [ "$selected_item" == "42 - Linuxbrew" ]; then
 	# Installing Linuxbrew dependencies.
 	sudo apt-get install build-essential curl git python-setuptools ruby
 	# Installing Linuxbrew.
@@ -524,7 +552,7 @@ if [ "$selected_item" == "41 - Linuxbrew" ]; then
 	echo "export INFOPATH='$HOME/.linuxbrew/share/info:$INFOPATH'" >> ~/.bashrc
 fi
 
-if [ "$selected_item" == "42 - Toggl" ]; then
+if [ "$selected_item" == "43 - Toggl" ]; then
 	#Downloading Toggl.
 	wget -P $HOME/Downloads/ https://github-cloud.s3.amazonaws.com/releases/16703726/16394e5e-9c3e-11e6-9d2f-0871f274c054.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161103%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161103T142454Z&X-Amz-Expires=300&X-Amz-Signature=85c4ff003bd3ac7acbb7706f5c6b69d782b5d75221f8faf39bd61120c4a9cba2&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dtoggldesktop_7.3.346_amd64.deb&response-content-type=application%2Foctet-stream
 	# Installing Toggl dependencies.
