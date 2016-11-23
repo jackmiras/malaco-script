@@ -150,7 +150,7 @@ fi
 
 if [ "$selected_item" == "10 - Python" ]; then
 	# Installing Python.
-	sudo apt-get install -y python-software-properties python g++ make && sudo apt-get install idle-python3.4
+	sudo apt-get install -y python-software-properties python g++ make && sudo apt-get install idle-python2.7*
 fi
 
 if [ "$selected_item" == "11 - Node Js" ]; then
