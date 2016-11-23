@@ -246,11 +246,11 @@ if [ "$selected_item" == "19 - Android Studio" ]; then
 	# Installing Android Studio dependencies.
 	sudo apt-get install lib32z1 lib32ncurses5 lib32stdc++6
 	# Downloading Android Studio.
-	wget -P $HOME/Download https://dl.google.com/dl/android/studio/ide-zips/2.2.2.0/android-studio-ide-145.3360264-linux.zip
+	wget -P $HOME/Downloads/ https://dl.google.com/dl/android/studio/ide-zips/2.2.2.0/android-studio-ide-145.3360264-linux.zip
 	# Extracting android-studio-ide-145.3360264-linux.zip into Download folder.
-	unzip $HOME/Download/android-studio-ide-145.3360264-linux.zip -d $HOME/Download
+	unzip $HOME/Downloads/android-studio-ide-145.3360264-linux.zip -d $HOME/Download
 	# Moving android-studio folder from Download to the opt folder.
-	sudo mv $HOME/Download/android-studio /opt/
+	sudo mv $HOME/Downloads/android-studio /opt/
 
 	# Setting up the Android Studio launcher on Ubuntu dash.
 	echo "[Desktop Entry]" >> ~/.local/share/applications/jetbrains-studio.desktop
@@ -280,16 +280,16 @@ if [ "$selected_item" == "19 - Android Studio" ]; then
 	# Creating a symbolic link of the new Android Studio configurations into .AndroidStudio folder.
 	ln -s $HOME/Projects/android-studio-config/* $HOME/.AndroidStudio2.2/config/
 	# Removing Android Studio zip file from Download folder.
-	rm -rf $HOME/Download/android-studio-ide-145.3360264-linux.zip
+	rm -rf $HOME/Downloads/android-studio-ide-145.3360264-linux.zip
 fi
 
 if [ "$selected_item" == "20 - Eclipse" ];then
 	# Downloading Eclipse.
-	wget -P $HOME/Download http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/neon/1a/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
+	wget -P $HOME/Downloads/ http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/neon/1a/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
 	# Extracting eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz into Download folder.
-	tar -vzxf $HOME/Download/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz -C $HOME/Download
+	tar -vzxf $HOME/Downloads/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz -C $HOME/Download
 	# Moving eclipse folder  from Download to the opt folder.
-	sudo mv $HOME/Download/eclipse /opt/
+	sudo mv $HOME/Downloads/eclipse /opt/
 
 	# Setting up Eclipse launcher on Ubuntu dash.
 	echo "[Desktop Entry]" >> ~/.local/share/applications/eclipse.desktop
@@ -307,7 +307,7 @@ if [ "$selected_item" == "20 - Eclipse" ];then
 	echo "TargetEnvironment=Unity" >> ~/.local/share/applications/eclipse.desktop
 
 	# Removing Eclipse tar.gz file from Download folder.
-	rm -rf $HOME/Download/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
+	rm -rf $HOME/Downloads/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
 fi
 
 if [ "$selected_item" == "21 - Google Chrome" ]; then
@@ -321,33 +321,33 @@ fi
 
 if [ "$selected_item" == "22 - Opera" ]; then
 	# Downloading opera-stable_41.0.2353.46_amd64.deb into the Download folder.
-	wget -P $HOME/Download http://download4.operacdn.com/pub/opera/desktop/41.0.2353.46/linux/opera-stable_41.0.2353.46_amd64.deb
+	wget -P $HOME/Downloads/ http://download4.operacdn.com/pub/opera/desktop/41.0.2353.46/linux/opera-stable_41.0.2353.46_amd64.deb
 	# Installing the stable version Opera.
-	sudo dpkg -i $HOME/Download/opera-stable_41.0.2353.46_amd64.deb && sudo apt-get -f install
+	sudo dpkg -i $HOME/Downloads/opera-stable_41.0.2353.46_amd64.deb && sudo apt-get -f install
 	# Updating Ubuntu dependencies. 
 	sudo ap-get update && sudo apt-get upgrade
 fi
 
 if [ "$selected_item" == "23 - Dropbox" ]; then
 	# Download dropbox_2015.10.28_amd64.deb into the Download folder.
-	wget -P $HOME/Download https://linux.dropbox.com/packages/ubuntu/dropbox_2015.10.28_amd64.deb
+	wget -P $HOME/Downloads/ https://linux.dropbox.com/packages/ubuntu/dropbox_2015.10.28_amd64.deb
 	# Installing Dropbox.
-	sudo dpkg -i $HOME/Download/dropbox_2015.10.28_amd64.deb && sudo apt-get -f install
+	sudo dpkg -i $HOME/Downloads/dropbox_2015.10.28_amd64.deb && sudo apt-get -f install
 	# Removing dropbox_2015.10.28_amd64.deb from Download folder.
-	rm -rf $HOME/Download/dropbox_2015.10.28_amd64.deb
+	rm -rf $HOME/Downloads/dropbox_2015.10.28_amd64.deb
 	# Updating Ubuntu dependencies.
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
 if [ "$selected_item" == "24 - pCloud" ]; then
 	# Downloading pCloud to the Download folder.
-	wget -P $HOME/Download https://c75.pcloud.com/dHZ8IsmSZJvU4uZZZmMutt7ZHkZZGNRZkZ5LUXZssw368uiJLjYQDTAP0KEsS2b0egy/pCloud_Linux_amd64_3.1.1.deb
+	wget -P $HOME/Downloads/ https://c75.pcloud.com/dHZ8IsmSZJvU4uZZZmMutt7ZHkZZGNRZkZ5LUXZssw368uiJLjYQDTAP0KEsS2b0egy/pCloud_Linux_amd64_3.1.1.deb
 	# Installing pCloud.
-	sudo dpkg -i $HOME/Download/pCloud_Linux_amd64_3.1.1.deb && sudo apt-get -f install
+	sudo dpkg -i $HOME/Downloads/pCloud_Linux_amd64_3.1.1.deb && sudo apt-get -f install
 	# Updating Ubuntu dependencies and softwares.
 	sudo apt-get update && sudo apt-get upgrade
 	# Removing pCloud_Linux_amd64_3.1.1.deb file from Download folder.
-	rm -rf $HOME/Download/pCloud_Linux_amd64_3.1.1.deb
+	rm -rf $HOME/Downloads/pCloud_Linux_amd64_3.1.1.deb
 fi
 
 if [ "$selected_item" == "25 - qBittorrent" ]; then
@@ -359,24 +359,24 @@ fi
 
 if [ "$selected_item" == "26 - Google Play Music" ]; then
 	# Downloading Google Play Music to the download folder.
-	wget -P $HOME/Download https://github-cloud.s3.amazonaws.com/releases/40008106/42e05a06-9491-11e6-885c-b9b3588ff9a0.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161031%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161031T184825Z&X-Amz-Expires=300&X-Amz-Signature=0d1c4b89a84149d1e40dd61045ffec11e8e52ea531f8c94809e5c02f25a15c63&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dgoogle-play-music-desktop-player_4.0.1_amd64.deb&response-content-type=application%2Foctet-stream
+	wget -P $HOME/Downloads/ https://github-cloud.s3.amazonaws.com/releases/40008106/42e05a06-9491-11e6-885c-b9b3588ff9a0.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161031%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161031T184825Z&X-Amz-Expires=300&X-Amz-Signature=0d1c4b89a84149d1e40dd61045ffec11e8e52ea531f8c94809e5c02f25a15c63&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dgoogle-play-music-desktop-player_4.0.1_amd64.deb&response-content-type=application%2Foctet-stream
 	# Installing Google Play Music.
-	sudo dpkg -i $HOME/Download/google-play-music-desktop-player_4.0.1_amd64.deb && sudo apt-get -f install
+	sudo dpkg -i $HOME/Downloads/google-play-music-desktop-player_4.0.1_amd64.deb && sudo apt-get -f install
 	# Updating Ubuntu dependencies and softwares.
 	sudo apt-get update && sudo apt-get upgrade
 	# Removing google-play-music-desktop-player_4.0.1_amd64.deb file.
-	rm -rf $HOME/Download/google-play-music-desktop-player_4.0.1_amd64.deb
+	rm -rf $HOME/Downloads/google-play-music-desktop-player_4.0.1_amd64.deb
 fi
 
 if [ "$selected_item" == "27 - Spotfy" ]; then
 	# Downloading Spotfy client.
-	wget -P $HOME/Download http://repository.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb
+	wget -P $HOME/Downloads/ http://repository.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb
 	# Installing Spotfy client.
 	sudo dpkg -i spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb && sudo apt-get -f install
 	# Updating Ubuntu dependencies.
 	sudo apt-get install && sudo apt-get upgrade
 	# Removing Spotfy file from Download folder.
-	rm -rf $HOME/Download/spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb
+	rm -rf $HOME/Downloads/spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb
 fi
 
 if [ "$selected_item" == "28 - Clementine" ]; then
@@ -388,19 +388,19 @@ fi
 
 if [ "$selected_item" == "29 - Vocal" ]; then
 	# Downloading Vocal.
-	wget -P $HOME/Download http://ufpr.dl.sourceforge.net/project/vocalpodcast/vocal_1.0_amd64.deb
+	wget -P $HOME/Downloads/ http://ufpr.dl.sourceforge.net/project/vocalpodcast/vocal_1.0_amd64.deb
 	# Downloading Vocal dependencies.
-	wget -P $HOME/Download https://launchpadlibrarian.net/201478397/libgranite2_0.3.0+r850+pkg80~ubuntu0.3.1_amd64.deb
-	wget -P $HOME/Download https://launchpadlibrarian.net/201478393/libgranite-common_0.3.0+r850+pkg80~ubuntu0.3.1_all.deb
+	wget -P $HOME/Downloads/ https://launchpadlibrarian.net/201478397/libgranite2_0.3.0+r850+pkg80~ubuntu0.3.1_amd64.deb
+	wget -P $HOME/Downloads/ https://launchpadlibrarian.net/201478393/libgranite-common_0.3.0+r850+pkg80~ubuntu0.3.1_all.deb
 	# Installing Vocal dependencies.
-	sudo dpkg -i $HOME/Download/libgranite2_0.3.0+r850+pkg80~ubuntu0.3.1_amd64.deb && sudo apt-get -f install
-	sudo dpkg -i $HOME/Download/libgranite-common_0.3.0+r850+pkg80~ubuntu0.3.1_all.deb && sudo apt-get -f install
+	sudo dpkg -i $HOME/Downloads/libgranite2_0.3.0+r850+pkg80~ubuntu0.3.1_amd64.deb && sudo apt-get -f install
+	sudo dpkg -i $HOME/Downloads/libgranite-common_0.3.0+r850+pkg80~ubuntu0.3.1_all.deb && sudo apt-get -f install
 	# Installing Vocal.
-	sudo dpkg -i $HOME/Download/vocal_1.0_amd64.deb && sudo apt-get -f install
+	sudo dpkg -i $HOME/Downloads/vocal_1.0_amd64.deb && sudo apt-get -f install
 	# Removing Vocal and his dependencies files.
-	rm -rf $HOME/Download/vocal_1.0_amd64.deb
-	rm -rf $HOME/Download/libgranite2_0.3.0+r850+pkg80~ubuntu0.3.1_amd64.deb
-	rm -rf $HOME/Download/libgranite-common_0.3.0+r850+pkg80~ubuntu0.3.1_all.deb
+	rm -rf $HOME/Downloads/vocal_1.0_amd64.deb
+	rm -rf $HOME/Downloads/libgranite2_0.3.0+r850+pkg80~ubuntu0.3.1_amd64.deb
+	rm -rf $HOME/Downloads/libgranite-common_0.3.0+r850+pkg80~ubuntu0.3.1_all.deb
 	# Updating Ubuntu dependencies.
 	sudo apt-get update && sudo apt-get upgrade
 fi
@@ -415,13 +415,13 @@ fi
 
 if [ "$selected_item" == "31 - Stremio" ]; then
 	# Downloading Stremio
-	wget -P $HOME/Download http://dl.strem.io/Stremio3.6.5.linux.tar.gz 
+	wget -P $HOME/Downloads/ http://dl.strem.io/Stremio3.6.5.linux.tar.gz 
 	# Creating stremio folder.
 	mkdir Download/stremio/
 	# Extracting the Stremio3.6.5.linux.tar.gz files into stremio folder.
-	tar -vzxf $HOME/Download/Stremio3.6.5.linux.tar.gz -C $HOME/Download/stremio
+	tar -vzxf $HOME/Downloads/Stremio3.6.5.linux.tar.gz -C $HOME/Downloads/stremio
 	# Moving stremio folder from Download to opt folder.
-	sudo mv $HOME/Download/stremio /opt/
+	sudo mv $HOME/Downloads/stremio /opt/
 	# Downloading the image icon.
 	wget -P /opt/stremio http://www.strem.io/3.0/stremio-white-small.png
 	# Renaming the image icon.
@@ -443,7 +443,7 @@ if [ "$selected_item" == "31 - Stremio" ]; then
 	echo "TargetEnvironment=Unity" >> ~/.local/share/applications/stremio.desktop
 
 	# Removing Stremio3.6.5.linux.tar.gz file.
-	rm -rf $HOME/Download/Stremio3.6.5.linux.tar.gz
+	rm -rf $HOME/Downloads/Stremio3.6.5.linux.tar.gz
 fi
 
 if [ "$selected_item" == "32 - Gimp" ]; then
@@ -458,22 +458,22 @@ fi
 
 if [ "$selected_item" == "34 - Slack" ]; then
 	# Downloading Slack.
-	wget -P $HOME/Download/ https://downloads.slack-edge.com/linux_releases/slack-desktop-2.2.1-amd64.deb
+	wget -P $HOME/Downloads/ https://downloads.slack-edge.com/linux_releases/slack-desktop-2.2.1-amd64.deb
 	# Installing Slack.
-	sudo dkpg -i $HOME/Download/slack-desktop-2.2.1-amd64.deb && sudo apt-get -f install
+	sudo dkpg -i $HOME/Downloads/slack-desktop-2.2.1-amd64.deb && sudo apt-get -f install
 	# Removing slack-desktop-2.2.1-amd64.deb file.
-	rm -rf $HOME/Download/slack-desktop-2.2.1-amd64.deb
+	rm -rf $HOME/Downloads/slack-desktop-2.2.1-amd64.deb
 	# Updating Ubuntu softwares and dependencies.
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
 if [ "$selected_item" == "35 - Skype" ]; then
 	# Downloading Skype.
-	wget -P $HOME/Download/ https://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
+	wget -P $HOME/Downloads/ https://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
 	# Installing Skype.
-	sudo dpkg -i $HOME/Download/skype-ubuntu-precise_4.3.0.37-1_i386.deb && sudo apt-get -f install
+	sudo dpkg -i $HOME/Downloads/skype-ubuntu-precise_4.3.0.37-1_i386.deb && sudo apt-get -f install
 	# Removing skype-ubuntu-precise_4.3.0.37-1_i386.deb file.
-	rm -rf $HOME/Download/skype-ubuntu-precise_4.3.0.37-1_i386.deb
+	rm -rf $HOME/Downloads/skype-ubuntu-precise_4.3.0.37-1_i386.deb
 	# Updating Ubuntu softwares and dependencies.
 	sudo apt-get update && sudo apt-get upgrade
 fi
@@ -482,9 +482,9 @@ if [ "$selected_item" == "36 - Simplenote" ]; then
 	# Downloading Simplenote.
 	wget -P $HOME/Downloads/ https://github.com/Automattic/simplenote-electron/releases/download/v1.0.6/simplenote-1.0.6.deb
 	# Installing Simplenote.
-	sudo dpkg -i $HOME/Download/simplenote-1.0.6.deb && sudo apt-get -f install
+	sudo dpkg -i $HOME/Downloads/simplenote-1.0.6.deb && sudo apt-get -f install
 	# Removing simplenote-1.0.6.deb file.
-	rm -rf $HOME/Download/simplenote-1.0.6.deb
+	rm -rf $HOME/Downloads/simplenote-1.0.6.deb
 	# Updating Ubuntu softwares and dependencies.
 	sudo apt-get update && sudo apt-get upgrade
 fi
@@ -526,13 +526,13 @@ fi
 
 if [ "$selected_item" == "42 - Toggl" ]; then
 	#Downloading Toggl.
-	wget -P $HOME/Download/ https://github-cloud.s3.amazonaws.com/releases/16703726/16394e5e-9c3e-11e6-9d2f-0871f274c054.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161103%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161103T142454Z&X-Amz-Expires=300&X-Amz-Signature=85c4ff003bd3ac7acbb7706f5c6b69d782b5d75221f8faf39bd61120c4a9cba2&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dtoggldesktop_7.3.346_amd64.deb&response-content-type=application%2Foctet-stream
+	wget -P $HOME/Downloads/ https://github-cloud.s3.amazonaws.com/releases/16703726/16394e5e-9c3e-11e6-9d2f-0871f274c054.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161103%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161103T142454Z&X-Amz-Expires=300&X-Amz-Signature=85c4ff003bd3ac7acbb7706f5c6b69d782b5d75221f8faf39bd61120c4a9cba2&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dtoggldesktop_7.3.346_amd64.deb&response-content-type=application%2Foctet-stream
 	# Installing Toggl dependencies.
 	sudo apt-get install libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
 	#Installing Toggl.
-	sudo dpkg -i $HOME/Download/toggldesktop_7.3.346_amd64.deb && sudo apt-get -f install
+	sudo dpkg -i $HOME/Downloads/toggldesktop_7.3.346_amd64.deb && sudo apt-get -f install
 	# Removing toggldesktop_7.3.346_amd64.deb.
-	rm -rf $HOME/Download/toggldesktop_7.3.346_amd64.deb
+	rm -rf $HOME/Downloads/toggldesktop_7.3.346_amd64.deb
 	# Updating Ubuntu dependencies.
 	sudo apt-get update && sudo apt-get upgrade
 fi
