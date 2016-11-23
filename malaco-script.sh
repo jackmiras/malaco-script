@@ -214,8 +214,10 @@ fi
 if [ "$selected_item" == "17 - Vim" ]; then
 	# Installing Vim.
 	sudo apt-get update && sudo apt-get install vim
+	if [ ! -d "$HOME/Projects/vim-config" ]; then
 	# Downloading Vim configs from github.
-	cd $HOME/Projects && git clone git@github.com:jackmiras/vim-config.git && cd $HOME
+		cd $HOME/Projects && git clone git@github.com:jackmiras/vim-config.git && cd $HOME
+	fi
 	# Creating a symbolic link of Vim configurations into the Home folder of Ubuntu.
 	ln -s $HOME/Projects/vim-config/ $HOME/.vim
 	ln -s $HOME/Projects/vim-config/vimrc $HOME/.vimrc
@@ -231,7 +233,9 @@ if [ "$selected_item" == "18 - Sublime Text 3" ]; then
 	# Installing Sublime Text 3.
 	sudo apt-get -y install sublime-text-installer
 	# Downloading Sublime Text 3 configs from Github.
-	cd $HOME/Projects && git clone git@github.com:jackmiras/sublime-text-3-config.git && cd $HOME
+	if [ ! -d "$HOME/Projects/sublime-text-3-config" ]; then
+		cd $HOME/Projects && git clone git@github.com:jackmiras/sublime-text-3-config.git && cd $HOME
+	fi
 	# Creating a symbolic link of Sublime Text 3 configs into the Home/.config folder of Ubuntu.
 	ln -s $HOME/Projects/sublime-text-3-config $HOME/.config/sublime-text-3
 fi
@@ -260,8 +264,11 @@ if [ "$selected_item" == "19 - Android Studio" ]; then
 
 	# Executing Android Studio to generate the .AndroidStudio folder.
 	sh /opt/android-studio/bin/studio.sh
-	# Downloading custom configs of Android Studio from Github.
-	cd $HOME/Projects && git clone git@github.com:jackmiras/android-studio-config.git && cd $HOME
+	if [ ! -d "$HOME/Projects/android-studio-config" ]; then
+		# Downloading custom configs of Android Studio from Github.
+		cd $HOME/Projects && git clone git@github.com:jackmiras/android-studio-config.git && cd $HOME
+	fi
+
 	# Removing current configurations of Android Studio.
 	rm -rf $HOME/.AndroidStudio2.2/config/codestyles
 	rm -rf $HOME/.AndroidStudio2.2/config/colors
@@ -437,7 +444,7 @@ if [ "$selected_item" == "31 - Stremio" ]; then
 	rm -rf $HOME/Download/Stremio3.6.5.linux.tar.gz
 fi
 
-if [ "$selected_item" =~ "32 - Gimp" ]; then
+if [ "$selected_item" == "32 - Gimp" ]; then
 	# Installing Gimp.
 	sudo apt-get update && sudo apt-get -y install gimp
 fi
