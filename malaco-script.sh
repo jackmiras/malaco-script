@@ -316,7 +316,7 @@ if [ "$selected_item" == "21 - Google Chrome" ]; then
 	# Adding Google Chrome to the source list.
 	sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 	# Installing the stable version of Google Chrome.
-	sudo apt-get update && sudo apt-get install -y google-chrome-stable
+	sudo apt-get update && sudo apt-get install -y google-chrome-stable && sudo apt-get -f install
 fi
 
 if [ "$selected_item" == "22 - Opera" ]; then
