@@ -498,7 +498,7 @@ if [ "$selected_item" == "35 - Slack" ]; then
 	# Removing slack-desktop-2.2.1-amd64.deb file.
 	rm -rf $HOME/Downloads/slack-desktop-2.2.1-amd64.deb
 	# Updating Ubuntu softwares and dependencies.
-	sudo apt-get update && sudo apt-get upgrade
+	sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove
 fi
 
 if [ "$selected_item" == "36 - Skype" ]; then
@@ -511,7 +511,7 @@ if [ "$selected_item" == "36 - Skype" ]; then
 	# Removing skype-ubuntu-precise_4.3.0.37-1_i386.deb file.
 	rm -rf $HOME/Downloads/skype-ubuntu-precise_4.3.0.37-1_i386.deb
 	# Updating Ubuntu softwares and dependencies.
-	sudo apt-get update && sudo apt-get upgrade
+	sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove
 fi
 
 if [ "$selected_item" == "37 - Simplenote" ]; then
@@ -544,9 +544,9 @@ fi
 
 if [ "$selected_item" == "41 - Syspeek" ]; then
 	# Adding Syspeek repository.
-	sudo add-apt-repository ppa:nilarimogard/webupd8
+	sudo add-apt-repository ppa:nilarimogard/webupd8 && sudo apt-get update
 	# Installing Syspeek.
-	sudo apt-get update && sudo apt-get install syspeek
+	sudo apt-get install syspeek
 fi
 
 if [ "$selected_item" == "42 - Linuxbrew" ]; then
