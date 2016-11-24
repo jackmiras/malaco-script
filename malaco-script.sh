@@ -276,7 +276,7 @@ if [ "$selected_item" == "20 - Android Studio" ]; then
 	# Downloading Android Studio.
 	wget -P $HOME/Downloads/ https://dl.google.com/dl/android/studio/ide-zips/2.2.2.0/android-studio-ide-145.3360264-linux.zip
 	# Extracting android-studio-ide-145.3360264-linux.zip into Download folder.
-	unzip $HOME/Downloads/android-studio-ide-145.3360264-linux.zip -d $HOME/Download
+	unzip $HOME/Downloads/android-studio-ide-145.3360264-linux.zip -d $HOME/Downloads/
 	# Moving android-studio folder from Download to the opt folder.
 	sudo mv $HOME/Downloads/android-studio /opt/
 
