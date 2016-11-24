@@ -477,8 +477,10 @@ if [ "$selected_item" == "32 - Stremio" ]; then
 fi
 
 if [ "$selected_item" == "33 - Gimp" ]; then
+	# Setting up ppa.
+	sudo add-apt-repository ppa:otto-kesselgulasch/gimp-edge && sudo apt-get update
 	# Installing Gimp.
-	sudo apt-get update && sudo apt-get -y install gimp
+	sudo apt-get -y install gimp
 fi
 
 if [ "$selected_item" == "34 - Inkscape" ]; then
