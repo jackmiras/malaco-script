@@ -492,7 +492,9 @@ if [ "$selected_item" == "35 - Slack" ]; then
 	# Downloading Slack.
 	wget -P $HOME/Downloads/ https://downloads.slack-edge.com/linux_releases/slack-desktop-2.2.1-amd64.deb
 	# Installing Slack.
-	sudo dkpg -i $HOME/Downloads/slack-desktop-2.2.1-amd64.deb && sudo apt-get -f install
+	sudo dpkg -i $HOME/Downloads/slack-desktop-2.2.1-amd64.deb
+	# Installing Slack dependencies.
+	sudo apt-get -f install
 	# Removing slack-desktop-2.2.1-amd64.deb file.
 	rm -rf $HOME/Downloads/slack-desktop-2.2.1-amd64.deb
 	# Updating Ubuntu softwares and dependencies.
@@ -503,7 +505,9 @@ if [ "$selected_item" == "36 - Skype" ]; then
 	# Downloading Skype.
 	wget -P $HOME/Downloads/ https://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
 	# Installing Skype.
-	sudo dpkg -i $HOME/Downloads/skype-ubuntu-precise_4.3.0.37-1_i386.deb && sudo apt-get -f install
+	sudo dpkg -i $HOME/Downloads/skype-ubuntu-precise_4.3.0.37-1_i386.deb
+	# Installing Skype dependencies.
+	sudo apt-get -f install
 	# Removing skype-ubuntu-precise_4.3.0.37-1_i386.deb file.
 	rm -rf $HOME/Downloads/skype-ubuntu-precise_4.3.0.37-1_i386.deb
 	# Updating Ubuntu softwares and dependencies.
