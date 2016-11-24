@@ -428,13 +428,13 @@ if [ "$selected_item" == "31 - Stremio" ]; then
 	# Downloading Stremio
 	wget -P $HOME/Downloads/ http://dl.strem.io/Stremio3.6.5.linux.tar.gz 
 	# Creating stremio folder.
-	mkdir Download/stremio/
+	mkdir $HOME/Downloads/stremio
 	# Extracting the Stremio3.6.5.linux.tar.gz files into stremio folder.
 	tar -vzxf $HOME/Downloads/Stremio3.6.5.linux.tar.gz -C $HOME/Downloads/stremio
 	# Moving stremio folder from Download to opt folder.
 	sudo mv $HOME/Downloads/stremio /opt/
 	# Downloading the image icon.
-	wget -P /opt/stremio http://www.strem.io/3.0/stremio-white-small.png
+	sudo wget -P /opt/stremio/ http://www.strem.io/3.0/stremio-white-small.png
 	# Renaming the image icon.
 	sudo mv /opt/stremio/stremio-white-small.png /opt/stremio/icon.png
 
