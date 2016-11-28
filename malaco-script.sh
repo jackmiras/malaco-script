@@ -130,7 +130,7 @@ if [[ "$selected_item" =~ "7" ]]; then
 fi
 
 if [[ "$selected_item" =~ "8" ]]; then
-	# Instalar compactadores de arquivos.
+	# Installing unpack files software.
   sudo apt-get -y install p7zip p7zip-full p7zip-rar unrar rar unace-nonfree
 fi
 
