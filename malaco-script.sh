@@ -1,7 +1,4 @@
 #!/bin/bash
-# Init
-FILE="/tmp/out.$$"
-GREP="/bin/grep"
 
 # Script written by: Jackson Miras.
 #
@@ -17,53 +14,53 @@ GREP="/bin/grep"
 
 selected_item=$(zenity --list\
 	--text "This is a script written to save time, choose down below the softwares that you want to install."\
-	--checklist  --column "Install" --column "Softwares"\
-		FALSE "1 - Git"\
-		FALSE "2 - Git-flow"\
-		FALSE "3 - Get repositories from Github and Bitbucket"\
-		FALSE "4 - Htop"\
-		FALSE "5 - Tmux"\
-		FALSE "6 - Zsh"\
-		FALSE "7 - Zsh Syntax Highlighting"\
-		FALSE "8 - 7zip, Rar, Unrar"\
-		FALSE "9 - Java 8"\
-		FALSE "10 - NVM"\
-		FALSE "11 - Node Js"\
-		FALSE "12 - Ruby, RVM, Rails"\
-		FALSE "13 - MySQL"\
-		FALSE "14 - MySQL Workbench"\
-		FALSE "15 - PostgreSQL"\
-		FALSE "16 - PgAdmin3"\
-		FALSE "17 - Vim"\
-		FALSE "18 - Sublime Text 3"\
-		FALSE "19 - Android Studio"\
-		FALSE "20 - Eclipse"\
-		FALSE "21 - Google Chrome"\
-		FALSE "22 - Opera"\
-		FALSE "23 - Dropbox"\
-		FALSE "24 - pCloud"\
-		FALSE "25 - qBittorrent"\
-		FALSE "26 - Google Play Music"\
-		FALSE "27 - Spotfy"\
-		FALSE "28 - Clementine"\
-		FALSE "29 - Vocal"\
-		FALSE "30 - VLC"\
-		FALSE "31 - Stremio"\
-		FALSE "32 - Gimp"\
-		FALSE "33 - Inkscape"\
-		FALSE "34 - Slack"\
-		FALSE "35 - Skype"\
-		FALSE "36 - Simplenote"\
-		FALSE "37 - Unetbootin"\
-		FALSE "38 - Unity Tweak Tool"\
-		FALSE "39 - Restricted-Extras"\
-		FALSE "40 - Syspeek"\
-		FALSE "41 - Linuxbrew"\
-		FALSE "42 - Toggl"\
+	--checklist  --column "Install" --"Software id" --column "Softwares"\
+		FALSE "1" "Git"\
+		FALSE "2" "Git-flow"\
+		FALSE "3" " Get repositories from Github and Bitbucket"\
+		FALSE "4" "Htop"\
+		FALSE "5" "Tmux"\
+		FALSE "6" "Zsh"\
+		FALSE "7" "Zsh Syntax Highlighting"\
+		FALSE "8" "7zip, Rar, Unrar"\
+		FALSE "9" "Java 8"\
+		FALSE "10" "NVM"\
+		FALSE "11" "Node Js"\
+		FALSE "12" "Ruby, RVM, Rails"\
+		FALSE "13" "MySQL"\
+		FALSE "14" "MySQL Workbench"\
+		FALSE "15" "PostgreSQL"\
+		FALSE "16" "PgAdmin3"\
+		FALSE "17" "Vim"\
+		FALSE "18" "Sublime Text 3"\
+		FALSE "19" "Android Studio"\
+		FALSE "20" "Eclipse"\
+		FALSE "21" "Google Chrome"\
+		FALSE "22" "Opera"\
+		FALSE "23" "Dropbox"\
+		FALSE "24" "pCloud"\
+		FALSE "25" "qBittorrent"\
+		FALSE "26" "Google Play Music"\
+		FALSE "27" "Spotfy"\
+		FALSE "28" "Clementine"\
+		FALSE "29" "Vocal"\
+		FALSE "30" "VLC"\
+		FALSE "31" "Stremio"\
+		FALSE "32" "Gimp"\
+		FALSE "33" "Inkscape"\
+		FALSE "34" "Slack"\
+		FALSE "35" "Skype"\
+		FALSE "36" "Simplenote"\
+		FALSE "37" "Unetbootin"\
+		FALSE "38" "Unity Tweak Tool"\
+		FALSE "39" "Restricted-Extras"\
+		FALSE "40" "Syspeek"\
+		FALSE "41" "Linuxbrew"\
+		FALSE "42" "Toggl"\
 	--separator=":" --width=1024 --height=768
 )
 
-if [ "$selected_item" == "1 - Git" ]; then
+if [[ "$selected_item" =~ "1" ]]; then
 	# Installing git.
 	sudo apt-get update && sudo apt-get install -y git
 
@@ -76,12 +73,12 @@ if [ "$selected_item" == "1 - Git" ]; then
 	ssh-keygen -t rsa -b 4096
 fi
 
-if [ "$selected_item" == "2 - Git-flow" ]; then
+if [[ "$selected_item" =~ "2" ]]; then
 	# Installing Git-flow.
 	sudo apt-get update && sudo apt-get install -y git-flow
 fi
 
-if [ "$selected_item" == "3 - Get repositories from Github and Bitbucket" ]; then
+if [[ "$selected_item" =~ "3" ]]; then
 	# Getting repositories from Github and Bitbucket.
 	mkdir $HOME/Projects/
 	cd $HOME/Projects/
@@ -102,17 +99,17 @@ if [ "$selected_item" == "3 - Get repositories from Github and Bitbucket" ]; the
 	git clone git@bitbucket.org:JacksonFlorentino/nubank-assignment-android.git
 fi
 
-if [ "$selected_item" == "4 - Htop" ]; then
+if [[ "$selected_item" =~ "4" ]]; then
 	# Installing Htop.
 	sudo apt-get update && sudo apt-get install -y htop
 fi
 
-if [ "$selected_item" == "5 - Tmux" ]; then
+if [[ "$selected_item" =~ "5" ]]; then
 	# Installing Tmux.
 	sudo apt-get update && sudo apt-get install -y tmux
 fi
 
-if [ "$selected_item" == "6 - Zsh" ]; then
+if [[ "$selected_item" =~ "6" ]]; then
 	# Installing zsh.
 	sudo apt-get update && sudo apt-get install -y zsh
 	# Making zsh the default shell.
@@ -127,17 +124,17 @@ if [ "$selected_item" == "6 - Zsh" ]; then
 	ln -s $HOME/Projects/zshrc-config/.zshrc $HOME/.zshrc
 fi
 
-if [ "$selected_item" == "7 - Zsh Syntax Highlighting" ]; then
+if [[ "$selected_item" =~ "7" ]]; then
 	# Installing Zsh Syntax Highlighting.
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
 
-if [ "$selected_item" == "8 - 7zip, Rar, Unrar" ]; then
+if [[ "$selected_item" =~ "8" ]]; then
 	# Instalar compactadores de arquivos.
   sudo apt-get -y install p7zip p7zip-full p7zip-rar unrar rar unace-nonfree
 fi
 
-if [ "$selected_item" == "9 - Java 8" ]; then
+if [[ "$selected_item" =~ "9" ]]; then
 	# Adding Oracle Java 8 repository.
 	sudo add-apt-repository -y ppa:webupd8team/java && sudo apt-get update
 	# Installing Oracle Java 8.
@@ -148,7 +145,7 @@ if [ "$selected_item" == "9 - Java 8" ]; then
 	sudo apt-get -y purge openjdk-7-jre openjdk-7-jre-lib openjdk-7-jre-headless
 fi
 
-if [ "$selected_item" == "10 - NVM" ]; then
+if [[ "$selected_item" =~ "10" ]]; then
 	# Installing Node build essential.
 	sudo apt-get update && sudo apt-get install build-essential libssl-dev
 	# Downloading nvm script.
@@ -159,7 +156,7 @@ if [ "$selected_item" == "10 - NVM" ]; then
 	zenity --info --text="Close and reopen the terminal."
 fi
 
-if [ "$selected_item" == "11 - Node Js" ]; then
+if [[ "$selected_item" =~ "11" ]]; then
 	# Enabling the nvm.sh script to run in bash scripts.
 	. ~/.nvm/nvm.sh
 	. ~/.profile
@@ -173,7 +170,7 @@ if [ "$selected_item" == "11 - Node Js" ]; then
 	sudo apt-get install npm
 fi
 
-if [ "$selected_item" == "12 - Ruby, RVM, Rails" ]; then
+if [[ "$selected_item" =~ "12" ]]; then
 	# Installing Ruby dependencies.
 	sudo apt-get update && sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
 
@@ -192,12 +189,12 @@ if [ "$selected_item" == "12 - Ruby, RVM, Rails" ]; then
 	gem install rails -v 4.2.6
 fi
 
-if [ "$selected_item" == "13 - MySQL" ]; then
+if [[ "$selected_item" =~ "13" ]]; then
 	# Installing MySQL.
 	sudo apt-get update && sudo apt-get install mysql-server mysql-client libmysqlclient-dev
 fi
 
-if [ "$selected_item" == "14 - MySQL Workbench" ]; then
+if [[ "$selected_item" =~ "14" ]]; then
 	# Downloading MySQL Workbench.
 	wget -P $HOME/Downloads/ http://cdn.mysql.com//Downloads/MySQLGUITools/mysql-workbench-community-6.3.8-1ubu1604-amd64.deb
 	# Installing MySQL Workbench.
@@ -208,7 +205,7 @@ if [ "$selected_item" == "14 - MySQL Workbench" ]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [ "$selected_item" == "15 - PostgreSQL" ]; then
+if [[ "$selected_item" =~ "15" ]]; then
 	# Adding PostgreSQL on Ubuntu souces.list.
 	sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
 	# Downloading PostgreSQL key to add as key of system repositories.
@@ -217,12 +214,12 @@ if [ "$selected_item" == "15 - PostgreSQL" ]; then
 	sudo apt-get update && sudo apt-get install postgresql-common && sudo apt-get install postgresql-9.5 libpq-dev
 fi
 
-if [ "$selected_item" == "16 - PgAdmin3" ]; then
+if [[ "$selected_item" =~ "16" ]]; then
 	# Installing PgAdmin3.
 	sudo apt-get update && sudo apt-get install pgadmin3
 fi
 
-if [ "$selected_item" == "17 - Vim" ]; then
+if [[ "$selected_item" =~ "17" ]]; then
 	# Installing Vim.
 	sudo apt-get update && sudo apt-get install vim
 	if [ ! -d "$HOME/Projects/vim-config" ]; then
@@ -238,7 +235,7 @@ if [ "$selected_item" == "17 - Vim" ]; then
 	git submodule update --recursive
 fi
 
-if [ "$selected_item" == "18 - Sublime Text 3" ]; then
+if [[ "$selected_item" =~ "18" ]]; then
 	# Adding Sublime Text 3 respository.
 	sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 && sudo apt-get update
 	# Installing Sublime Text 3.
@@ -251,7 +248,7 @@ if [ "$selected_item" == "18 - Sublime Text 3" ]; then
 	ln -s $HOME/Projects/sublime-text-3-config $HOME/.config/sublime-text-3
 fi
 
-if [ "$selected_item" == "19 - Android Studio" ]; then
+if [[ "$selected_item" =~ "19" ]]; then
 	# Installing Android Studio dependencies.
 	sudo apt-get install lib32z1 lib32ncurses5 lib32stdc++6
 	# Downloading Android Studio.
@@ -262,16 +259,19 @@ if [ "$selected_item" == "19 - Android Studio" ]; then
 	sudo mv $HOME/Downloads/android-studio /opt/
 
 	# Setting up the Android Studio launcher on Ubuntu dash.
-	echo "[Desktop Entry]" >> ~/.local/share/applications/jetbrains-studio.desktop
-	echo "Version=1.0" >> ~/.local/share/applications/jetbrains-studio.desktop
-	echo "Type=Application" >> ~/.local/share/applications/jetbrains-studio.desktop
-	echo "Name=Android Studio" >> ~/.local/share/applications/jetbrains-studio.desktop
-	echo "Icon=/opt/android-studio/bin/studio.png" >> ~/.local/share/applications/jetbrains-studio.desktop
-	echo "Exec="/opt/android-studio/bin/studio.sh" %f" >> ~/.local/share/applications/jetbrains-studio.desktop
-	echo "Comment=Develop with pleasure!" >> ~/.local/share/applications/jetbrains-studio.desktop
-	echo "Categories=Development;IDE;" >> ~/.local/share/applications/jetbrains-studio.desktop
-	echo "Terminal=false" >> ~/.local/share/applications/jetbrains-studio.desktop
-	echo "StartupWMClass=jetbrains-studio" >> ~/.local/share/applications/jetbrains-studio.desktop
+	echo "[Desktop Entry]" >> $HOME/jetbrains-studio.desktop
+	echo "Version=1.0" >> $HOME/jetbrains-studio.desktop
+	echo "Type=Application" >> $HOME/jetbrains-studio.desktop
+	echo "Name=Android Studio" >> $HOME/jetbrains-studio.desktop
+	echo "Icon=/opt/android-studio/bin/studio.png" >> $HOME/jetbrains-studio.desktop
+	echo "Exec="/opt/android-studio/bin/studio.sh" %f" >> $HOME/jetbrains-studio.desktop
+	echo "Comment=Develop with pleasure!" >> $HOME/jetbrains-studio.desktop
+	echo "Categories=Development;IDE;" >> $HOME/jetbrains-studio.desktop
+	echo "Terminal=false" >> $HOME/jetbrains-studio.desktop
+	echo "StartupWMClass=jetbrains-studio" >> $HOME/jetbrains-studio.desktop
+	
+	# Moving the jetbrains-studio.destop to the usr/share/applications folder.
+	sudo mv $HOME/jetbrains-studio.desktop /usr/share/applications/
 
 	# Executing Android Studio to generate the .AndroidStudio folder.
 	sh /opt/android-studio/bin/studio.sh
@@ -292,7 +292,7 @@ if [ "$selected_item" == "19 - Android Studio" ]; then
 	rm -rf $HOME/Downloads/android-studio-ide-145.3360264-linux.zip
 fi
 
-if [ "$selected_item" == "20 - Eclipse" ];then
+if [[ "$selected_item" =~ "20" ]]; then
 	# Downloading Eclipse.
 	wget -P $HOME/Downloads/ http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/neon/1a/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
 	# Extracting eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz into Download folder.
@@ -301,25 +301,28 @@ if [ "$selected_item" == "20 - Eclipse" ];then
 	sudo mv $HOME/Downloads/eclipse /opt/
 
 	# Setting up Eclipse launcher on Ubuntu dash.
-	echo "[Desktop Entry]" >> ~/.local/share/applications/eclipse.desktop
-	echo "Version=1.0" >> ~/.local/share/applications/eclipse.desktop
-	echo "Name=Eclipse" >> ~/.local/share/applications/eclipse.desktop
-	echo "Exec=env UBUNTU_MENUPROXY= eclipse" >> ~/.local/share/applications/eclipse.desktop
-	echo "Terminal=false" >> ~/.local/share/applications/eclipse.desktop
-	echo "Icon=/opt/eclipse/icon.xpm" >> ~/.local/share/applications/eclipse.desktop
-	echo "Type=Application" >> ~/.local/share/applications/eclipse.desktop
-	echo "Categories=IDE;Development" >> ~/.local/share/applications/eclipse.desktop
-	echo "X-Ayatana-Desktop-Shortcuts=NewWindow" >> ~/.local/share/applications/eclipse.desktop
-	echo "[NewWindow Shortcut Group]" >> ~/.local/share/applications/eclipse.desktop
-	echo "Name=New Window" >> ~/.local/share/applications/eclipse.desktop
-	echo "Exec=env UBUNTU_MENUPROXY= eclipse" >> ~/.local/share/applications/eclipse.desktop
-	echo "TargetEnvironment=Unity" >> ~/.local/share/applications/eclipse.desktop
+	echo "[Desktop Entry]" >> $HOME/eclipse.desktop
+	echo "Version=1.0" >> $HOME/eclipse.desktop
+	echo "Name=Eclipse" >> $HOME/eclipse.desktop
+	echo "Exec=env UBUNTU_MENUPROXY= eclipse" >> $HOME/eclipse.desktop
+	echo "Terminal=false" >> $HOME/eclipse.desktop
+	echo "Icon=/opt/eclipse/icon.xpm" >> $HOME/eclipse.desktop
+	echo "Type=Application" >> $HOME/eclipse.desktop
+	echo "Categories=IDE;Development" >> $HOME/eclipse.desktop
+	echo "X-Ayatana-Desktop-Shortcuts=NewWindow" >> $HOME/eclipse.desktop
+	echo "[NewWindow Shortcut Group]" >> $HOME/eclipse.desktop
+	echo "Name=New Window" >> $HOME/eclipse.desktop
+	echo "Exec=env UBUNTU_MENUPROXY= eclipse" >> $HOME/eclipse.desktop
+	echo "TargetEnvironment=Unity" >> $HOME/eclipse.desktop
+
+	# Moving the eclipse.destop to the usr/share/applications folder.
+	sudo mv $HOME/eclipse.desktop /usr/share/applications/
 
 	# Removing Eclipse tar.gz file from Download folder.
 	rm -rf $HOME/Downloads/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
 fi
 
-if [ "$selected_item" == "21 - Google Chrome" ]; then
+if [[ "$selected_item" =~ "21" ]]; then
 	# Downloading Google Chrome key to add as key of system repositories.
 	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 	# Adding Google Chrome to the source list.
@@ -328,7 +331,7 @@ if [ "$selected_item" == "21 - Google Chrome" ]; then
 	sudo apt-get update && sudo apt-get install -y google-chrome-stable && sudo apt-get -f install
 fi
 
-if [ "$selected_item" == "22 - Opera" ]; then
+if [[ "$selected_item" =~ "22" ]]; then
 	# Downloading opera-stable_41.0.2353.46_amd64.deb into the Download folder.
 	wget -P $HOME/Downloads/ http://download4.operacdn.com/pub/opera/desktop/41.0.2353.46/linux/opera-stable_41.0.2353.46_amd64.deb
 	# Installing the stable version Opera.
@@ -337,7 +340,7 @@ if [ "$selected_item" == "22 - Opera" ]; then
 	sudo ap-get update && sudo apt-get upgrade
 fi
 
-if [ "$selected_item" == "23 - Dropbox" ]; then
+if [[ "$selected_item" =~ "23" ]]; then
 	# Download dropbox_2015.10.28_amd64.deb into the Download folder.
 	wget -P $HOME/Downloads/ https://linux.dropbox.com/packages/ubuntu/dropbox_2015.10.28_amd64.deb
 	# Installing Dropbox.
@@ -350,7 +353,7 @@ if [ "$selected_item" == "23 - Dropbox" ]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [ "$selected_item" == "24 - pCloud" ]; then
+if [[ "$selected_item" =~ "24" ]]; then
 	# Downloading pCloud to the Download folder.
 	wget -P $HOME/Downloads/ https://c75.pcloud.com/dHZ8IsmSZJvU4uZZZmMutt7ZHkZZGNRZkZ5LUXZssw368uiJLjYQDTAP0KEsS2b0egy/pCloud_Linux_amd64_3.1.1.deb
 	# Installing pCloud.
@@ -361,14 +364,14 @@ if [ "$selected_item" == "24 - pCloud" ]; then
 	rm -rf $HOME/Downloads/pCloud_Linux_amd64_3.1.1.deb
 fi
 
-if [ "$selected_item" == "25 - qBittorrent" ]; then
+if [[ "$selected_item" =~ "25" ]]; then
 	# Adding qBittorrent repository.
 	sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
 	# Installing qBittorrent.
 	sudo apt-get update && sudo apt-get install qbittorrent
 fi
 
-if [ "$selected_item" == "26 - Google Play Music" ]; then
+if [[ "$selected_item" =~ "26" ]]; then
 	# Downloading Google Play Music to the download folder.
 	wget -P $HOME/Downloads/ https://github-cloud.s3.amazonaws.com/releases/40008106/42e05a06-9491-11e6-885c-b9b3588ff9a0.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161031%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161031T184825Z&X-Amz-Expires=300&X-Amz-Signature=0d1c4b89a84149d1e40dd61045ffec11e8e52ea531f8c94809e5c02f25a15c63&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dgoogle-play-music-desktop-player_4.0.1_amd64.deb&response-content-type=application%2Foctet-stream
 	# Installing Google Play Music.
@@ -379,7 +382,7 @@ if [ "$selected_item" == "26 - Google Play Music" ]; then
 	rm -rf $HOME/Downloads/google-play-music-desktop-player_4.0.1_amd64.deb
 fi
 
-if [ "$selected_item" == "27 - Spotfy" ]; then
+if [[ "$selected_item" =~ "27" ]]; then
 	# Downloading Spotfy client.
 	wget -P $HOME/Downloads/ http://repository.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb
 	# Installing Spotfy client.
@@ -390,14 +393,14 @@ if [ "$selected_item" == "27 - Spotfy" ]; then
 	rm -rf $HOME/Downloads/spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb
 fi
 
-if [ "$selected_item" == "28 - Clementine" ]; then
+if [[ "$selected_item" =~ "28" ]]; then
 	# Adding Clementaine repository.
 	sudo add-apt-repository ppa:me-davidsansome/clementine && sudo apt-get update 
 	# Installing Clementine.
 	sudo apt-get install clementine
 fi
 
-if [ "$selected_item" == "29 - Vocal" ]; then
+if [[ "$selected_item" =~ "29" ]]; then
 	# Downloading Vocal.
 	wget -P $HOME/Downloads/ http://ufpr.dl.sourceforge.net/project/vocalpodcast/vocal_1.0_amd64.deb
 	# Downloading Vocal dependencies.
@@ -416,7 +419,7 @@ if [ "$selected_item" == "29 - Vocal" ]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [ "$selected_item" == "30 - VLC" ]; then
+if [[ "$selected_item" =~ "30" ]]; then
 	# Adding VLC repositories
 	sudo add-apt-repository ppa:videolan/stable-daily
 	sudo add-apt-repository ppa:nicola-onorata/desktop
@@ -424,7 +427,7 @@ if [ "$selected_item" == "30 - VLC" ]; then
 	sudo apt-get update && sudo apt-get install vlc
 fi
 
-if [ "$selected_item" == "31 - Stremio" ]; then
+if [[ "$selected_item" =~ "31" ]]; then
 	# Downloading Stremio
 	wget -P $HOME/Downloads/ http://dl.strem.io/Stremio3.6.5.linux.tar.gz 
 	# Creating stremio folder.
@@ -439,37 +442,36 @@ if [ "$selected_item" == "31 - Stremio" ]; then
 	sudo mv /opt/stremio/stremio-white-small.png /opt/stremio/icon.png
 
 	# Setting up Stremio launcher on Ubuntu dash.
-	echo "[Desktop Entry]" >> ~/.local/share/applications/stremio.desktop
-	echo "Version=1.0" >> ~/.local/share/applications/stremio.desktop
-	echo "Name=Stremio" >> ~/.local/share/applications/stremio.desktop
-	echo "Exec=/opt/Stremio/Stremio.sh" >> ~/.local/share/applications/stremio.desktop
-	echo "Terminal=false" >> ~/.local/share/applications/stremio.desktop
-	echo "Icon=/opt/Stremio/icon.png" >> ~/.local/share/applications/stremio.desktop
-	echo "Type=Application" >> ~/.local/share/applications/stremio.desktop
-	echo "Categories=Video" >> ~/.local/share/applications/stremio.desktop
-	echo "X-Ayatana-Desktop-Shortcuts=NewWindow" >> ~/.local/share/applications/stremio.desktop
-	echo "[NewWindow Shortcut Group]" >> ~/.local/share/applications/stremio.desktop
-	echo "Name=New Window" >> ~/.local/share/applications/stremio.desktop
-	echo "Exec=/opt/Stremio/Stremio.sh" >> ~/.local/share/applications/stremio.desktop
-	echo "TargetEnvironment=Unity" >> ~/.local/share/applications/stremio.desktop
+	echo "[Desktop Entry]" >> $HOME/stremio.desktop
+	echo "Version=1.0" >> $HOME/stremio.desktop
+	echo "Type=Application" >> $HOME/stremio.desktop
+	echo "Name=Stremio" >> $HOME/stremio.desktop
+	echo "Icon=/opt/Stremio/icon.png" >> $HOME/stremio.desktop
+	echo "Exec=/opt/Stremio/Stremio.sh" >> $HOME/stremio.desktop
+	echo "Comment=Have fun!" >> $HOME/stremio.desktop
+	echo "Categories=Video" >> $HOME/stremio.desktop
+	echo "Terminal=false" >> $HOME/stremio.desktop
+
+	# Moving the eclipse.destop to the usr/share/applications folder.
+	sudo mv $HOME/stremio.desktop /usr/share/applications/
 
 	# Removing Stremio3.6.5.linux.tar.gz file.
 	rm -rf $HOME/Downloads/Stremio3.6.5.linux.tar.gz
 fi
 
-if [ "$selected_item" == "32 - Gimp" ]; then
+if [[ "$selected_item" =~ "32" ]]; then
 	# Setting up ppa.
 	sudo add-apt-repository ppa:otto-kesselgulasch/gimp-edge && sudo apt-get update
 	# Installing Gimp.
 	sudo apt-get -y install gimp
 fi
 
-if [ "$selected_item" == "33 - Inkscape" ]; then
+if [[ "$selected_item" =~ "33" ]]; then
 	# Installing Inkscape.
 	sudo apt-get update && sudo apt-get -y install inkscape
 fi
 
-if [ "$selected_item" == "34 - Slack" ]; then
+if [[ "$selected_item" =~ "34" ]]; then
 	# Downloading Slack.
 	wget -P $HOME/Downloads/ https://downloads.slack-edge.com/linux_releases/slack-desktop-2.2.1-amd64.deb
 	# Installing Slack.
@@ -482,7 +484,7 @@ if [ "$selected_item" == "34 - Slack" ]; then
 	sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove
 fi
 
-if [ "$selected_item" == "35 - Skype" ]; then
+if [[ "$selected_item" =~ "35" ]]; then
 	# Downloading Skype.
 	wget -P $HOME/Downloads/ https://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
 	# Installing Skype.
@@ -495,7 +497,7 @@ if [ "$selected_item" == "35 - Skype" ]; then
 	sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove
 fi
 
-if [ "$selected_item" == "36 - Simplenote" ]; then
+if [[ "$selected_item" =~ "36" ]]; then
 	# Downloading Simplenote.
 	wget -P $HOME/Downloads/ https://github.com/Automattic/simplenote-electron/releases/download/v1.0.6/simplenote-1.0.6.deb
 	# Installing Simplenote.
@@ -506,31 +508,31 @@ if [ "$selected_item" == "36 - Simplenote" ]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [ "$selected_item" = "37 - Unetbootin" ]; then
+if [[ "$selected_item" =~ "37" ]]; then
 	# Adding Unetbootin repository.
 	sudo add-apt-repository ppa:gezakovacs/ppa
 	# Installing Unetbootin
 	sudo apt-get update && sudo apt-get install unetbootin
 fi
 
-if [ "$selected_item"	== "38 - Unity Tweak Tool" ]; then
+if [[ "$selected_item" =~ "38" ]]; then
 	# Installing Unity Tweek Tool
 	sudo apt-get update && sudo apt-get install unity-tweak-tool
 fi
 
-if [ "$selected_item" == "39 - Restricted-Extras" ]; then
+if [[ "$selected_item" =~ "39" ]]; then
 	# Installing Restricted-Extras.
 	sudo apt-get -y install ubuntu-restricted-extras
 fi
 
-if [ "$selected_item" == "40 - Syspeek" ]; then
+if [[ "$selected_item" =~ "40" ]]; then
 	# Adding Syspeek repository.
 	sudo add-apt-repository ppa:nilarimogard/webupd8 && sudo apt-get update
 	# Installing Syspeek.
 	sudo apt-get install syspeek
 fi
 
-if [ "$selected_item" == "41 - Linuxbrew" ]; then
+if [[ "$selected_item" =~ "41" ]]; then
 	# Installing Linuxbrew dependencies.
 	sudo apt-get install build-essential curl git python-setuptools ruby
 	# Installing Linuxbrew.
@@ -541,7 +543,7 @@ if [ "$selected_item" == "41 - Linuxbrew" ]; then
 	echo "export INFOPATH='$HOME/.linuxbrew/share/info:$INFOPATH'" >> ~/.bashrc
 fi
 
-if [ "$selected_item" == "42 - Toggl" ]; then
+if [[ "$selected_item" =~ "42" ]]; then
 	#Downloading Toggl.
 	wget -P $HOME/Downloads/ https://github-cloud.s3.amazonaws.com/releases/16703726/16394e5e-9c3e-11e6-9d2f-0871f274c054.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161103%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161103T142454Z&X-Amz-Expires=300&X-Amz-Signature=85c4ff003bd3ac7acbb7706f5c6b69d782b5d75221f8faf39bd61120c4a9cba2&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dtoggldesktop_7.3.346_amd64.deb&response-content-type=application%2Foctet-stream
 	# Installing Toggl dependencies.
