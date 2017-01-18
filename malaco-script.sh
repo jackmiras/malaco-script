@@ -56,7 +56,6 @@ selected_item=$(zenity --list\
 		FALSE "39" "Restricted-Extras"\
 		FALSE "40" "Syspeek"\
 		FALSE "41" "Linuxbrew"\
-		FALSE "42" "Toggl"\
 	--separator=":" --width=1024 --height=768
 )
 
@@ -541,19 +540,6 @@ if [[ "$selected_item" =~ "41" ]]; then
 	echo "export PATH='$HOME/.linuxbrew/bin:$PATH'" >> ~/.bashrc
 	echo "export MANPATH='$HOME/.linuxbrew/share/man:$MANPATH'" >> ~/.bashrc
 	echo "export INFOPATH='$HOME/.linuxbrew/share/info:$INFOPATH'" >> ~/.bashrc
-fi
-
-if [[ "$selected_item" =~ "42" ]]; then
-	#Downloading Toggl.
-	wget -P $HOME/Downloads/ https://github-cloud.s3.amazonaws.com/releases/16703726/16394e5e-9c3e-11e6-9d2f-0871f274c054.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161103%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161103T142454Z&X-Amz-Expires=300&X-Amz-Signature=85c4ff003bd3ac7acbb7706f5c6b69d782b5d75221f8faf39bd61120c4a9cba2&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dtoggldesktop_7.3.346_amd64.deb&response-content-type=application%2Foctet-stream
-	# Installing Toggl dependencies.
-	sudo apt-get install libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
-	#Installing Toggl.
-	sudo dpkg -i $HOME/Downloads/toggldesktop_7.3.346_amd64.deb && sudo apt-get -f install
-	# Removing toggldesktop_7.3.346_amd64.deb.
-	rm -rf $HOME/Downloads/toggldesktop_7.3.346_amd64.deb
-	# Updating Ubuntu dependencies.
-	sudo apt-get update && sudo apt-get upgrade
 fi
 
 #################Uninstalling unused softwares from Ubuntu.##################
