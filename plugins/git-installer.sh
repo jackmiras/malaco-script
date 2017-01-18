@@ -5,11 +5,11 @@
 
 # Installing git.                                                             
 sudo apt-get update && sudo apt-get install -y git                            
-	                                                                                 
+
 # Configuring git.                                                            
 git config --global color.ui true                                             
 git config --global user.name "Jackson Miras"                                 
-git config --global user.email "jackmiras@gmail.com"                          
-	                                                                                 
+git config --global user.email "jackmiras@gmail.com"
+
 # Generating ssh key.                                                         
 ssh-keygen -t rsa -b 4096
