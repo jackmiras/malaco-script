@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script written by: Jackson Miras.
+# Script written by: Jack Miras.
 # This script install Google Chrome browser.
 
 # Downloading Google Chrome key to add as key of system repositories.
