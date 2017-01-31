@@ -119,8 +119,12 @@ if [[ "$selected_item" =~ "6" ]]; then
 	rm -rf $HOME/.zshrc
 	# Downloading Zsh configs from github.
 	cd $HOME/Projects && git clone git@github.com:jackmiras/zshrc-config.git && cd $HOME/
-	# Creating symbolic link of Zsh configs into the home of computer.
+	# Creating symbolic link of Zsh configs into the home of the computer.
 	ln -s $HOME/Projects/zshrc-config/.zshrc $HOME/.zshrc
+	# Removing default themes.
+	rm -rf $HOME/.oh-my-zsh/themes
+	# Creating symbolic link of Zsh themes into the home of the computer.
+	ln -s $HOME/Projects/zshrc-config/themes $HOME/.oh-my-zsh
 fi
 
 if [[ "$selected_item" =~ "7" ]]; then
@@ -531,9 +535,9 @@ if [[ "$selected_item" =~ "39" ]]; then
 fi
 
 if [[ "$selected_item" =~ "40" ]]; then
-	# Adding Syspeek repository.
+	# adding syspeek repository.
 	sudo add-apt-repository ppa:nilarimogard/webupd8 && sudo apt-get update
-	# Installing Syspeek.
+	# installing syspeek.
 	sudo apt-get install syspeek
 fi
 
@@ -549,43 +553,43 @@ if [[ "$selected_item" =~ "41" ]]; then
 fi
 
 #################Uninstalling unused softwares from Ubuntu.##################
-if which onboard >/dev/null; then
+if command -v onboard >/dev/null; then
 # Removing Onboard from the system.
 	sudo apt-get remove --purge onboard
 	sudo apt-get autoremove
 fi
 
-if which gnome-mahjongg >/dev/null; then
+if command -v gnome-mahjongg >/dev/null; then
 	# Removing GNOME Mahjongg.
 	sudo apt-get remove --purge gnome-mahjongg
 	sudo apt-get autoremove
 fi
 
-if which gnome-sudoku >/dev/null; then
+if command -v gnome-sudoku >/dev/null; then
 	# Removing GNOME Sudoku.
 	sudo apt-get remove --purge gnome-sudoku
 	sudo apt-get autoremove
 fi
 
-if which gnome-orca >/dev/null; then
+if command -v gnome-orca >/dev/null; then
 	# Removing GNOME Orca.
 	sudo apt-get remove --purge gnome-orca
 	sudo apt-get autoremove
 fi
 
-if which gnome-mines>/dev/null; then
+if command -v gnome-mines>/dev/null; then
 	# Removing GNOME Mines.
 	sudo apt-get remove --purge gnome-mines
 	sudo apt-get autoremove
 fi
 
-if which rhythmbox >/dev/null; then
+if command -v rhythmbox >/dev/null; then
 	# Removing Rhythmbox.
 	sudo apt-get remove --purge rhythmbox
 	sudo apt-get autoremove
 fi
 
-if which thunderbird >/dev/null; then
+if command -v thunderbird >/dev/null; then
 	# Removing Thunderbird.
 	sudo apt-get remove --purge thunderbird*
 	sudo apt-get autoremove
