@@ -236,6 +236,7 @@ if [[ "$selected_item" =~ "17" ]]; then
 	sudo apt-get install python-dev python3-dev
 	# Accessing YouCompleteMe plugin folder.
 	cd bundle/youcompleteme/
+	./install.py --clang-completer
 	./install.py --all
 fi
 
