@@ -5,7 +5,7 @@
 # download and setup my configs of oh-my-zsh.
 
 if command -v zsh >/dev/null; then
-	echo 'Zsh and Oh-myzsh were already installed.'
+	echo 'Zsh and Oh-myzsh are already installed.'
 else
 	# Installing zsh.
 	sudo apt-get update && sudo apt-get install -y zsh
