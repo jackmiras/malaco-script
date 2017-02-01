@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script written by: Jackson Miras.
+# Script written by: JM.
 # This script create the "Project" folder and download all my repositories fom
 # Github and Bitbucket.
 
