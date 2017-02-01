@@ -232,16 +232,6 @@ if [[ "$selected_item" =~ "17" ]]; then
 	# Creating a symbolic link of Vim configurations into the Home folder of Ubuntu.
 	ln -s $HOME/Projects/vim-config/ $HOME/.vim
 	ln -s $HOME/Projects/vim-config/vimrc $HOME/.vimrc
-	# Installing vim plugins.
-	cd $HOME/.vim
-	git submodule update --init --recursive
-	# Installing dependencies for YouCompleteMe plugin.
-	sudo apt-get install build-essential cmake
-	sudo apt-get install python-dev python3-dev
-	# Accessing YouCompleteMe plugin folder.
-	cd bundle/youcompleteme/
-	./install.py --clang-completer
-	./install.py --all
 fi
 
 if [[ "$selected_item" =~ "18" ]]; then
