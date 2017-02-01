@@ -4,7 +4,7 @@
 # This script install git and configure git and also generate a ssh-key file.
 
 if command -v git >/dev/null; then
-	echo "Git is already installed."
+	echo 'Git is already installed.'
 else
 	# Installing git.                                                             
 	sudo apt-get update && sudo apt-get install -y git                            
@@ -16,5 +16,5 @@ else
 
 	# Generating ssh key.                                                         
 	ssh-keygen -t rsa -b 4096
-	echo "Git was installed with success."
+	echo $'\nGit was installed with success.'
 fi
