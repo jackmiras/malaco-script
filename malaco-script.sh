@@ -223,15 +223,22 @@ if [[ "$selected_item" =~ "16" ]]; then
 fi
 
 if [[ "$selected_item" =~ "17" ]]; then
-	# Installing Vim.
-	sudo apt-get update && sudo apt-get install vim
-	if [ ! -d "$HOME/Projects/vim-config" ]; then
-		# Downloading Vim configs from github.
-		cd $HOME/Projects && git clone git@github.com:jackmiras/vim-config.git && cd $HOME
+	# Installing Neovim.
+	sudo apt-get install software-properties-common
+	sudo apt-get install python-software-properties
+	sudo add-apt-repository ppa:neovim-ppa/unstable
+	sudo apt-get update
+	sudo apt-get install neovim
+	if [ ! -d "$HOME/Projects/neovim-config" ]; then
+		# Downloading Neovim configs from github.
+		cd $HOME/Projects && git clone git@github.com:jackmiras/neovim-config.git && cd $HOME
 	fi
-	# Creating a symbolic link of Vim configurations into the Home folder of Ubuntu.
-	ln -s $HOME/Projects/vim-config/ $HOME/.vim
-	ln -s $HOME/Projects/vim-config/vimrc $HOME/.vimrc
+	# Loading the Neovim plugins
+	cd $HOME/Projects/neovim-config
+	git submodule init
+	git submodule update --recursive
+	# Creating a symbolic link of Neovim configurations into the .config folder of Ubuntu.
+	ln -s $HOME/Projects/neovim-config/ $HOME/.config/nvim
 fi
 
 if [[ "$selected_item" =~ "18" ]]; then
