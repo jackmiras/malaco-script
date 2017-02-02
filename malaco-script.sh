@@ -223,12 +223,16 @@ if [[ "$selected_item" =~ "16" ]]; then
 fi
 
 if [[ "$selected_item" =~ "17" ]]; then
+  # Installing xclip as a dependency required by Neovim.
+  sudo apt-get install xclip
+
 	# Installing Neovim.
 	sudo apt-get install software-properties-common
 	sudo apt-get install python-software-properties
 	sudo add-apt-repository ppa:neovim-ppa/unstable
 	sudo apt-get update
 	sudo apt-get install neovim
+
 	if [ ! -d "$HOME/Projects/neovim-config" ]; then
 		# Downloading Neovim configs from github.
 		cd $HOME/Projects && git clone git@github.com:jackmiras/neovim-config.git && cd $HOME

@@ -2,6 +2,9 @@
 # Script written by: Jackson Miras.
 # This script install and configure Vim text editor.
 
+# Installing xclip as a dependency required by Neovim
+sudo apt-get install xclip
+
 # Installing Neovim.
 sudo apt-get install software-properties-common
 sudo apt-get install python-software-properties
