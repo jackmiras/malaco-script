@@ -9,8 +9,8 @@
 #
 # With this thinks in mind I've decided to write my, sort of, own version of fedy
 # but focused on Ubuntu that is my current Linux distribuition.
-# 
-# This is script also uses Zenity to build the graphic user interface. 
+#
+# This is script also uses Zenity to build the graphic user interface.
 
 selected_item=$(zenity --list\
 	--text "This is a script written to save time, choose down below the softwares that you want to install."\
@@ -235,8 +235,7 @@ if [[ "$selected_item" =~ "17" ]]; then
 	fi
 	# Loading the Neovim plugins
 	cd $HOME/Projects/neovim-config
-	git submodule init
-	git submodule update --recursive
+	git submodule init && git submodule update --recursive
 	# Creating a symbolic link of Neovim configurations into the .config folder of Ubuntu.
 	ln -s $HOME/Projects/neovim-config/ $HOME/.config/nvim
 fi
@@ -275,7 +274,7 @@ if [[ "$selected_item" =~ "19" ]]; then
 	echo "Categories=Development;IDE;" >> $HOME/jetbrains-studio.desktop
 	echo "Terminal=false" >> $HOME/jetbrains-studio.desktop
 	echo "StartupWMClass=jetbrains-studio" >> $HOME/jetbrains-studio.desktop
-	
+
 	# Moving the jetbrains-studio.destop to the usr/share/applications folder.
 	sudo mv $HOME/jetbrains-studio.desktop /usr/share/applications/
 
@@ -342,7 +341,7 @@ if [[ "$selected_item" =~ "22" ]]; then
 	wget -P $HOME/Downloads/ http://download4.operacdn.com/pub/opera/desktop/41.0.2353.46/linux/opera-stable_41.0.2353.46_amd64.deb
 	# Installing the stable version Opera.
 	sudo dpkg -i $HOME/Downloads/opera-stable_41.0.2353.46_amd64.deb && sudo apt-get -f install
-	# Updating Ubuntu dependencies. 
+	# Updating Ubuntu dependencies.
 	sudo ap-get update && sudo apt-get upgrade
 fi
 
@@ -401,7 +400,7 @@ fi
 
 if [[ "$selected_item" =~ "28" ]]; then
 	# Adding Clementaine repository.
-	sudo add-apt-repository ppa:me-davidsansome/clementine && sudo apt-get update 
+	sudo add-apt-repository ppa:me-davidsansome/clementine && sudo apt-get update
 	# Installing Clementine.
 	sudo apt-get install clementine
 fi
@@ -435,7 +434,7 @@ fi
 
 if [[ "$selected_item" =~ "31" ]]; then
 	# Downloading Stremio
-	wget -P $HOME/Downloads/ http://dl.strem.io/Stremio3.6.5.linux.tar.gz 
+	wget -P $HOME/Downloads/ http://dl.strem.io/Stremio3.6.5.linux.tar.gz
 	# Creating stremio folder.
 	mkdir $HOME/Downloads/stremio
 	# Extracting the Stremio3.6.5.linux.tar.gz files into stremio folder.

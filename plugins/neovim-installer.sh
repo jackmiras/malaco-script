@@ -16,9 +16,7 @@ fi
 
 # Loading the Neovim plugins
 cd $HOME/Projects/neovim-config
-git submodule init
-git submodule update --recursive
+git submodule init && git submodule update --recursive
 
 # Creating a symbolic link of Neovim configurations into the .config folder of Ubuntu.
-ln -s $HOME/Projects/neovim-config/ $HOME/.config/nvim
-
+ln -s $HOME/Projects/neovim-config $HOME/.config/nvim
