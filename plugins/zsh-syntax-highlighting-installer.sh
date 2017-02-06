@@ -1,7 +1,14 @@
 #!/bin/bash
 
-# Scrip written by: Jackson Miras.
+# Scrip written by: JM.
 # This script install the zsh-syntax-highlighting.
 
-# Installing Zsh Syntax Highlighting.
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+DESTINATION="$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+if [ -d "$DESTINATION" ]; then
+	echo 'zsh-syntax-highlighting is already installed.'
+else
+  # Installing Zsh Syntax Highlighting.
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+	echo $'\nzsh-syntax-highlighting was installed with success!'
+fi
