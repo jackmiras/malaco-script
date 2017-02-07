@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script written by: Jackson Miras.
+# Script written by: JM.
 # This script install MySQL Workbench.
 
 if command -v mysql-workbench >/dev/null; then
