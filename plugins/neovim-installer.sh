@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script written by: Jackson Miras.
+# Script written by: JM.
 # This script install and configure Vim text editor.
 
 if command -v nvim >/dev/null; then

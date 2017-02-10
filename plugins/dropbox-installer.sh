@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script written by: Jack Miras.
+# Script written by: JM.
 # This script install Dropbox.
 
 if command -v dropbox >/dev/null; then

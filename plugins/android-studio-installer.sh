@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script written by: Jackson Miras.
+# Script written by: JM.
 # This script install and configure Android Studio IDE.
 
 if [ -d "/opt/android-studio/" ]; then

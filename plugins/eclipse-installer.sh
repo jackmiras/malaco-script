@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script written by: Jackson Miras.
+# Script written by: JM.
 # This script install Eclipse IDE.
 
 if [ -d "/opt/eclipse/" ]; then

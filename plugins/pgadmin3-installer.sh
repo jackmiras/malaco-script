@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script written by: Jackson Miras.
+# Script written by: JM.
 # This script install and configure PgAdmin3.
 
 if command -v pgadmin3 >/dev/null; then

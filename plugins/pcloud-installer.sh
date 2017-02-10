@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script written by: Jack Miras.
+# Script written by: JM.
 # This script install pCloud.
 
 if command -v psyncgui >/dev/null; then

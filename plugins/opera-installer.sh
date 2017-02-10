@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script written by: Jack Miras.
+# Script written by: JM.
 # This script install Opera browser.
 
 if command -v opera >/dev/null; then

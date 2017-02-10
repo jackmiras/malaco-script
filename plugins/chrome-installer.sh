@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script written by: Jack Miras.
+# Script written by: JM.
 # This script install Google Chrome browser.
 
 if command -v google-chrome >/dev/null; then
