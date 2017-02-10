@@ -40,22 +40,21 @@ selected_item=$(zenity --list\
 		FALSE "23" "Dropbox"\
 		FALSE "24" "pCloud"\
 		FALSE "25" "qBittorrent"\
-		FALSE "26" "Google Play Music"\
-		FALSE "27" "Spotfy"\
-		FALSE "28" "Clementine"\
-		FALSE "29" "Vocal"\
-		FALSE "30" "VLC"\
-		FALSE "31" "Stremio"\
-		FALSE "32" "Gimp"\
-		FALSE "33" "Inkscape"\
-		FALSE "34" "Slack"\
-		FALSE "35" "Skype"\
-		FALSE "36" "Simplenote"\
-		FALSE "37" "Unetbootin"\
-		FALSE "38" "Unity Tweak Tool"\
-		FALSE "39" "Restricted-Extras"\
-		FALSE "40" "Syspeek"\
-		FALSE "41" "Linuxbrew"\
+		FALSE "26" "Spotfy"\
+		FALSE "27" "Clementine"\
+		FALSE "28" "Vocal"\
+		FALSE "29" "VLC"\
+		FALSE "30" "Stremio"\
+		FALSE "31" "Gimp"\
+		FALSE "32" "Inkscape"\
+		FALSE "33" "Slack"\
+		FALSE "34" "Skype"\
+		FALSE "35" "Simplenote"\
+		FALSE "36" "Unetbootin"\
+		FALSE "37" "Unity Tweak Tool"\
+		FALSE "38" "Restricted-Extras"\
+		FALSE "39" "Syspeek"\
+		FALSE "40" "Linuxbrew"\
 	--separator=":" --width=1024 --height=768
 )
 
@@ -381,17 +380,6 @@ if [[ "$selected_item" =~ "25" ]]; then
 fi
 
 if [[ "$selected_item" =~ "26" ]]; then
-	# Downloading Google Play Music to the download folder.
-	wget -P $HOME/Downloads/ https://github-cloud.s3.amazonaws.com/releases/40008106/42e05a06-9491-11e6-885c-b9b3588ff9a0.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161031%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161031T184825Z&X-Amz-Expires=300&X-Amz-Signature=0d1c4b89a84149d1e40dd61045ffec11e8e52ea531f8c94809e5c02f25a15c63&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dgoogle-play-music-desktop-player_4.0.1_amd64.deb&response-content-type=application%2Foctet-stream
-	# Installing Google Play Music.
-	sudo dpkg -i $HOME/Downloads/google-play-music-desktop-player_4.0.1_amd64.deb && sudo apt-get -f install
-	# Updating Ubuntu dependencies and softwares.
-	sudo apt-get update && sudo apt-get upgrade
-	# Removing google-play-music-desktop-player_4.0.1_amd64.deb file.
-	rm -rf $HOME/Downloads/google-play-music-desktop-player_4.0.1_amd64.deb
-fi
-
-if [[ "$selected_item" =~ "27" ]]; then
 	# Downloading Spotfy client.
 	wget -P $HOME/Downloads/ http://repository.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb
 	# Installing Spotfy client.
@@ -402,14 +390,14 @@ if [[ "$selected_item" =~ "27" ]]; then
 	rm -rf $HOME/Downloads/spotify-client_1.0.38.171.g5e1cd7b2-22_amd64.deb
 fi
 
-if [[ "$selected_item" =~ "28" ]]; then
+if [[ "$selected_item" =~ "27" ]]; then
 	# Adding Clementaine repository.
 	sudo add-apt-repository ppa:me-davidsansome/clementine && sudo apt-get update
 	# Installing Clementine.
 	sudo apt-get install clementine
 fi
 
-if [[ "$selected_item" =~ "29" ]]; then
+if [[ "$selected_item" =~ "28" ]]; then
 	# Downloading Vocal.
 	wget -P $HOME/Downloads/ http://ufpr.dl.sourceforge.net/project/vocalpodcast/vocal_1.0_amd64.deb
 	# Downloading Vocal dependencies.
@@ -428,7 +416,7 @@ if [[ "$selected_item" =~ "29" ]]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [[ "$selected_item" =~ "30" ]]; then
+if [[ "$selected_item" =~ "29" ]]; then
 	# Adding VLC repositories
 	sudo add-apt-repository ppa:videolan/stable-daily
 	sudo add-apt-repository ppa:nicola-onorata/desktop
@@ -436,7 +424,7 @@ if [[ "$selected_item" =~ "30" ]]; then
 	sudo apt-get update && sudo apt-get install vlc
 fi
 
-if [[ "$selected_item" =~ "31" ]]; then
+if [[ "$selected_item" =~ "30" ]]; then
 	# Downloading Stremio
 	wget -P $HOME/Downloads/ http://dl.strem.io/Stremio3.6.5.linux.tar.gz
 	# Creating stremio folder.
@@ -468,19 +456,19 @@ if [[ "$selected_item" =~ "31" ]]; then
 	rm -rf $HOME/Downloads/Stremio3.6.5.linux.tar.gz
 fi
 
-if [[ "$selected_item" =~ "32" ]]; then
+if [[ "$selected_item" =~ "31" ]]; then
 	# Setting up ppa.
 	sudo add-apt-repository ppa:otto-kesselgulasch/gimp && sudo apt-get update
 	# Installing Gimp.
 	sudo apt-get install gimp
 fi
 
-if [[ "$selected_item" =~ "33" ]]; then
+if [[ "$selected_item" =~ "32" ]]; then
 	# Installing Inkscape.
 	sudo apt-get update && sudo apt-get -y install inkscape
 fi
 
-if [[ "$selected_item" =~ "34" ]]; then
+if [[ "$selected_item" =~ "33" ]]; then
 	# Downloading Slack.
 	wget -P $HOME/Downloads/ https://downloads.slack-edge.com/linux_releases/slack-desktop-2.2.1-amd64.deb
 	# Installing Slack.
@@ -493,7 +481,7 @@ if [[ "$selected_item" =~ "34" ]]; then
 	sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove
 fi
 
-if [[ "$selected_item" =~ "35" ]]; then
+if [[ "$selected_item" =~ "34" ]]; then
 	# Downloading Skype.
 	wget -P $HOME/Downloads/ https://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
 	# Installing Skype.
@@ -506,7 +494,7 @@ if [[ "$selected_item" =~ "35" ]]; then
 	sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove
 fi
 
-if [[ "$selected_item" =~ "36" ]]; then
+if [[ "$selected_item" =~ "35" ]]; then
 	# Downloading Simplenote.
 	wget -P $HOME/Downloads/ https://github.com/Automattic/simplenote-electron/releases/download/v1.0.6/simplenote-1.0.6.deb
 	# Installing Simplenote.
@@ -517,31 +505,31 @@ if [[ "$selected_item" =~ "36" ]]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [[ "$selected_item" =~ "37" ]]; then
+if [[ "$selected_item" =~ "36" ]]; then
 	# Adding Unetbootin repository.
 	sudo add-apt-repository ppa:gezakovacs/ppa
 	# Installing Unetbootin
 	sudo apt-get update && sudo apt-get install unetbootin
 fi
 
-if [[ "$selected_item" =~ "38" ]]; then
+if [[ "$selected_item" =~ "37" ]]; then
 	# Installing Unity Tweek Tool
 	sudo apt-get update && sudo apt-get install unity-tweak-tool
 fi
 
-if [[ "$selected_item" =~ "39" ]]; then
+if [[ "$selected_item" =~ "38" ]]; then
 	# Installing Restricted-Extras.
 	sudo apt-get -y install ubuntu-restricted-extras
 fi
 
-if [[ "$selected_item" =~ "40" ]]; then
+if [[ "$selected_item" =~ "39" ]]; then
 	# adding syspeek repository.
 	sudo add-apt-repository ppa:nilarimogard/webupd8 && sudo apt-get update
 	# installing syspeek.
 	sudo apt-get install syspeek
 fi
 
-if [[ "$selected_item" =~ "41" ]]; then
+if [[ "$selected_item" =~ "40" ]]; then
 	# Installing Linuxbrew dependencies.
 	sudo apt-get install build-essential curl git python-setuptools ruby
 	# Installing Linuxbrew.
