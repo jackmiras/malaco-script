@@ -31,7 +31,7 @@ selected_item=$(zenity --list\
 		FALSE "14" "MySQL Workbench"\
 		FALSE "15" "PostgreSQL"\
 		FALSE "16" "PgAdmin3"\
-		FALSE "17" "Vim"\
+		FALSE "17" "Neovim"\
 		FALSE "18" "Sublime Text 3"\
 		FALSE "19" "Android Studio"\
 		FALSE "20" "Eclipse"\
