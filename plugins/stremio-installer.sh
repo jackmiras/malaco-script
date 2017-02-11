@@ -1,16 +1,38 @@
 #!/bin/bash
-# Script written by: Jack Miras.
+# Script written by: JM.
 # This script install Stremio video streaming.
 
-# Downloading Google Play Music to the download folder.
-wget -P $HOME/Downloads/ https://github-cloud.s3.amazonaws.com/releases/40008106/42e05a06-9491-11e6-885c-b9b3588ff9a0.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20161031%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20161031T184825Z&X-Amz-Expires=300&X-Amz-Signature=0d1c4b89a84149d1e40dd61045ffec11e8e52ea531f8c94809e5c02f25a15c63&X-Amz-SignedHeaders=host&actor_id=5861625&response-content-disposition=attachment%3B%20filename%3Dgoogle-play-music-desktop-player_4.0.1_amd64.deb&response-content-type=application%2Foctet-stream
+if [ -d "/opt/stremio/" ]; then
+  echo 'Stremio Studio is already installed.'
+else
+  # Downloading Stremio
+	wget -P $HOME/Downloads/ http://dl.strem.io/Stremio3.6.5.linux.tar.gz
+	# Creating stremio folder.
+	mkdir $HOME/Downloads/stremio
+	# Extracting the Stremio3.6.5.linux.tar.gz files into stremio folder.
+	tar -vzxf $HOME/Downloads/Stremio3.6.5.linux.tar.gz -C $HOME/Downloads/stremio
+	# Moving stremio folder from Download to opt folder.
+	sudo mv $HOME/Downloads/stremio /opt/
+	# Downloading the image icon.
+	sudo wget -P /opt/stremio/ http://www.strem.io/3.0/stremio-white-small.png
+	# Renaming the image icon.
+	sudo mv /opt/stremio/stremio-white-small.png /opt/stremio/icon.png
 
-# Installing Google Play Music.
-sudo dpkg -i $HOME/Downloads/google-play-music-desktop-player_4.0.1_amd64.deb && sudo apt-get -f install
+	# Setting up Stremio launcher on Ubuntu dash.
+	echo "[Desktop Entry]" >> $HOME/stremio.desktop
+	echo "Version=1.0" >> $HOME/stremio.desktop
+	echo "Type=Application" >> $HOME/stremio.desktop
+	echo "Name=Stremio" >> $HOME/stremio.desktop
+	echo "Icon=/opt/Stremio/icon.png" >> $HOME/stremio.desktop
+	echo "Exec=/opt/Stremio/Stremio.sh" >> $HOME/stremio.desktop
+	echo "Comment=Have fun!" >> $HOME/stremio.desktop
+	echo "Categories=Video" >> $HOME/stremio.desktop
+	echo "Terminal=false" >> $HOME/stremio.desktop
 
-# Updating Ubuntu dependencies and softwares.
-sudo apt-get update && sudo apt-get upgrade
+	# Moving the eclipse.destop to the usr/share/applications folder.
+	sudo mv $HOME/stremio.desktop /usr/share/applications/
 
-# Removing google-play-music-desktop-player_4.0.1_amd64.deb file.
-rm -rf $HOME/Downloads/google-play-music-desktop-player_4.0.1_amd64.deb
+	# Removing Stremio3.6.5.linux.tar.gz file.
+	rm -rf $HOME/Downloads/Stremio3.6.5.linux.tar.gz
+fi
 
