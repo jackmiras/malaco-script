@@ -45,16 +45,15 @@ selected_item=$(zenity --list\
 		FALSE "28" "Vocal"\
 		FALSE "29" "VLC"\
 		FALSE "30" "Stremio"\
-		FALSE "31" "Gimp"\
-		FALSE "32" "Inkscape"\
-		FALSE "33" "Slack"\
-		FALSE "34" "Skype"\
-		FALSE "35" "Simplenote"\
-		FALSE "36" "Unetbootin"\
-		FALSE "37" "Unity Tweak Tool"\
-		FALSE "38" "Restricted-Extras"\
-		FALSE "39" "Syspeek"\
-		FALSE "40" "Linuxbrew"\
+		FALSE "31" "Inkscape"\
+		FALSE "32" "Slack"\
+		FALSE "33" "Skype"\
+		FALSE "34" "Simplenote"\
+		FALSE "35" "Unetbootin"\
+		FALSE "36" "Unity Tweak Tool"\
+		FALSE "37" "Restricted-Extras"\
+		FALSE "38" "Syspeek"\
+		FALSE "39" "Linuxbrew"\
 	--separator=":" --width=1024 --height=768
 )
 
@@ -457,18 +456,11 @@ if [[ "$selected_item" =~ "30" ]]; then
 fi
 
 if [[ "$selected_item" =~ "31" ]]; then
-	# Setting up ppa.
-	sudo add-apt-repository ppa:otto-kesselgulasch/gimp && sudo apt-get update
-	# Installing Gimp.
-	sudo apt-get install gimp
-fi
-
-if [[ "$selected_item" =~ "32" ]]; then
 	# Installing Inkscape.
 	sudo apt-get update && sudo apt-get -y install inkscape
 fi
 
-if [[ "$selected_item" =~ "33" ]]; then
+if [[ "$selected_item" =~ "32" ]]; then
 	# Downloading Slack.
 	wget -P $HOME/Downloads/ https://downloads.slack-edge.com/linux_releases/slack-desktop-2.2.1-amd64.deb
 	# Installing Slack.
@@ -481,7 +473,7 @@ if [[ "$selected_item" =~ "33" ]]; then
 	sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove
 fi
 
-if [[ "$selected_item" =~ "34" ]]; then
+if [[ "$selected_item" =~ "33" ]]; then
 	# Downloading Skype.
 	wget -P $HOME/Downloads/ https://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
 	# Installing Skype.
@@ -494,7 +486,7 @@ if [[ "$selected_item" =~ "34" ]]; then
 	sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove
 fi
 
-if [[ "$selected_item" =~ "35" ]]; then
+if [[ "$selected_item" =~ "34" ]]; then
 	# Downloading Simplenote.
 	wget -P $HOME/Downloads/ https://github.com/Automattic/simplenote-electron/releases/download/v1.0.6/simplenote-1.0.6.deb
 	# Installing Simplenote.
@@ -505,31 +497,31 @@ if [[ "$selected_item" =~ "35" ]]; then
 	sudo apt-get update && sudo apt-get upgrade
 fi
 
-if [[ "$selected_item" =~ "36" ]]; then
+if [[ "$selected_item" =~ "35" ]]; then
 	# Adding Unetbootin repository.
 	sudo add-apt-repository ppa:gezakovacs/ppa
 	# Installing Unetbootin
 	sudo apt-get update && sudo apt-get install unetbootin
 fi
 
-if [[ "$selected_item" =~ "37" ]]; then
+if [[ "$selected_item" =~ "36" ]]; then
 	# Installing Unity Tweek Tool
 	sudo apt-get update && sudo apt-get install unity-tweak-tool
 fi
 
-if [[ "$selected_item" =~ "38" ]]; then
+if [[ "$selected_item" =~ "37" ]]; then
 	# Installing Restricted-Extras.
 	sudo apt-get -y install ubuntu-restricted-extras
 fi
 
-if [[ "$selected_item" =~ "39" ]]; then
+if [[ "$selected_item" =~ "38" ]]; then
 	# adding syspeek repository.
 	sudo add-apt-repository ppa:nilarimogard/webupd8 && sudo apt-get update
 	# installing syspeek.
 	sudo apt-get install syspeek
 fi
 
-if [[ "$selected_item" =~ "40" ]]; then
+if [[ "$selected_item" =~ "39" ]]; then
 	# Installing Linuxbrew dependencies.
 	sudo apt-get install build-essential curl git python-setuptools ruby
 	# Installing Linuxbrew.
