@@ -1,11 +1,15 @@
 #!/bin/bash
-# Script written by: Jack Miras.
+# Script written by: JM.
 # This script install VLC Video player.
 
-# Adding VLC repositories
-sudo add-apt-repository ppa:videolan/stable-daily
-sudo add-apt-repository ppa:nicola-onorata/desktop
+if command -v vlc >/dev/null; then
+  echo 'Vlc is already installed.'
+else
+  # Adding VLC repositories
+  sudo add-apt-repository ppa:videolan/stable-daily
+  sudo add-apt-repository ppa:nicola-onorata/desktop
 
-# Installing VLC.
-sudo apt-get update && sudo apt-get install vlc
+  # Installing VLC.
+  sudo apt-get update && sudo apt-get install vlc
+fi
 
