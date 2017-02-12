@@ -1,6 +1,13 @@
 #!/bin/bash
-# Script written by: Jack Miras.
+# Script written by: JM.
 # This script install Syspeek.
 
-# Installing Restricted-Extras.
-sudo apt-get -y install ubuntu-restricted-extras
+if command -v syspeek >/dev/null; then
+  echo 'Syspeek is already installed.'
+else  
+  # adding syspeek repository.
+	sudo add-apt-repository ppa:nilarimogard/webupd8 && sudo apt-get update
+	# installing syspeek.
+	sudo apt-get install syspeek
+fi
+
