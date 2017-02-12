@@ -51,7 +51,7 @@ selected_item=$(zenity --list\
 		FALSE "34" "Simplenote"\
 		FALSE "35" "Unetbootin"\
 		FALSE "36" "Unity Tweak Tool"\
-		FALSE "37" "Restricted-Extras"\
+		FALSE "37" "Ubuntu Restricted Extras"\
 		FALSE "38" "Syspeek"\
 		FALSE "39" "Linuxbrew"\
 	--separator=":" --width=1024 --height=768
