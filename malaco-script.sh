@@ -14,10 +14,10 @@
 
 selected_item=$(zenity --list\
 	--text "This is a script written to save time, choose down below the softwares that you want to install."\
-	--checklist  --column "Install" --"Software id" --column "Softwares"\
+	--checklist  --column "Install" --column "Id" --column "Name"\
 		FALSE "1" "Git"\
 		FALSE "2" "Git-flow"\
-		FALSE "3" " Get repositories from Github and Bitbucket"\
+		FALSE "3" "Get repositories from Github and Bitbucket"\
 		FALSE "4" "Htop"\
 		FALSE "5" "Tmux"\
 		FALSE "6" "Zsh"\
