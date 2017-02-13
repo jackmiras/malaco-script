@@ -3,9 +3,10 @@
 # This script install and configure PgAdmin3.
 
 if command -v pgadmin3 >/dev/null; then
-  echo 'Pgadmin3 is already installed.'
+  echo $'\n Pgadmin3 is already installed.\n'
 else
   # Installing PgAdmin3.
   sudo apt-get update && sudo apt-get install pgadmin3
+  echo $'\n Pgadmin3 was installed with success.\n'
 fi
 

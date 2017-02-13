@@ -3,7 +3,7 @@
 # This script install Stremio video streaming.
 
 if [ -d "/opt/stremio/" ]; then
-  echo 'Stremio Studio is already installed.'
+  echo $'\n Stremio Studio is already installed.\n'
 else
   # Downloading Stremio
 	wget -P $HOME/Downloads/ http://dl.strem.io/Stremio3.6.5.linux.tar.gz
@@ -34,5 +34,7 @@ else
 
 	# Removing Stremio3.6.5.linux.tar.gz file.
 	rm -rf $HOME/Downloads/Stremio3.6.5.linux.tar.gz
+
+  echo $'\n Stremio Studio was installed with success.\n'
 fi
 

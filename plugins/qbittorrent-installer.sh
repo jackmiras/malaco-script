@@ -3,12 +3,14 @@
 # This script install qBittorrent.
 
 if command -v qbittorrent >/dev/null; then
-  echo 'qBittorrent is already installed.'
+  echo $'\n qBittorrent is already installed.\n'
 else
   # Adding qBittorrent repository.
   sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
 
   # Installing qBittorrent.
   sudo apt-get update && sudo apt-get install qbittorrent
+
+  echo $'\n qBittorrent was installed with success.\n'
 fi
 

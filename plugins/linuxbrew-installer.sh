@@ -3,7 +3,7 @@
 # This script install Linuxbrew.
 
 if command -v brew >/dev/null; then
-  echo 'Linuxbrew is already installed.'
+  echo $'\n Linuxbrew is already installed.\n'
 else
   # Installing Linuxbrew dependencies.
   sudo apt-get install build-essential curl git python-setuptools ruby
@@ -15,5 +15,7 @@ else
   echo "export PATH='$HOME/.linuxbrew/bin:$PATH'" >> ~/.bashrc
   echo "export MANPATH='$HOME/.linuxbrew/share/man:$MANPATH'" >> ~/.bashrc
   echo "export INFOPATH='$HOME/.linuxbrew/share/info:$INFOPATH'" >> ~/.bashrc
+
+  echo $'\n Linuxbrew was installed with success.\n'
 fi
 

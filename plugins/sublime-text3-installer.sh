@@ -3,7 +3,7 @@
 # This script install android configure Sublime Text 3 text editor.
 
 if command -v subl >/dev/null; then
-  echo 'Sublime is already installed.'
+  echo $'\n Sublime is already installed.\n'
 else
   # Adding Sublime Text 3 respository.
   sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 && sudo apt-get update
@@ -18,5 +18,7 @@ else
 
   # Creating a symbolic link of Sublime Text 3 configs into the Home/.config folder of Ubuntu.
   ln -s $HOME/Projects/sublime-text-3-config $HOME/.config/sublime-text-3
+
+  echo $'\n Sublime was installed with success.\n'
 fi
 

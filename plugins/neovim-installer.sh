@@ -3,7 +3,7 @@
 # This script install and configure Vim text editor.
 
 if command -v nvim >/dev/null; then
-  echo 'Neovim is already installed.'
+  echo $'\n Neovim is already installed.\n'
 else
   # Installing xclip as a dependency required by Neovim
   sudo apt-get install xclip
@@ -26,5 +26,7 @@ else
 
   # Creating a symbolic link of Neovim configurations into the .config folder of Ubuntu.
   ln -s $HOME/Projects/neovim-config $HOME/.config/nvim
+
+  echo $'\n Neovim was installed with success.\n'
 fi
 

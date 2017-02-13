@@ -3,9 +3,11 @@
 # This script install Inkscape image editor.
 
 if command -v inkscape >/dev/null; then
-  echo 'Inkscape is already installed.'
+  echo $'\n Inkscape is already installed.\n'
 else
   # Installing Inkscape.
   sudo apt-get update && sudo apt-get -y install inkscape
+
+  echo $'\n Inkscape was installed with success.\n'
 fi
 

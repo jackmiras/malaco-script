@@ -4,7 +4,7 @@
 # This script install and configure NVM(Node Package Manager).
 
 if [ -d "$HOME/.nvm/" ]; then
-  echo 'NVM is already installed.'
+  echo $'\n NVM is already installed.\n'
 else
   # Installing Node build essential.
   sudo apt-get update && sudo apt-get install build-essential libssl-dev
@@ -15,5 +15,5 @@ else
 
   zenity --info --text="Close and reopen the terminal."
 
-  echo 'NVM was installed with success!'
+  echo $'\n NVM was installed with success!\n'
 fi

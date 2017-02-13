@@ -3,12 +3,14 @@
 # This script install Clementine player.
 
 if command -v clementine >/dev/null; then
-  echo 'Clementine is already installed.'
+  echo $'\n Clementine is already installed.\n'
 else
   # Adding Clementaine repository.
 	sudo add-apt-repository ppa:me-davidsansome/clementine && sudo apt-get update
 	
   # Installing Clementine.
 	sudo apt-get install clementine
+
+  echo $'\n Clementine was installed with success.\n'
 fi
 
