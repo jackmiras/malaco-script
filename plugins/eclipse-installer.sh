@@ -3,7 +3,7 @@
 # This script install Eclipse IDE.
 
 if [ -d "/opt/eclipse/" ]; then
-  echo $'\n Eclipse is already installed.\n'
+  echo $'\n Eclipse is already installed.'
 else
   # Downloading Eclipse.
   wget -P $HOME/Downloads/ http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/neon/1a/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
@@ -35,6 +35,6 @@ else
   # Removing Eclipse tar.gz file from Download folder.
   rm -rf $HOME/Downloads/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
 
-  echo $'\n Eclipse was installed with success.\n'
+  echo $'\n Eclipse was installed with success.'
 fi
 

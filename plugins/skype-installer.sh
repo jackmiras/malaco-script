@@ -3,7 +3,7 @@
 # This script install Skype.
 
 if command -v skype >/dev/null; then
-  echo $'\n Skype is already isntalled.\n'
+  echo $'\n Skype is already isntalled.'
 else
   # Downloading Skype.
   wget -P $HOME/Downloads/ https://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
@@ -20,6 +20,6 @@ else
   # Updating Ubuntu softwares and dependencies.
   sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove
 
-  echo $'\n Skype was isntalled with success.\n'
+  echo $'\n Skype was isntalled with success.'
 fi
 

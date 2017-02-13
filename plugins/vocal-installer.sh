@@ -3,7 +3,7 @@
 # This script install Vocal podcast player.
 
 if command -v vocal >/dev/null; then
-  echo $'\n Vocal is already installed.\n'
+  echo $'\n Vocal is already installed.'
 else
   # Downloading Vocal.
   wget -P $HOME/Downloads/ http://ufpr.dl.sourceforge.net/project/vocalpodcast/vocal_1.0_amd64.deb
@@ -27,6 +27,6 @@ else
   # Updating Ubuntu dependencies.
   sudo apt-get update && sudo apt-get upgrade
 
-  echo $'\n Vocal was installed with success.\n'
+  echo $'\n Vocal was installed with success.'
 fi
 

@@ -4,7 +4,7 @@
 # This script install and configure Node.
 
 if command -v npm >/dev/null; then
-  echo $'\n NPM is already installed.\n'
+  echo $'\n NPM is already installed.'
 else
   # Enabling the nvm.sh script to run in bash scripts.
   . ~/.nvm/nvm.sh
@@ -18,5 +18,5 @@ else
   # Intalling npm.
   sudo apt-get install npm
 
-  echo $'\n NPM was isntalled with success!\n'
+  echo $'\n NPM was isntalled with success!'
 fi

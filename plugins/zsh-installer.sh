@@ -5,7 +5,7 @@
 # download and setup my configs of oh-my-zsh.
 
 if command -v zsh >/dev/null; then
-	echo 'Zsh and Oh-myzsh are already installed.'
+	echo $'\n Zsh and Oh-myzsh are already installed.'
 else
 	# Installing zsh.
 	sudo apt-get update && sudo apt-get install -y zsh
@@ -21,5 +21,5 @@ else
 	# Creating symbolic link of Zsh configs into the home of computer.
 	ln -s $HOME/Projects/zshrc-config/.zshrc $HOME/.zshrc
 
-	echo $'\nZsh and Oh-my-zsh was installed with succes.'
+	echo $'\n Zsh and Oh-my-zsh was installed with succes.'
 fi

@@ -3,7 +3,7 @@
 # This script install Spotfy.
 
 if command -v spotify >/dev/null; then
-  echo $'\n Spotify is already installed.\n'
+  echo $'\n Spotify is already installed.'
 else
   # Downloading Spotfy client.
   wget -P $HOME/Downloads/ http://repository.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.48.103.g15edf1ec-121_amd64.deb
@@ -17,5 +17,5 @@ else
   # Removing Spotfy file from Download folder.
   rm -rf $HOME/Downloads/spotify-client_1.0.48.103.g15edf1ec-121_amd64.deb
 
-  echo $'\n Spotify was installed with success.\n'
+  echo $'\n Spotify was installed with success.'
 fi

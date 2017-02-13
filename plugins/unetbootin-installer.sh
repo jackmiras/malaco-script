@@ -3,7 +3,7 @@
 # This script install Unetbootin.
 
 if command -v unetbootin >/dev/null; then
-  echo $'\n Unetbootin is already installed.\n'
+  echo $'\n Unetbootin is already installed.'
 else
   # Adding Unetbootin repository.
   sudo add-apt-repository ppa:gezakovacs/ppa
@@ -11,6 +11,6 @@ else
   # Installing Unetbootin
   sudo apt-get update && sudo apt-get install unetbootin
 
-  echo $'\n Unetbootin was installed with success.\n'
+  echo $'\n Unetbootin was installed with success.'
 fi
 

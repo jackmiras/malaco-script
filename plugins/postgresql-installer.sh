@@ -3,7 +3,7 @@
 # This script install and configure PostgreSQL.
 
 if command -v psql >/dev/null; then
-  echo $'\n PostgreeSQL is already installed.\n'
+  echo $'\n PostgreeSQL is already installed.'
 else
   # Adding PostgreSQL on Ubuntu souces.list.
   sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
@@ -11,5 +11,5 @@ else
   wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
   # Installing PostgreSQL.
   sudo apt-get update && sudo apt-get install postgresql-common && sudo apt-get install postgresql-9.5 libpq-dev
-  echo $'\n PostgreeSQL was installed with success!\n'
+  echo $'\n PostgreeSQL was installed with success!'
 fi

@@ -3,7 +3,7 @@
 # This script install Dropbox.
 
 if command -v dropbox >/dev/null; then
-  echo $'\n Dropbox is already installed.\n'
+  echo $'\n Dropbox is already installed.'
 else
   # Download dropbox_2015.10.28_amd64.deb into the Download folder.
   wget -P $HOME/Downloads/ https://linux.dropbox.com/packages/ubuntu/dropbox_2015.10.28_amd64.deb
@@ -20,5 +20,5 @@ else
   # Updating Ubuntu dependencies.
   sudo apt-get update && sudo apt-get upgrade
 
-  echo $'\n Dropbox was installed with success.\n'
+  echo $'\n Dropbox was installed with success.'
 fi

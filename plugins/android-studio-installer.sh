@@ -3,7 +3,7 @@
 # This script install and configure Android Studio IDE.
 
 if [ -d "/opt/android-studio/" ]; then
-  echo $'\n Android Studio is already installed.\n'
+  echo $'\n Android Studio is already installed.'
 else
   # Installing Android Studio dependencies.
   sudo apt-get install lib32z1 lib32ncurses5 lib32stdc++6
@@ -50,6 +50,6 @@ else
   # Removing Android Studio zip file from Download folder.
   rm -rf $HOME/Downloads/android-studio-ide-145.3360264-linux.zip
 
-  echo $'\n Android Studio was installed with success.\n'
+  echo $'\n Android Studio was installed with success.'
 fi
 

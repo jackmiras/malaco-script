@@ -2,7 +2,7 @@
 # Script written by: JM.
 
 if command -v java >/dev/null; then
-  echo $'\n Java 8 is already installed.\n'
+  echo $'\n Java 8 is already installed.'
 else
   # Adding Oracle Java 8 repository.
   sudo add-apt-repository -y ppa:webupd8team/java && sudo apt-get update
@@ -13,5 +13,5 @@ else
   # Removing Open JDK 7.
   sudo apt-get -y purge openjdk-7-jre openjdk-7-jre-lib openjdk-7-jre-headless
 
-  echo $'\n Java 8 was installed with success!\n'
+  echo $'\n Java 8 was installed with success!'
 fi

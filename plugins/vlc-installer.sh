@@ -3,7 +3,7 @@
 # This script install VLC Video player.
 
 if command -v vlc >/dev/null; then
-  echo $'\n Vlc is already installed.\n'
+  echo $'\n Vlc is already installed.'
 else
   # Adding VLC repositories
   sudo add-apt-repository ppa:videolan/stable-daily
@@ -12,6 +12,6 @@ else
   # Installing VLC.
   sudo apt-get update && sudo apt-get install vlc
 
-  echo $'\n Vlc was installed with success.\n'
+  echo $'\n Vlc was installed with success.'
 fi
 
