@@ -30,7 +30,7 @@
 
 15 - PgAdmin3
 
-16 - Vim
+16 - Neovim
 
 17 - Sublime Text 3
 
@@ -48,36 +48,32 @@
 
 24 - qBitTorrent
 
-25 - Google Play Music
+25 - Spotfy
 
-26 - Spotfy
+26 - Clementine
 
-27 - Clementine
+27 - Vocal
 
-28 - Vocal
+28 - VLC
 
-29 - VLC
+29 - Stremio
 
-30 - Stremio
+30 - Inkscape
 
-31 - Gimp
+31 - Slack
 
-32 - Inkscape
+32 - Skype
 
-33 - Slack
+33 - Simplenote
 
-34 - Skype
+34 - Unetbootin
 
-35 - Simplenote
+35 - Unit Tweak Tool
 
-36 - Unetbootin
+36 - Restricted extras
 
-37 - Unit Tweak Tool
+37 - Syspeek
 
-38 - Restricted extras
+38 - Linuxbrew 
 
-39 - Syspeek
-
-40 - Linuxbrew 
-
-41 - Toggl
+39 - Toggl
