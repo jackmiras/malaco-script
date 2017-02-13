@@ -1,13 +1,13 @@
 # Malaco Scrip - Ubuntu
 
 *This are a shell scrip written to install software on Ubuntu in a simpler 
-way and hi is inspired on [Fedy](http://folkswithhats.org/). Fedy is a 
+way, this script is also inspired on [Fedy](http://folkswithhats.org/) that is a 
 software built to easy install another software on Fedora.*
 
-*The problem is that haven't used Fedora for almos 3 years and I really really 
+*The problem is that I haven't used Fedora for almos 3 years and I really really 
 enjoy the experience and the time saving that's provided by Fedy. With this in 
 mind I've decided to write my own version of Fedy but focused on my needs and 
-Ubuntu that is my current Linux distribution.*
+on Ubuntu that is my current Linux distribution.*
 
 
 ## Software list:
@@ -45,7 +45,7 @@ but includes other files that were changed without explanation or that weren't
 related to the bug you fixed. Another example is a non-descriptive title "Fixes Stuff".
 2. Pull requests must be made against ```develop``` branch.                   
 3. Have fun!                                                                  
-                                                                                 
+
 ## Maintainer
-                        
+
 [Jack Miras](https://github.com/jackmiras) ([@jackmiras](https://www.twitter.com/@jackmiras))
