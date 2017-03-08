@@ -15,6 +15,9 @@ else
   sudo apt-get update
   sudo apt-get install neovim
 
+  # Installing Python for Neovim.
+  sudo pip install neovim
+
   if [ ! -d "$HOME/Projects/neovim-config" ]; then
 	  # Downloading Neovim configs from github.
 	  cd $HOME/Projects && git clone git@github.com:jackmiras/neovim-config.git && cd $HOME
