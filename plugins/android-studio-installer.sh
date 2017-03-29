@@ -43,13 +43,37 @@ else
   rm -rf $HOME/.AndroidStudio2.3/config/codestyles
   rm -rf $HOME/.AndroidStudio2.3/config/colors
   rm -rf $HOME/.AndroidStudio2.3/config/plugins
-  rm -rf $HOME/.AndroidStudio2.3/config/inspection
-  rm -rf $HOME/.AndroidStudio2.3/config/options
+  rm -rf $HOME/.AndroidStudio2.3/config/options/colors.scheme.xml
+  rm -rf $HOME/.AndroidStudio2.3/config/options/debugger.renderers.xml
+  rm -rf $HOME/.AndroidStudio2.3/config/options/debugger.xml
+  rm -rf $HOME/.AndroidStudio2.3/config/options/editor.codeinsight.xml
+  rm -rf $HOME/.AndroidStudio2.3/config/options/editor.xml
+  rm -rf $HOME/.AndroidStudio2.3/config/options/ide.general.xml
+  rm -rf $HOME/.AndroidStudio2.3/config/options/markdown_navigator.local.xml
+  rm -rf $HOME/.AndroidStudio2.3/config/options/markdown_navigator.shared.xml
+  rm -rf $HOME/.AndroidStudio2.3/config/options/multimarkdown.shared.xml
+  rm -rf $HOME/.AndroidStudio2.3/config/options/path.macros.xml
+  rm -rf $HOME/.AndroidStudio2.3/config/options/vim_settings.xml
+
   # Creating a symbolic link of the new Android Studio configurations into .AndroidStudio folder.
-  ln -s $HOME/Projects/android-studio-config/* $HOME/.AndroidStudio2.3/config/
+  ln -s $HOME/Projects/android-studio-config/codestyles/ $HOME/.AndroidStudio2.3/config/
+  ln -s $HOME/Projects/android-studio-config/colors/ $HOME/.AndroidStudio2.3/config/
+  ln -s $HOME/Projects/android-studio-config/plugins/ $HOME/.AndroidStudio2.3/config/
+  ln -s $HOME/Projects/android-studio-config/options/colors.scheme.xml $HOME/.AndroidStudio2.3/config/options/
+  ln -s $HOME/Projects/android-studio-config/options/debugger.renderers.xml $HOME/.AndroidStudio2.3/config/options/
+  ln -s $HOME/Projects/android-studio-config/options/debugger.xml $HOME/.AndroidStudio2.3/config/options/
+  ln -s $HOME/Projects/android-studio-config/options/editor.codeinsight.xml $HOME/.AndroidStudio2.3/config/options/
+  ln -s $HOME/Projects/android-studio-config/options/editor.xml $HOME/.AndroidStudio2.3/config/options/
+  ln -s $HOME/Projects/android-studio-config/options/ide.general.xml $HOME/.AndroidStudio2.3/config/options/
+  ln -s $HOME/Projects/android-studio-config/options/markdown_navigator.local.xml $HOME/.AndroidStudio2.3/config/options/
+  ln -s $HOME/Projects/android-studio-config/options/markdown_navigator.shared.xml $HOME/.AndroidStudio2.3/config/options/
+  ln -s $HOME/Projects/android-studio-config/options/multimarkdown.shared.xml $HOME/.AndroidStudio2.3/config/options/
+  ln -s $HOME/Projects/android-studio-config/options/path.macros.xml $HOME/.AndroidStudio2.3/config/options/
+  ln -s $HOME/Projects/android-studio-config/options/vim_settings.xml $HOME/.AndroidStudio2.3/config/options/
+
   # Removing Android Studio zip file from Download folder.
   rm -rf $HOME/Downloads/android-studio-ide-162.3764568-linux.zip
 
-  echo $'\n Android Studio was installed with success.'
+  echo $'\n Android Studio has been successfully installed.'
 fi
 
