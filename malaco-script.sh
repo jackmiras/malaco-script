@@ -17,7 +17,7 @@ selected_item=$(zenity --list\
 	--checklist  --column "Install" --column "Id" --column "Name"\
 		FALSE "1" "Git"\
 		FALSE "2" "Git-flow"\
-		FALSE "3" "Get repositories from Github and Bitbucket"\
+		FALSE "3" "Get private repositories"\
 		FALSE "4" "Htop"\
 		FALSE "5" "Tmux"\
 		FALSE "6" "Zsh"\
@@ -66,7 +66,7 @@ if [[ "$selected_item" =~ "2" ]]; then
 fi
 
 if [[ "$selected_item" =~ "3" ]]; then
-  ./plugins/repositories-github-bitbucket.sh
+  ./plugins/private-repositories.sh
 fi
 
 if [[ "$selected_item" =~ "4" ]]; then
