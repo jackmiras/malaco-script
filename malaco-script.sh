@@ -34,26 +34,27 @@ selected_item=$(zenity --list\
 		FALSE "17" "Neovim"\
 		FALSE "18" "Sublime Text 3"\
 		FALSE "19" "Android Studio"\
-		FALSE "20" "Eclipse"\
-		FALSE "21" "Google Chrome"\
-		FALSE "22" "Opera"\
-		FALSE "23" "Dropbox"\
-		FALSE "24" "pCloud"\
-		FALSE "25" "qBittorrent"\
-		FALSE "26" "Spotfy"\
-		FALSE "27" "Clementine"\
-		FALSE "28" "Vocal"\
-		FALSE "29" "VLC"\
-		FALSE "30" "Stremio"\
-		FALSE "31" "Inkscape"\
-		FALSE "32" "Slack"\
-		FALSE "33" "Skype"\
-		FALSE "34" "Simplenote"\
-		FALSE "35" "Unetbootin"\
-		FALSE "36" "Unity Tweak Tool"\
-		FALSE "37" "Ubuntu Restricted Extras"\
-		FALSE "38" "Syspeek"\
-		FALSE "39" "Linuxbrew"\
+		FALSE "20" "IntelliJ IDEA"\
+		FALSE "21" "Eclipse"\
+		FALSE "22" "Google Chrome"\
+		FALSE "23" "Opera"\
+		FALSE "24" "Dropbox"\
+		FALSE "25" "pCloud"\
+		FALSE "26" "qBittorrent"\
+		FALSE "27" "Spotfy"\
+		FALSE "28" "Clementine"\
+		FALSE "29" "Vocal"\
+		FALSE "30" "VLC"\
+		FALSE "31" "Stremio"\
+		FALSE "32" "Inkscape"\
+		FALSE "33" "Slack"\
+		FALSE "34" "Skype"\
+		FALSE "35" "Simplenote"\
+		FALSE "36" "Unetbootin"\
+		FALSE "37" "Unity Tweak Tool"\
+		FALSE "38" "Ubuntu Restricted Extras"\
+		FALSE "39" "Syspeek"\
+		FALSE "40" "Linuxbrew"\
 	--separator=":" --width=1024 --height=768
 )
 
@@ -134,82 +135,86 @@ if [[ "$selected_item" =~ "19" ]]; then
 fi
 
 if [[ "$selected_item" =~ "20" ]]; then
+	./plugins/intellij-idea-installer.sh
+fi
+
+if [[ "$selected_item" =~ "21" ]]; then
   ./plugins/eclipse-installer.sh
 fi
 
-if [[ "$selected_item" =~ "21" ]]; then	
+if [[ "$selected_item" =~ "22" ]]; then	
   ./plugins/chrome-installer.sh
 fi
 
-if [[ "$selected_item" =~ "22" ]]; then
+if [[ "$selected_item" =~ "23" ]]; then
   ./plugins/opera-installer.sh
 fi
 
-if [[ "$selected_item" =~ "23" ]]; then
+if [[ "$selected_item" =~ "24" ]]; then
 	./plugins/dropbox-installer.sh
 fi
 
-if [[ "$selected_item" =~ "24" ]]; then
+if [[ "$selected_item" =~ "25" ]]; then
   ./plugins/pcloud-installer.sh
 fi
 
-if [[ "$selected_item" =~ "25" ]]; then
+if [[ "$selected_item" =~ "26" ]]; then
   ./plugins/qbittorrent-installer.sh
 fi
 
-if [[ "$selected_item" =~ "26" ]]; then
+if [[ "$selected_item" =~ "27" ]]; then
   ./plugins/spotify-install.sh
 fi
 
-if [[ "$selected_item" =~ "27" ]]; then
+if [[ "$selected_item" =~ "28" ]]; then
   ./plugins/clementine-installer.sh
 fi
 
-if [[ "$selected_item" =~ "28" ]]; then	
+if [[ "$selected_item" =~ "29" ]]; then	
 	./plugins/vocal-installer.sh
 fi
 
-if [[ "$selected_item" =~ "29" ]]; then
+if [[ "$selected_item" =~ "30" ]]; then
   ./plugins/vlc-installer.sh
 fi
 
-if [[ "$selected_item" =~ "30" ]]; then
+if [[ "$selected_item" =~ "31" ]]; then
   ./plugins/stremio-installer.sh
 fi
 
-if [[ "$selected_item" =~ "31" ]]; then
+if [[ "$selected_item" =~ "32" ]]; then
   ./plugins/inkscape-installer.sh
 fi
 
-if [[ "$selected_item" =~ "32" ]]; then
+if [[ "$selected_item" =~ "33" ]]; then
 	./plugins/slack-installer.sh
 fi
 
-if [[ "$selected_item" =~ "33" ]]; then
+if [[ "$selected_item" =~ "34" ]]; then
 	./plugins/skype-installer.sh
 fi
 
-if [[ "$selected_item" =~ "34" ]]; then
+if [[ "$selected_item" =~ "35" ]]; then
 	./plugins/simplenote-installer.sh
 fi
 
-if [[ "$selected_item" =~ "35" ]]; then
+if [[ "$selected_item" =~ "36" ]]; then
   ./plugins/unetbootin-installer.sh
 fi
 
-if [[ "$selected_item" =~ "36" ]]; then
+if [[ "$selected_item" =~ "37" ]]; then
   ./plugins/unity-tweak-tool-installer.sh
 fi
 
-if [[ "$selected_item" =~ "37" ]]; then
+if [[ "$selected_item" =~ "38" ]]; then
   ./plugins/ubuntu-restricted-extras.sh
 fi
 
-if [[ "$selected_item" =~ "38" ]]; then
+if [[ "$selected_item" =~ "39" ]]; then
   ./plugins/syspeek-installer.sh
 fi
 
-if [[ "$selected_item" =~ "39" ]]; then
+if [[ "$selected_item" =~ "40" ]]; then
 	./plugins/linuxbrew-installer.sh
 fi
 
