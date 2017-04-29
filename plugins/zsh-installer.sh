@@ -18,8 +18,14 @@ else
 	# Downloading Zsh configs from github.
 	cd $HOME/Projects && git clone git@github.com:jackmiras/zshrc-config.git && cd $HOME/
 
-	# Creating symbolic link of Zsh configs into the home of computer.
+	# Creating symbolic link of the .zsh script into the home of computer.
 	ln -s $HOME/Projects/zshrc-config/.zshrc $HOME/.zshrc
+
+	# Creating symbolic link of themese folder into the home of computer.
+	ln -s $HOME/Projects/zshrc-config/themes/ $HOME/.oh-my-zsh/themes
+
+	# Creating symbolic link of custom folder into the home of computer.
+	ln -s $HOME/Projects/zshrc-config/custom/ $HOME/.oh-my-zsh/custom
 
 	echo $'\n Zsh and Oh-my-zsh was installed with succes.'
 fi
