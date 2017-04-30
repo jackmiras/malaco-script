@@ -15,46 +15,48 @@
 selected_item=$(zenity --list\
 	--text "This is a script written to save time, choose down below the softwares that you want to install."\
 	--checklist  --column "Install" --column "Id" --column "Name"\
-		FALSE "1" "Git"\
-		FALSE "2" "Git-flow"\
-		FALSE "3" "Get private repositories"\
-		FALSE "4" "Htop"\
-		FALSE "5" "Tmux"\
-		FALSE "6" "Zsh"\
-		FALSE "7" "Zsh Syntax Highlighting"\
-		FALSE "8" "7zip, Rar, Unrar"\
-		FALSE "9" "Java 8"\
-		FALSE "10" "NVM"\
-		FALSE "11" "Node Js"\
-		FALSE "12" "Ruby, RVM, Rails"\
-		FALSE "13" "MySQL"\
-		FALSE "14" "MySQL Workbench"\
-		FALSE "15" "PostgreSQL"\
-		FALSE "16" "PgAdmin3"\
-		FALSE "17" "Neovim"\
-		FALSE "18" "Sublime Text 3"\
-		FALSE "19" "Android Studio"\
-		FALSE "20" "IntelliJ IDEA"\
-		FALSE "21" "Eclipse"\
-		FALSE "22" "Google Chrome"\
-		FALSE "23" "Opera"\
-		FALSE "24" "Dropbox"\
-		FALSE "25" "pCloud"\
-		FALSE "26" "qBittorrent"\
-		FALSE "27" "Spotfy"\
-		FALSE "28" "Clementine"\
-		FALSE "29" "Vocal"\
-		FALSE "30" "VLC"\
-		FALSE "31" "Stremio"\
-		FALSE "32" "Inkscape"\
-		FALSE "33" "Slack"\
-		FALSE "34" "Skype"\
-		FALSE "35" "Simplenote"\
-		FALSE "36" "Unetbootin"\
-		FALSE "37" "Unity Tweak Tool"\
-		FALSE "38" "Ubuntu Restricted Extras"\
-		FALSE "39" "Syspeek"\
-		FALSE "40" "Linuxbrew"\
+    FALSE "1" "Git"\
+    FALSE "2" "Git-flow"\
+    FALSE "3" "Get private repositories"\
+    FALSE "4" "Htop"\
+    FALSE "5" "Tmux"\
+    FALSE "6" "Zsh"\
+    FALSE "7" "Zsh Syntax Highlighting"\
+    FALSE "8" "7zip, Rar, Unrar"\
+    FALSE "9" "Java 8"\
+    FALSE "10" "NVM"\
+    FALSE "11" "Node Js"\
+    FALSE "12" "Ruby, RVM, Rails"\
+    FALSE "13" "MySQL"\
+    FALSE "14" "MySQL Workbench"\
+    FALSE "15" "PostgreSQL"\
+    FALSE "16" "PgAdmin3"\
+    FALSE "17" "MongoDB"\
+    FALSE "18" "Robomongo"\
+    FALSE "19" "Neovim"\
+    FALSE "20" "Sublime Text 3"\
+    FALSE "21" "Android Studio"\
+    FALSE "22" "IntelliJ IDEA"\
+    FALSE "23" "Eclipse"\
+    FALSE "24" "Google Chrome"\
+    FALSE "25" "Opera"\
+    FALSE "26" "Dropbox"\
+    FALSE "27" "pCloud"\
+    FALSE "28" "qBittorrent"\
+    FALSE "29" "Spotfy"\
+    FALSE "30" "Clementine"\
+    FALSE "31" "Vocal"\
+    FALSE "32" "VLC"\
+    FALSE "33" "Stremio"\
+    FALSE "34" "Inkscape"\
+    FALSE "35" "Slack"\
+    FALSE "36" "Skype"\
+    FALSE "37" "Simplenote"\
+    FALSE "38" "Unetbootin"\
+    FALSE "39" "Unity Tweak Tool"\
+    FALSE "40" "Ubuntu Restricted Extras"\
+    FALSE "41" "Syspeek"\
+    FALSE "42" "Linuxbrew"\
 	--separator=":" --width=1024 --height=768
 )
 
@@ -123,98 +125,106 @@ if [[ "$selected_item" =~ "16" ]]; then
 fi
 
 if [[ "$selected_item" =~ "17" ]]; then
-	./plugins/neovim-installer.sh
+	./plugins/mongodb-installer.sh
 fi
 
 if [[ "$selected_item" =~ "18" ]]; then
-	./plugins/sublime-text3-installer.sh
+	./plugins/robomongo-installer.sh
 fi
 
 if [[ "$selected_item" =~ "19" ]]; then
-	./plugins/android-studio-installer.sh
+	./plugins/neovim-installer.sh
 fi
 
 if [[ "$selected_item" =~ "20" ]]; then
-	./plugins/intellij-idea-installer.sh
+	./plugins/sublime-text3-installer.sh
 fi
 
 if [[ "$selected_item" =~ "21" ]]; then
-  ./plugins/eclipse-installer.sh
+	./plugins/android-studio-installer.sh
 fi
 
-if [[ "$selected_item" =~ "22" ]]; then	
-  ./plugins/chrome-installer.sh
+if [[ "$selected_item" =~ "22" ]]; then
+	./plugins/intellij-idea-installer.sh
 fi
 
 if [[ "$selected_item" =~ "23" ]]; then
-  ./plugins/opera-installer.sh
+  ./plugins/eclipse-installer.sh
 fi
 
-if [[ "$selected_item" =~ "24" ]]; then
-	./plugins/dropbox-installer.sh
+if [[ "$selected_item" =~ "24" ]]; then	
+  ./plugins/chrome-installer.sh
 fi
 
 if [[ "$selected_item" =~ "25" ]]; then
-  ./plugins/pcloud-installer.sh
+  ./plugins/opera-installer.sh
 fi
 
 if [[ "$selected_item" =~ "26" ]]; then
-  ./plugins/qbittorrent-installer.sh
+	./plugins/dropbox-installer.sh
 fi
 
 if [[ "$selected_item" =~ "27" ]]; then
-  ./plugins/spotify-install.sh
+  ./plugins/pcloud-installer.sh
 fi
 
 if [[ "$selected_item" =~ "28" ]]; then
-  ./plugins/clementine-installer.sh
+  ./plugins/qbittorrent-installer.sh
 fi
 
-if [[ "$selected_item" =~ "29" ]]; then	
-	./plugins/vocal-installer.sh
+if [[ "$selected_item" =~ "29" ]]; then
+  ./plugins/spotify-install.sh
 fi
 
 if [[ "$selected_item" =~ "30" ]]; then
-  ./plugins/vlc-installer.sh
+  ./plugins/clementine-installer.sh
 fi
 
-if [[ "$selected_item" =~ "31" ]]; then
-  ./plugins/stremio-installer.sh
+if [[ "$selected_item" =~ "31" ]]; then	
+	./plugins/vocal-installer.sh
 fi
 
 if [[ "$selected_item" =~ "32" ]]; then
-  ./plugins/inkscape-installer.sh
+  ./plugins/vlc-installer.sh
 fi
 
 if [[ "$selected_item" =~ "33" ]]; then
-	./plugins/slack-installer.sh
+  ./plugins/stremio-installer.sh
 fi
 
 if [[ "$selected_item" =~ "34" ]]; then
-	./plugins/skype-installer.sh
+  ./plugins/inkscape-installer.sh
 fi
 
 if [[ "$selected_item" =~ "35" ]]; then
-	./plugins/simplenote-installer.sh
+	./plugins/slack-installer.sh
 fi
 
 if [[ "$selected_item" =~ "36" ]]; then
-  ./plugins/unetbootin-installer.sh
+	./plugins/skype-installer.sh
 fi
 
 if [[ "$selected_item" =~ "37" ]]; then
-  ./plugins/unity-tweak-tool-installer.sh
+	./plugins/simplenote-installer.sh
 fi
 
 if [[ "$selected_item" =~ "38" ]]; then
-  ./plugins/ubuntu-restricted-extras.sh
+  ./plugins/unetbootin-installer.sh
 fi
 
 if [[ "$selected_item" =~ "39" ]]; then
-  ./plugins/syspeek-installer.sh
+  ./plugins/unity-tweak-tool-installer.sh
 fi
 
 if [[ "$selected_item" =~ "40" ]]; then
+  ./plugins/ubuntu-restricted-extras.sh
+fi
+
+if [[ "$selected_item" =~ "41" ]]; then
+  ./plugins/syspeek-installer.sh
+fi
+
+if [[ "$selected_item" =~ "42" ]]; then
 	./plugins/linuxbrew-installer.sh
 fi
 
