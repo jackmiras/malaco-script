@@ -7,16 +7,12 @@ if [ -d "/opt/robomongo/" ]; then
 else
   # Downloading Robomongo.
   wget -P $HOME/Downloads/ https://download.robomongo.org/1.0.0/linux/robomongo-1.0.0-linux-x86_64-89f24ea.tar.gz 
-
   # Extracting android-studio-ide-145.3360264-linux.zip into Download folder.
   tar zxvf $HOME/Downloads/robomongo-1.0.0-linux-x86_64-89f24ea.tar.gz -C $HOME/Downloads/
-
   # Removing robomongo-1.0.0-linux-x86_64-89f24ea.tar.gz zip file from Download folder.
   rm -rf $HOME/Downloads/robomongo-1.0.0-linux-x86_64-89f24ea.tar.gz
-
   # Renaming robomongo* folder to a simpler name.
   mv $HOME/Downloads/robomongo* $HOME/Downloads/robomongo
-
   # Moving robomongo folder from Download to the opt folder.
   sudo mv $HOME/Downloads/robomongo /opt/
 
