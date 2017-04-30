@@ -50,6 +50,7 @@ else
   rm -rf $HOME/.IdeaIC/config/codestyles
   rm -rf $HOME/.IdeaIC/config/colors
   rm -rf $HOME/.IdeaIC/config/plugins
+  rm -rf $HOME/.IdeaIC/config/templates
   rm -rf $HOME/.IdeaIC/config/options/colors.scheme.xml
   rm -rf $HOME/.IdeaIC/config/options/debugger.renderers.xml
   rm -rf $HOME/.IdeaIC/config/options/debugger.xml
@@ -58,7 +59,6 @@ else
   rm -rf $HOME/.IdeaIC/config/options/ide.general.xml
   rm -rf $HOME/.IdeaIC/config/options/markdown_navigator.local.xml
   rm -rf $HOME/.IdeaIC/config/options/markdown_navigator.shared.xml
-  rm -rf $HOME/.IdeaIC/config/options/multimarkdown.shared.xml
   rm -rf $HOME/.IdeaIC/config/options/path.macros.xml
   rm -rf $HOME/.IdeaIC/config/options/vim_settings.xml
 
@@ -66,6 +66,7 @@ else
   ln -s $HOME/Projects/intellij-idea-config/codestyles/ $HOME/.IdeaIC/config/
   ln -s $HOME/Projects/intellij-idea-config/colors/ $HOME/.IdeaIC/config/
   ln -s $HOME/Projects/intellij-idea-config/plugins/ $HOME/.IdeaIC/config/
+  ln -s $HOME/Projects/intellij-idea-config/templates/ $HOME/.IdeaIC/config/
   ln -s $HOME/Projects/intellij-idea-config/options/colors.scheme.xml $HOME/.IdeaIC/config/options/
   ln -s $HOME/Projects/intellij-idea-config/options/debugger.renderers.xml $HOME/.IdeaIC/config/options/
   ln -s $HOME/Projects/intellij-idea-config/options/debugger.xml $HOME/.IdeaIC/config/options/
@@ -74,7 +75,6 @@ else
   ln -s $HOME/Projects/intellij-idea-config/options/ide.general.xml $HOME/.IdeaIC/config/options/
   ln -s $HOME/Projects/intellij-idea-config/options/markdown_navigator.local.xml $HOME/.IdeaIC/config/options/
   ln -s $HOME/Projects/intellij-idea-config/options/markdown_navigator.shared.xml $HOME/.IdeaIC/config/options/
-  ln -s $HOME/Projects/intellij-idea-config/options/multimarkdown.shared.xml $HOME/.IdeaIC/config/options/
   ln -s $HOME/Projects/intellij-idea-config/options/path.macros.xml $HOME/.IdeaIC/config/options/
   ln -s $HOME/Projects/intellij-idea-config/options/vim_settings.xml $HOME/.IdeaIC/config/options/
 
