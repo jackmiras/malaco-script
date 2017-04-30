@@ -9,10 +9,10 @@ else
   sudo apt-get install lib32z1 lib32ncurses5 lib32stdc++6
 
   # Downloading Android Studio.
-  wget -P $HOME/Downloads/ https://dl.google.com/dl/android/studio/ide-zips/2.3.0.8/android-studio-ide-162.3764568-linux.zip
+  wget -P $HOME/Downloads/ https://dl.google.com/dl/android/studio/ide-zips/2.3.1.0/android-studio-ide-162.3871768-linux.zip
 
-  # Extracting android-studio-ide-145.3360264-linux.zip into Download folder.
-  unzip $HOME/Downloads/android-studio-ide-162.3764568-linux.zip -d $HOME/Downloads/
+  # Extracting android-studio-ide-162.3871768-linux.zip into Download folder.
+  unzip $HOME/Downloads/android-studio-ide-162.3871768-linux.zip -d $HOME/Downloads/
 
   # Moving android-studio folder from Download to the opt folder.
   sudo mv $HOME/Downloads/android-studio /opt/
@@ -72,7 +72,7 @@ else
   ln -s $HOME/Projects/android-studio-config/options/vim_settings.xml $HOME/.AndroidStudio2.3/config/options/
 
   # Removing Android Studio zip file from Download folder.
-  rm -rf $HOME/Downloads/android-studio-ide-162.3764568-linux.zip
+  rm -rf $HOME/Downloads/android-studio-ide-162.3871768-linux.zip
 
   echo $'\n Android Studio has been successfully installed.'
 fi
