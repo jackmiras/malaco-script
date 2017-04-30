@@ -21,8 +21,8 @@ if command -v ruby >/dev/null; then
   echo $'\n Ruby is already installed.'
 else
   # Installing Ruby.
-  rvm install 2.3.1
-  rvm use 2.3.1 --default
+  rvm install 2.4.0
+  rvm use 2.4.0 --default
   echo $'\n Ruby was installed with succes'
 fi
 
@@ -38,7 +38,7 @@ if command -v rails >/dev/null; then
   echo $'\n Rails is already installed.'
 else
   # Installing Rails.
-  gem install rails -v 4.2.6
+  gem install rails -v 5.0.1
   echo $'\n Rails was installed with success!'
 fi
 

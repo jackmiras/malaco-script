@@ -5,17 +5,17 @@
 if command -v spotify >/dev/null; then
   echo $'\n Spotify is already installed.'
 else
-  # Downloading Spotfy client.
-  wget -P $HOME/Downloads/ http://repository.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.48.103.g15edf1ec-121_amd64.deb
+  # 1. Add the Spotify repository signing key to be able to verify downloaded packages
+  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
 
-  # Installing Spotfy client.
-  sudo dpkg -i $HOME/Downloads/spotify-client_1.0.48.103.g15edf1ec-121_amd64.deb && sudo apt-get -f install
+  # 2. Add the Spotify repository
+  echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 
-  # Updating Ubuntu dependencies.
-  sudo apt-get install && sudo apt-get upgrade
+  # 3. Update list of available packages
+  sudo apt-get update
 
-  # Removing Spotfy file from Download folder.
-  rm -rf $HOME/Downloads/spotify-client_1.0.48.103.g15edf1ec-121_amd64.deb
+  # 4. Install Spotify
+  sudo apt-get install spotify-client
 
-  echo $'\n Spotify was installed with success.'
+echo $'\n Spotify was installed with success.'
 fi

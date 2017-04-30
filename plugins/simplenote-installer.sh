@@ -7,7 +7,6 @@ if [ -d "/usr/share/simplenote/" ]; then
 else
   # Downloading Simplenote.
   wget -P $HOME/Downloads/ https://github.com/Automattic/simplenote-electron/releases/download/v1.0.8/simplenote-1.0.8.deb
-
 	
   # Installing Simplenote.
   sudo dpkg -i $HOME/Downloads/simplenote-1.0.8.deb && sudo apt-get -f install

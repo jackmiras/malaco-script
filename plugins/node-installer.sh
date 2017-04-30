@@ -12,9 +12,9 @@ else
   . ~/.bashrc
   . ~/.zshrc
   # Installing Node.
-  nvm install 7.2.0
-  nvm use 7.2.0
-  nvm alias default 7.2.0
+  nvm install 7.9.0
+  nvm use 7.9.0
+  nvm alias default 7.9.0
   # Intalling npm.
   sudo apt-get install npm
 

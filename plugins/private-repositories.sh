@@ -74,20 +74,26 @@ fi
 ################################################################################
 #                           GitLab repositories                                #
 ################################################################################
-if [ ! -d "$HOME/Projects/inteli-api" ]; then
-  git clone git@gitlab.com:teaminteli/inteli-api.git
+if [ ! -d "$HOME/Projects/inteli-api-kotlin" ]; then
+  git clone git@gitlab.com:intelitechnology/inteli-api-kotlin.git
 else
   echo $'\n The inteli-api folder already exists.'
 fi
 
-if [ ! -d "$HOME/Projects/inteli-plataforma" ]; then
-  git clone git@gitlab.com:teaminteli/inteli-plataforma.git
+if [ ! -d "$HOME/Projects/inteli-plataforma-arduino" ]; then
+  git clone git@gitlab.com:intelitechnology/inteli-plataforma-arduino.git
 else
   echo $'\n The inteli-plataforma folder already exists.'
 fi
 
-if [ ! -d "$HOME/Projects/inteli-site" ]; then
-  git clone git@gitlab.com:teaminteli/inteli-site.git
+if [ ! -d "$HOME/Projects/inteli-central-arduino" ]; then
+  git clone git@gitlab.com:intelitechnology/inteli-central-arduino.git
+else
+  echo $'\n The inteli-plataforma folder already exists.'
+fi
+
+if [ ! -d "$HOME/Projects/inteli-site-php" ]; then
+  git clone git@gitlab.com:intelitechnology/inteli-site-php.git
 else
   echo $'\n The inteli-site folder aldready exists.'
 fi
