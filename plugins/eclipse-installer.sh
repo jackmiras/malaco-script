@@ -8,7 +8,7 @@ else
   # Downloading Eclipse.
   wget -P $HOME/Downloads/ http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/neon/1a/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
 
-  # Extracting eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz into Download folder.
+  # Extracting eclipse into Download folder.
   tar -vzxf $HOME/Downloads/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz -C $HOME/Downloads/
 
   # Moving eclipse folder  from Download to the opt folder.

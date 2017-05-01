@@ -11,7 +11,7 @@ else
   # Downloading IntelliJ IDEA.
   wget -P $HOME/Downloads/ https://download-cf.jetbrains.com/idea/ideaIC-2017.1.2.tar.gz
 
-  # Extracting ideaIC-2017.1.2.tar.gz into Download folder.
+  # Extracting IntelliJ IDEA into Download folder.
   tar zxvf $HOME/Downloads/ideaIC-2017.1.2.tar.gz -C $HOME/Downloads/
 
   # Renaming the folder to a simpler name.

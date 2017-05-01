@@ -11,7 +11,7 @@ else
   # Downloading Android Studio.
   wget -P $HOME/Downloads/ https://dl.google.com/dl/android/studio/ide-zips/2.3.1.0/android-studio-ide-162.3871768-linux.zip
 
-  # Extracting android-studio-ide-162.3871768-linux.zip into Download folder.
+  # Extracting Android Studio into Download folder.
   unzip $HOME/Downloads/android-studio-ide-162.3871768-linux.zip -d $HOME/Downloads/
 
   # Moving android-studio folder from Download to the opt folder.
