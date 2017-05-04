@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script written by: JM.
-# This script install and configure Vim text editor.
+# This script install and configure Neovim text editor.
 
 if command -v nvim >/dev/null; then
   echo $'\n Neovim is already installed.'
