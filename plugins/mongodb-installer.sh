@@ -11,7 +11,7 @@ else
 
   # Adding mongo repository to the source list.
   echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
-  
+
   # Updating the system.
   sudo apt-get update
 
@@ -22,4 +22,4 @@ else
   sudo service mongod start
 
   echo $'\n MongoDB has been successfully installed.'
-fi 
+fi

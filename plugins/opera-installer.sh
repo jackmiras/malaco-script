@@ -11,7 +11,7 @@ else
   # Installing the stable version Opera.
   sudo dpkg -i $HOME/Downloads/opera-stable_44.0.2510.1449_amd64.deb && sudo apt-get -f install
 
-  # Updating Ubuntu dependencies. 
+  # Updating Ubuntu dependencies.
   sudo ap-get update && sudo apt-get upgrade
 
   echo $'\n Opera was installed with success.'

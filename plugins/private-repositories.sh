@@ -6,7 +6,7 @@
 
 # Getting repositories from GitHub and GitLab.
 if [ ! -d "$HOME/Projects/" ]; then
-	mkdir $HOME/Projects/
+  mkdir $HOME/Projects/
 else
   echo $'\n The Projects folder already exists.'
 fi
@@ -18,13 +18,13 @@ cd $HOME/Projects/
 #                           GitHub repositories                                #
 ################################################################################
 if [ ! -d "$HOME/Projects/android-studio-config" ]; then
-	git clone git@github.com:jackmiras/android-studio-config.git
+  git clone git@github.com:jackmiras/android-studio-config.git
 else
   echo $'\n The android-studio-config folder already exists.'
 fi
 
 if [ ! -d "$HOME/Projects/malaco-script" ]; then
-	git clone git@github.com:jackmiras/malaco-script.git
+  git clone git@github.com:jackmiras/malaco-script.git
 else
   echo $'\n The malaco-script folder already exists.'
 fi
@@ -36,31 +36,31 @@ else
 fi
 
 if [ ! -d "$HOME/Projects/placeholderj" ]; then
-	git clone git@github.com:jackmiras/placeholderj.git
+  git clone git@github.com:jackmiras/placeholderj.git
 else
   echo $'\n The placeholderj folder already exists.'
 fi
 
 if [ ! -d "$HOME/Projects/logger" ]; then
-	git clone git@github.com:jackmiras/logger.git
+  git clone git@github.com:jackmiras/logger.git
 else
   echo $'\n The logger folder already exists.'
 fi
 
 if [ ! -d "$HOME/Projects/sublime-text-3-config" ]; then
-	git clone git@github.com:jackmiras/sublime-text-3-config.git
+  git clone git@github.com:jackmiras/sublime-text-3-config.git
 else
   echo $'\n The sublime-text-3-config folder already exists.'
 fi
 
 if [ ! -d "$HOME/Projects/zshrc-config" ]; then
-	git clone git@github.com:jackmiras/zshrc-config.git
+  git clone git@github.com:jackmiras/zshrc-config.git
 else
   echo $'\n The zshrc-config folder already exists.'
 fi
 
 if [ ! -d "$HOME/Projects/orcamento-android" ]; then
-  git clone https://github.com/orcamentopessoal/orcamento-android 
+  git clone https://github.com/orcamentopessoal/orcamento-android
 else
   echo $'\nThe orcamento-android folder already exists.'
 fi

@@ -13,7 +13,7 @@ else
 
   # Installing Skype dependencies.
   sudo apt-get -f install
-	
+
   # Removing skypeforlinux-64.deb file.
   rm -rf $HOME/Downloads/skypeforlinux-64.deb
 

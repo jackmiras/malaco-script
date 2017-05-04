@@ -7,7 +7,7 @@ if command -v unetbootin >/dev/null; then
 else
   # Adding Unetbootin repository.
   sudo add-apt-repository ppa:gezakovacs/ppa
-	
+
   # Installing Unetbootin
   sudo apt-get update && sudo apt-get install unetbootin
 

@@ -6,7 +6,7 @@ if [ -d "/opt/robomongo/" ]; then
   echo $'\n Robomongo is already installed.'
 else
   # Downloading Robomongo.
-  wget -P $HOME/Downloads/ https://download.robomongo.org/1.0.0/linux/robomongo-1.0.0-linux-x86_64-89f24ea.tar.gz 
+  wget -P $HOME/Downloads/ https://download.robomongo.org/1.0.0/linux/robomongo-1.0.0-linux-x86_64-89f24ea.tar.gz
   # Extracting android-studio-ide-145.3360264-linux.zip into Download folder.
   tar zxvf $HOME/Downloads/robomongo-1.0.0-linux-x86_64-89f24ea.tar.gz -C $HOME/Downloads/
   # Removing robomongo-1.0.0-linux-x86_64-89f24ea.tar.gz zip file from Download folder.
@@ -26,7 +26,7 @@ else
   echo "Comment=Develop with pleasure!" >> $HOME/robomongo.desktop
   echo "Categories=Database" >> $HOME/robomongo.desktop
   echo "Terminal=false" >> $HOME/robomongo.desktop
-	
+
   # Moving the robomongo.desktop to the usr/share/applications folder.
   sudo mv $HOME/robomongo.desktop /usr/share/applications/
 

@@ -74,6 +74,6 @@
 
 37 - Syspeek
 
-38 - Linuxbrew 
+38 - Linuxbrew
 
 39 - Toggl
