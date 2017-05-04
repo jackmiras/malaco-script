@@ -28,15 +28,15 @@ else
   echo "Categories=Development;IDE;" >> $HOME/jetbrains-studio.desktop
   echo "Terminal=false" >> $HOME/jetbrains-studio.desktop
   echo "StartupWMClass=jetbrains-studio" >> $HOME/jetbrains-studio.desktop
-	
+
   # Moving the jetbrains-studio.destop to the usr/share/applications folder.
   sudo mv $HOME/jetbrains-studio.desktop /usr/share/applications/
 
   # Executing Android Studio to generate the .AndroidStudio folder.
   sh /opt/android-studio/bin/studio.sh
   if [ ! -d "$HOME/Projects/android-studio-config" ]; then
-	  # Downloading custom configs of Android Studio from Github.
-	  cd $HOME/Projects && git clone git@github.com:jackmiras/android-studio-config.git && cd $HOME
+    # Downloading custom configs of Android Studio from Github.
+    cd $HOME/Projects && git clone git@github.com:jackmiras/android-studio-config.git && cd $HOME
   fi
 
   # Removing current configurations of Android Studio.
