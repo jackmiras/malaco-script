@@ -19,8 +19,13 @@ else
   sudo apt-get install python-dev python-pip python3-dev python3-pip
 
   if [ ! -d "$HOME/Projects/neovim-config" ]; then
-	  # Downloading Neovim configs from github.
-	  cd $HOME/Projects && git clone git@github.com:jackmiras/neovim-config.git && cd $HOME
+    # Downloading Neovim configs from github.
+    cd $HOME/Projects && git clone git@github.com:jackmiras/neovim-config.git && cd $HOME
+  fi
+
+  # Removing any existent .config/nvim folder from $HOME.
+  if [ -d "$HOME/.config/nvim" ]; then
+    rm -rf $HOME/.config/nvim
   fi
 
   # Loading the Neovim plugins
