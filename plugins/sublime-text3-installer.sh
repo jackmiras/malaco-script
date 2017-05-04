@@ -13,7 +13,12 @@ else
 
   # Downloading Sublime Text 3 configs from Github.
   if [ ! -d "$HOME/Projects/sublime-text-3-config" ]; then
-	  cd $HOME/Projects && git clone git@github.com:jackmiras/sublime-text-3-config.git && cd $HOME
+    cd $HOME/Projects && git clone git@github.com:jackmiras/sublime-text-3-config.git && cd $HOME
+  fi
+
+  # Removing any existent .config/sublime-text-3 folder from $HOME.
+  if [ -e "$HOME/.config/sublime-text-3" ]; then
+    rm -rf $HOME/.config/sublime-text-3
   fi
 
   # Creating a symbolic link of Sublime Text 3 configs into the Home/.config folder of Ubuntu.
