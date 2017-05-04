@@ -30,16 +30,16 @@ else
   echo "Comment=Develop with pleasure!" >> $HOME/jetbrains-idea.desktop
   echo "Categories=Development;IDE;" >> $HOME/jetbrains-idea.desktop
   echo "Terminal=false" >> $HOME/jetbrains-idea.desktop
-	
+
   # Moving the jetbrains-studio.destop to the usr/share/applications folder.
   sudo mv $HOME/jetbrains-idea.desktop /usr/share/applications/
 
   # Executing Intellij IDEA to generate the .IdeaIC folder.
   sh /opt/idea-IC/bin/idea.sh
 
-	# Downloading custom configs of IntelliJ IDEA from Github if needed.
+  # Downloading custom configs of IntelliJ IDEA from Github if needed.
   if [ ! -d "$HOME/Projects/intellij-idea-config" ]; then
-	  cd $HOME/Projects && git clone git clone git@github.com:jackmiras/intellij-idea-config.git && cd $HOME
+    cd $HOME/Projects && git clone git clone git@github.com:jackmiras/intellij-idea-config.git && cd $HOME
   fi
 
   # Removing current configurations of IntelliJ IDEA.
