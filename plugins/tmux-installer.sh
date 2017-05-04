@@ -1,7 +1,6 @@
 #!/bin/bash
-
 # Script written by: JM.
-# This plugin install the Tmux software.
+# This plugin install and configure Tmux software.
 
 if command -v tmux >/dev/null; then
 	echo $'\n Tmux is already installed'
