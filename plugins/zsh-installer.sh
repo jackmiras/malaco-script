@@ -5,27 +5,31 @@
 # download and setup my configs of oh-my-zsh.
 
 if command -v zsh >/dev/null; then
-	echo $'\n Zsh and Oh-myzsh are already installed.'
+  echo $'\n Zsh and Oh-myzsh are already installed.'
 else
-	# Installing zsh.
-	sudo apt-get update && sudo apt-get install -y zsh
-	# Making zsh the default shell.
-	chsh -s $(which zsh)
-	# Installing oh-my-zsh
-	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-	# Removing the default .zshrc file.
-	rm -rf $HOME/.zshrc
-	# Downloading Zsh configs from github.
-	cd $HOME/Projects && git clone git@github.com:jackmiras/zshrc-config.git && cd $HOME/
+  # Installing zsh.
+  sudo apt-get update && sudo apt-get install -y zsh
+  # Making zsh the default shell.
+  chsh -s $(which zsh)
+  # Installing oh-my-zsh
+  sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+  # Removing the default .zshrc file.
+  rm -rf $HOME/.zshrc
 
-	# Creating symbolic link of the .zsh script into the home of computer.
-	ln -s $HOME/Projects/zshrc-config/.zshrc $HOME/.zshrc
+  # Checking if zshrc-config folder exists on computer.
+  if [ ! -d "$HOME/Projects/zshrc-config" ]; then
+    cd $HOME/Projects && git clone git@github.com:jackmiras/zshrc-config.git && cd $HOME/
+  fi
 
-	# Creating symbolic link of themese folder into the home of computer.
-	ln -s $HOME/Projects/zshrc-config/themes/ $HOME/.oh-my-zsh/themes
+  # Removing current configurations of Zsh and Oh my Zsh.
+  rm -rf $HOME/.zshrc
+  rm -rf $HOME/.oh-my-zsh/themes
+  rm -rf $HOME/.oh-my-zsh/custom
 
-	# Creating symbolic link of custom folder into the home of computer.
-	ln -s $HOME/Projects/zshrc-config/custom/ $HOME/.oh-my-zsh/custom
+  # Creating symbolic link of the Zsh and Oh my Zsh configuration.
+  ln -s $HOME/Projects/zshrc-config/.zshrc $HOME/.zshrc
+  ln -s $HOME/Projects/zshrc-config/themes/ $HOME/.oh-my-zsh/themes
+  ln -s $HOME/Projects/zshrc-config/custom/ $HOME/.oh-my-zsh/custom
 
-	echo $'\n Zsh and Oh-my-zsh was installed with succes.'
+  echo $'\n Zsh and Oh-my-zsh was installed with succes.'
 fi
