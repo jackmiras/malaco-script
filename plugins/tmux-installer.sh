@@ -20,7 +20,7 @@ else
   fi
 
   # Creating a symbolic link of the .tmux.config file in the $HOME.
-  ln -s $HOME/Projects/tmux-config/tmux.conf $HOME/
+  ln -s $HOME/Projects/tmux-config/tmux.conf $HOME/.tmux.conf
 
   echo $'\n Tmux was installed with succes.'
 fi
