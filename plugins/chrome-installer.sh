@@ -6,13 +6,18 @@ if command -v google-chrome >/dev/null; then
   echo $'\n Google chrome is already install.'
 else
   # Downloading Google Chrome key to add as key of system repositories.
-  wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-
-  # Adding Google Chrome to the source list.
-  sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $HOME/Downloads
 
   # Installing the stable version of Google Chrome.
-  sudo apt-get update && sudo apt-get install -y google-chrome-stable && sudo apt-get -f install
+  dpkg -i $HOME/Downloads/google-chrome-stable_current_amd64.deb
+  sudo apt-get install -f
+  
+  # Updating Ubuntu dependencies.
+  sudo apt-get update && sudo apt-get upgrade
+
+  # Removing google-chrome-stable_current_amd64.deb from Downloads folder.
+  rm -rf $HOME/Downloads/google-chrome-stable_current_amd64.deb
+
   echo $'\n Google chrome was installed with success.'
 fi
 
