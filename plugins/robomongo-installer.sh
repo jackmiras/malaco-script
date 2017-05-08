@@ -15,6 +15,10 @@ else
   mv $HOME/Downloads/robomongo* $HOME/Downloads/robomongo
   # Moving robomongo folder from Download to the opt folder.
   sudo mv $HOME/Downloads/robomongo /opt/
+  # Downloading the image icon.
+  sudo wget -P /opt/robomongo/bin/ https://robomongo.org/static/robomongo-1024x1024-bfaf4052.png
+  # Renaming the image icon.
+  sudo mv /opt/robomongo/bin/robomongo-1024x1024-bfaf4052.png /opt/robomongo/bin/robomongo.png
 
   # Setting up the Robomongo launcher on Ubuntu dash.
   echo "[Desktop Entry]" >> $HOME/robomongo.desktop
