@@ -14,7 +14,7 @@ else
   # Updating Ubuntu dependencies.
   sudo ap-get update && sudo apt-get upgrade
 
-  # Removing opera-stable_44.0.2510.1449_amd64.drb from Download folder
+  # Removing opera-stable_44.0.2510.1449_amd64.drb from Download folder.
   rm -rf $HOME/Downloads/opera-stable_44.0.2510.1449_amd64.deb
 
   echo $'\n Opera was installed with success.'
