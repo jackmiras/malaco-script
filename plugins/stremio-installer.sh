@@ -20,11 +20,11 @@ else
 
   # Setting up Stremio launcher on Ubuntu dash.
   echo "[Desktop Entry]" >> $HOME/stremio.desktop
-  echo "Version=1.0" >> $HOME/stremio.desktop
+  echo "Version=3.6.5" >> $HOME/stremio.desktop
   echo "Type=Application" >> $HOME/stremio.desktop
   echo "Name=Stremio" >> $HOME/stremio.desktop
-  echo "Icon=/opt/Stremio/icon.png" >> $HOME/stremio.desktop
-  echo "Exec=/opt/Stremio/Stremio.sh" >> $HOME/stremio.desktop
+  echo "Icon=/opt/stremio/icon.png" >> $HOME/stremio.desktop
+  echo "Exec=/opt/stremio/Stremio.sh" >> $HOME/stremio.desktop
   echo "Comment=Have fun!" >> $HOME/stremio.desktop
   echo "Categories=Video" >> $HOME/stremio.desktop
   echo "Terminal=false" >> $HOME/stremio.desktop

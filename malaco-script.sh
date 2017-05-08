@@ -264,4 +264,12 @@ if command -v thunderbird >/dev/null; then
   sudo apt-get autoremove
 fi
 
+if command -v gnome-music >/dev/null; then
+  sudo apt-get remove gnome-music
+fi
+
+if command -v gedit >/dev/null; then
+  sudo apt-get remove gedit
+fi
+
 zenity --info --title "Installation finished" --text "Installation finished with success!"
