@@ -22,37 +22,38 @@ selected_item=$(zenity --list\
     FALSE "5" "Tmux"\
     FALSE "6" "Zsh"\
     FALSE "7" "Zsh Syntax Highlighting"\
-    FALSE "8" "7zip, Rar, Unrar"\
-    FALSE "9" "Java 8"\
-    FALSE "10" "NVM"\
-    FALSE "11" "Node Js"\
-    FALSE "12" "Ruby, RVM, Rails"\
-    FALSE "13" "MySQL"\
-    FALSE "14" "MySQL Workbench"\
-    FALSE "15" "PostgreSQL"\
-    FALSE "16" "PgAdmin3"\
-    FALSE "17" "MongoDB"\
-    FALSE "18" "Robomongo"\
-    FALSE "19" "Neovim"\
-    FALSE "20" "Sublime Text 3"\
-    FALSE "21" "Android Studio"\
-    FALSE "22" "IntelliJ IDEA"\
-    FALSE "23" "Google Chrome"\
-    FALSE "24" "Opera"\
-    FALSE "25" "Dropbox"\
-    FALSE "26" "pCloud"\
-    FALSE "27" "qBittorrent"\
-    FALSE "28" "Clementine"\
-    FALSE "29" "Vocal"\
-    FALSE "30" "VLC"\
-    FALSE "31" "Stremio"\
-    FALSE "32" "Skype"\
-    FALSE "33" "Simplenote"\
-    FALSE "34" "Unetbootin"\
-    FALSE "35" "Unity Tweak Tool"\
-    FALSE "36" "Ubuntu Restricted Extras"\
-    FALSE "37" "Syspeek"\
-    FALSE "38" "Linuxbrew"\
+    FALSE "8" "Oh-my-zsh"\
+    FALSE "9" "7zip, Rar, Unrar"\
+    FALSE "10" "Java 8"\
+    FALSE "11" "NVM"\
+    FALSE "12" "Node Js"\
+    FALSE "13" "Ruby, RVM, Rails"\
+    FALSE "14" "MySQL"\
+    FALSE "15" "MySQL Workbench"\
+    FALSE "16" "PostgreSQL"\
+    FALSE "17" "PgAdmin3"\
+    FALSE "18" "MongoDB"\
+    FALSE "19" "Robomongo"\
+    FALSE "20" "Neovim"\
+    FALSE "21" "Sublime Text 3"\
+    FALSE "22" "Android Studio"\
+    FALSE "23" "IntelliJ IDEA"\
+    FALSE "24" "Google Chrome"\
+    FALSE "25" "Opera"\
+    FALSE "26" "Dropbox"\
+    FALSE "27" "pCloud"\
+    FALSE "28" "qBittorrent"\
+    FALSE "29" "Clementine"\
+    FALSE "30" "Vocal"\
+    FALSE "31" "VLC"\
+    FALSE "32" "Stremio"\
+    FALSE "33" "Skype"\
+    FALSE "34" "Simplenote"\
+    FALSE "35" "Unetbootin"\
+    FALSE "36" "Unity Tweak Tool"\
+    FALSE "37" "Ubuntu Restricted Extras"\
+    FALSE "38" "Syspeek"\
+    FALSE "39" "Linuxbrew"\
   --separator=":" --width=1024 --height=768
 )
 
@@ -85,62 +86,66 @@ if [[ "$selected_item" =~ "7" ]]; then
 fi
 
 if [[ "$selected_item" =~ "8" ]]; then
-  ./plugins/unpack-files-installer.sh
+  ./plugins/oh-my-zsh-installer.sh
 fi
 
 if [[ "$selected_item" =~ "9" ]]; then
-  ./plugins/java8-installer.sh
+  ./plugins/unpack-files-installer.sh
 fi
 
 if [[ "$selected_item" =~ "10" ]]; then
-  ./plugins/nvm-installer.sh
+  ./plugins/java8-installer.sh
 fi
 
 if [[ "$selected_item" =~ "11" ]]; then
-  ./plugins/node-installer.sh
+  ./plugins/nvm-installer.sh
 fi
 
 if [[ "$selected_item" =~ "12" ]]; then
-  ./plugins/ruby-installer.sh
+  ./plugins/node-installer.sh
 fi
 
 if [[ "$selected_item" =~ "13" ]]; then
-  ./plugins/mysql-installer.sh
+  ./plugins/ruby-installer.sh
 fi
 
 if [[ "$selected_item" =~ "14" ]]; then
-  ./plugins/mysql-workbench-installer.sh
+  ./plugins/mysql-installer.sh
 fi
 
 if [[ "$selected_item" =~ "15" ]]; then
-  ./plugins/postgresql-installer.sh
+  ./plugins/mysql-workbench-installer.sh
 fi
 
 if [[ "$selected_item" =~ "16" ]]; then
-  ./plugins/pgadmin3-installer.sh
+  ./plugins/postgresql-installer.sh
 fi
 
 if [[ "$selected_item" =~ "17" ]]; then
-  ./plugins/mongodb-installer.sh
+  ./plugins/pgadmin3-installer.sh
 fi
 
 if [[ "$selected_item" =~ "18" ]]; then
-  ./plugins/robomongo-installer.sh
+  ./plugins/mongodb-installer.sh
 fi
 
 if [[ "$selected_item" =~ "19" ]]; then
-  ./plugins/neovim-installer.sh
+  ./plugins/robomongo-installer.sh
 fi
 
 if [[ "$selected_item" =~ "20" ]]; then
-  ./plugins/sublime-text3-installer.sh
+  ./plugins/neovim-installer.sh
 fi
 
 if [[ "$selected_item" =~ "21" ]]; then
-  ./plugins/android-studio-installer.sh
+  ./plugins/sublime-text3-installer.sh
 fi
 
 if [[ "$selected_item" =~ "22" ]]; then
+  ./plugins/android-studio-installer.sh
+fi
+
+if [[ "$selected_item" =~ "23" ]]; then
   ./plugins/intellij-idea-installer.sh
 fi
 
