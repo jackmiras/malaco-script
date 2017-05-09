@@ -29,7 +29,6 @@ else
   echo "Exec="/opt/idea-IC/bin/idea.sh" %f" >> $HOME/jetbrains-idea.desktop
   echo "Comment=Develop with pleasure!" >> $HOME/jetbrains-idea.desktop
   echo "Categories=Development;IDE;" >> $HOME/jetbrains-idea.desktop
-  echo "Terminal=false" >> $HOME/jetbrains-idea.desktop
 
   # Moving the jetbrains-studio.destop to the usr/share/applications folder.
   sudo mv $HOME/jetbrains-idea.desktop /usr/share/applications/

@@ -27,7 +27,6 @@ else
   echo "Comment=Develop with pleasure!" >> $HOME/jetbrains-studio.desktop
   echo "Categories=Development;IDE;" >> $HOME/jetbrains-studio.desktop
   echo "Terminal=false" >> $HOME/jetbrains-studio.desktop
-  echo "StartupWMClass=jetbrains-studio" >> $HOME/jetbrains-studio.desktop
 
   # Moving the jetbrains-studio.destop to the usr/share/applications folder.
   sudo mv $HOME/jetbrains-studio.desktop /usr/share/applications/
