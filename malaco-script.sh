@@ -50,10 +50,9 @@ selected_item=$(zenity --list\
     FALSE "33" "Skype"\
     FALSE "34" "Simplenote"\
     FALSE "35" "Unetbootin"\
-    FALSE "36" "Unity Tweak Tool"\
-    FALSE "37" "Ubuntu Restricted Extras"\
-    FALSE "38" "Syspeek"\
-    FALSE "39" "Linuxbrew"\
+    FALSE "36" "Ubuntu Restricted Extras"\
+    FALSE "37" "Syspeek"\
+    FALSE "38" "Linuxbrew"\
   --separator=":" --width=1024 --height=768
 )
 
@@ -198,18 +197,14 @@ if [[ "$selected_item" =~ "35" ]]; then
 fi
 
 if [[ "$selected_item" =~ "36" ]]; then
-  ./plugins/unity-tweak-tool-installer.sh
-fi
-
-if [[ "$selected_item" =~ "37" ]]; then
   ./plugins/ubuntu-restricted-extras.sh
 fi
 
-if [[ "$selected_item" =~ "38" ]]; then
+if [[ "$selected_item" =~ "37" ]]; then
   ./plugins/syspeek-installer.sh
 fi
 
-if [[ "$selected_item" =~ "39" ]]; then
+if [[ "$selected_item" =~ "38" ]]; then
   ./plugins/linuxbrew-installer.sh
 fi
 
