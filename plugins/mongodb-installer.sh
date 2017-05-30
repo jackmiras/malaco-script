@@ -21,5 +21,7 @@ else
   # Starting MongoDB.
   sudo service mongod start
 
+  systemctl enable mongod.service
+
   echo $'\n MongoDB has been successfully installed.'
 fi
