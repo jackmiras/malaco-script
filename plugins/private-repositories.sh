@@ -23,6 +23,12 @@ else
   echo $'\n The android-studio-config folder already exists.'
 fi
 
+if [ ! -d "$HOME/Projects/intellij-idea-config" ]; then
+  git clone git@github.com:jackmiras/intellij-idea-config.git
+else
+  echo $'\n The intellij-idea-config folder already exists.'
+fi
+
 if [ ! -d "$HOME/Projects/malaco-script" ]; then
   git clone git@github.com:jackmiras/malaco-script.git
 else
@@ -62,7 +68,7 @@ fi
 if [ ! -d "$HOME/Projects/orcamento-android" ]; then
   git clone https://github.com/orcamentopessoal/orcamento-android
 else
-  echo $'\nThe orcamento-android folder already exists.'
+  echo $'\n The orcamento-android folder already exists.'
 fi
 
 if [ ! -d "$HOME/Projects/orcamento-api" ]; then
