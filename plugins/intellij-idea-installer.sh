@@ -9,10 +9,10 @@ else
   sudo apt-get install lib32z1 lib32ncurses5 lib32stdc++6
 
   # Downloading IntelliJ IDEA.
-  wget -P $HOME/Downloads/ https://download-cf.jetbrains.com/idea/ideaIC-2017.1.2.tar.gz
+  wget -P $HOME/Downloads/ https://download-cf.jetbrains.com/idea/ideaIC-2017.1.4.tar.gz
 
   # Extracting IntelliJ IDEA into Download folder.
-  tar zxvf $HOME/Downloads/ideaIC-2017.1.2.tar.gz -C $HOME/Downloads/
+  tar zxvf $HOME/Downloads/ideaIC-2017.1.4.tar.gz -C $HOME/Downloads/
 
   # Renaming the folder to a simpler name.
   mv $HOME/Downloads/idea-IC* $HOME/Downloads/idea-IC
@@ -41,40 +41,41 @@ else
     cd $HOME/Projects && git clone git clone git@github.com:jackmiras/intellij-idea-config.git && cd $HOME
   fi
 
-  # Removing current configurations of IntelliJ IDEA.
-  rm -rf $HOME/.IdeaIC2017.1/config/codestyles
-  rm -rf $HOME/.IdeaIC2017.1/config/colors
-  rm -rf $HOME/.IdeaIC2017.1/config/plugins
-  rm -rf $HOME/.IdeaIC2017.1/config/templates
-  rm -rf $HOME/.IdeaIC2017.1/config/options/colors.scheme.xml
-  rm -rf $HOME/.IdeaIC2017.1/config/options/debugger.renderers.xml
-  rm -rf $HOME/.IdeaIC2017.1/config/options/debugger.xml
-  rm -rf $HOME/.IdeaIC2017.1/config/options/editor.codeinsight.xml
-  rm -rf $HOME/.IdeaIC2017.1/config/options/editor.xml
-  rm -rf $HOME/.IdeaIC2017.1/config/options/ide.general.xml
-  rm -rf $HOME/.IdeaIC2017.1/config/options/markdown_navigator.local.xml
-  rm -rf $HOME/.IdeaIC2017.1/config/options/markdown_navigator.shared.xml
-  rm -rf $HOME/.IdeaIC2017.1/config/options/path.macros.xml
-  rm -rf $HOME/.IdeaIC2017.1/config/options/vim_settings.xml
+  if[ -d "$HOME/Projects/intellij-idea-config" ]; then
+    # Removing current configurations of IntelliJ IDEA.
+    rm -rf $HOME/.IdeaIC2017.1/config/codestyles
+    rm -rf $HOME/.IdeaIC2017.1/config/colors
+    rm -rf $HOME/.IdeaIC2017.1/config/plugins
+    rm -rf $HOME/.IdeaIC2017.1/config/templates
+    rm -rf $HOME/.IdeaIC2017.1/config/options/colors.scheme.xml
+    rm -rf $HOME/.IdeaIC2017.1/config/options/debugger.renderers.xml
+    rm -rf $HOME/.IdeaIC2017.1/config/options/debugger.xml
+    rm -rf $HOME/.IdeaIC2017.1/config/options/editor.codeinsight.xml
+    rm -rf $HOME/.IdeaIC2017.1/config/options/editor.xml
+    rm -rf $HOME/.IdeaIC2017.1/config/options/ide.general.xml
+    rm -rf $HOME/.IdeaIC2017.1/config/options/markdown_navigator.local.xml
+    rm -rf $HOME/.IdeaIC2017.1/config/options/markdown_navigator.shared.xml
+    rm -rf $HOME/.IdeaIC2017.1/config/options/path.macros.xml
+    rm -rf $HOME/.IdeaIC2017.1/config/options/vim_settings.xml
 
-  # Creating a symbolic link of the new IntelliJ IDEA configurations into .IdeaIC folder.
-  ln -s $HOME/Projects/intellij-idea-config/codestyles/ $HOME/.IdeaIC2017.1/config/
-  ln -s $HOME/Projects/intellij-idea-config/colors/ $HOME/.IdeaIC2017.1/config/
-  ln -s $HOME/Projects/intellij-idea-config/plugins/ $HOME/.IdeaIC2017.1/config/
-  ln -s $HOME/Projects/intellij-idea-config/templates/ $HOME/.IdeaIC2017.1/config/
-  ln -s $HOME/Projects/intellij-idea-config/options/colors.scheme.xml $HOME/.IdeaIC2017.1/config/options/
-  ln -s $HOME/Projects/intellij-idea-config/options/debugger.renderers.xml $HOME/.IdeaIC2017.1/config/options/
-  ln -s $HOME/Projects/intellij-idea-config/options/debugger.xml $HOME/.IdeaIC2017.1/config/options/
-  ln -s $HOME/Projects/intellij-idea-config/options/editor.codeinsight.xml $HOME/.IdeaIC2017.1/config/options/
-  ln -s $HOME/Projects/intellij-idea-config/options/editor.xml $HOME/.IdeaIC2017.1/config/options/
-  ln -s $HOME/Projects/intellij-idea-config/options/ide.general.xml $HOME/.IdeaIC2017.1/config/options/
-  ln -s $HOME/Projects/intellij-idea-config/options/markdown_navigator.local.xml $HOME/.IdeaIC2017.1/config/options/
-  ln -s $HOME/Projects/intellij-idea-config/options/markdown_navigator.shared.xml $HOME/.IdeaIC2017.1/config/options/
-  ln -s $HOME/Projects/intellij-idea-config/options/path.macros.xml $HOME/.IdeaIC2017.1/config/options/
-  ln -s $HOME/Projects/intellij-idea-config/options/vim_settings.xml $HOME/.IdeaIC2017.1/config/options/
-
+    # Creating a symbolic link of the new IntelliJ IDEA configurations into .IdeaIC folder.
+    ln -s $HOME/Projects/intellij-idea-config/codestyles/ $HOME/.IdeaIC2017.1/config/
+    ln -s $HOME/Projects/intellij-idea-config/colors/ $HOME/.IdeaIC2017.1/config/
+    ln -s $HOME/Projects/intellij-idea-config/plugins/ $HOME/.IdeaIC2017.1/config/
+    ln -s $HOME/Projects/intellij-idea-config/templates/ $HOME/.IdeaIC2017.1/config/
+    ln -s $HOME/Projects/intellij-idea-config/options/colors.scheme.xml $HOME/.IdeaIC2017.1/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/options/debugger.renderers.xml $HOME/.IdeaIC2017.1/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/options/debugger.xml $HOME/.IdeaIC2017.1/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/options/editor.codeinsight.xml $HOME/.IdeaIC2017.1/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/options/editor.xml $HOME/.IdeaIC2017.1/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/options/ide.general.xml $HOME/.IdeaIC2017.1/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/options/markdown_navigator.local.xml $HOME/.IdeaIC2017.1/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/options/markdown_navigator.shared.xml $HOME/.IdeaIC2017.1/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/options/path.macros.xml $HOME/.IdeaIC2017.1/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/options/vim_settings.xml $HOME/.IdeaIC2017.1/config/options/
+  fi
   # Removing IntelliJ IDEA tar.gz file from Download folder.
-  rm -rf $HOME/Downloads/ideaIC-2017.1.2.tar.gz
+  rm -rf $HOME/Downloads/ideaIC-2017.1.4.tar.gz
 
   echo $'\n IntelliJ IDEA has been successfully installed.'
 fi
