@@ -26,7 +26,7 @@ else
   echo "Type=Application" >> $HOME/robomongo.desktop
   echo "Name=Robomongo" >> $HOME/robomongo.desktop
   echo "Icon=/opt/robomongo/bin/robomongo.png" >> $HOME/robomongo.desktop
-  echo "Exec="/opt/robomongo/bin/robomongo" %f" >> $HOME/robomongo.desktop
+  echo "Exec="/opt/robomongo/bin/robo3t" %f" >> $HOME/robomongo.desktop
   echo "Comment=Develop with pleasure!" >> $HOME/robomongo.desktop
   echo "Categories=Database" >> $HOME/robomongo.desktop
   echo "Terminal=false" >> $HOME/robomongo.desktop
