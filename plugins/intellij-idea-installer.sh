@@ -9,10 +9,10 @@ else
   sudo apt-get install lib32z1 lib32ncurses5 lib32stdc++6
 
   # Downloading IntelliJ IDEA.
-  wget -P $HOME/Downloads/ https://download-cf.jetbrains.com/idea/ideaIC-2017.1.4.tar.gz
+  wget -P $HOME/Downloads/ https://download-cf.jetbrains.com/idea/ideaIU-2017.1.5.tar.gz
 
   # Extracting IntelliJ IDEA into Download folder.
-  tar zxvf $HOME/Downloads/ideaIC-2017.1.4.tar.gz -C $HOME/Downloads/
+  tar zxvf $HOME/Downloads/ideaIU-2017.1.5.tar.gz -C $HOME/Downloads/
 
   # Renaming the folder to a simpler name.
   mv $HOME/Downloads/idea-IC* $HOME/Downloads/idea-IC
@@ -75,7 +75,7 @@ else
     ln -s $HOME/Projects/intellij-idea-config/options/vim_settings.xml $HOME/.IdeaIC2017.1/config/options/
   fi
   # Removing IntelliJ IDEA tar.gz file from Download folder.
-  rm -rf $HOME/Downloads/ideaIC-2017.1.4.tar.gz
+  rm -rf $HOME/Downloads/ideaIU-2017.1.5.tar.gz
 
   echo $'\n IntelliJ IDEA has been successfully installed.'
 fi
