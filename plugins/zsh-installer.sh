@@ -13,13 +13,18 @@ else
 	chsh -s $(which zsh)
 	# Installing oh-my-zsh
 	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-	# Removing the default .zshrc file.
-	rm -rf $HOME/.zshrc
 	# Downloading Zsh configs from github.
 	cd $HOME/Projects && git clone git@github.com:jackmiras/zshrc-config.git && cd $HOME/
 
+	# Removing the default files.
+	rm -rf $HOME/.zshrc
+	rm -rf $HOME/.oh-my-zsh/themes
+	rm -rf $HOME/.oh-my-zsh/custom
+
 	# Creating symbolic link of Zsh configs into the home of computer.
-	ln -s $HOME/Projects/zshrc-config/.zshrc $HOME/.zshrc
+	ln -s $HOME/Projects/zshrc-config/zshrc $HOME/.zshrc
+	ln -s $HOME/Projects/zshrc-config/themes $HOME/.oh-my-zsh/
+	ln -s $HOME/Projects/zshrc-config/custom $HOME/.oh-my-zsh/
 
 	echo $'\n Zsh and Oh-my-zsh was installed with succes.'
 fi
