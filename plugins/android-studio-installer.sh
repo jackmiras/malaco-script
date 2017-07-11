@@ -53,7 +53,6 @@ else
 	  rm -rf $HOME/.AndroidStudio2.3/config/options/markdown_navigator.shared.xml
 	  rm -rf $HOME/.AndroidStudio2.3/config/options/multimarkdown.shared.xml
 	  rm -rf $HOME/.AndroidStudio2.3/config/options/path.macros.xml
-	  rm -rf $HOME/.AndroidStudio2.3/config/options/vim_settings.xml
 
 	  # Creating a symbolic link of the new Android Studio configurations into .AndroidStudio folder.
 	  ln -s $HOME/Projects/android-studio-config/codestyles/ $HOME/.AndroidStudio2.3/config/
@@ -69,7 +68,6 @@ else
 	  ln -s $HOME/Projects/android-studio-config/options/markdown_navigator.shared.xml $HOME/.AndroidStudio2.3/config/options/
 	  ln -s $HOME/Projects/android-studio-config/options/multimarkdown.shared.xml $HOME/.AndroidStudio2.3/config/options/
 	  ln -s $HOME/Projects/android-studio-config/options/path.macros.xml $HOME/.AndroidStudio2.3/config/options/
-	  ln -s $HOME/Projects/android-studio-config/options/vim_settings.xml $HOME/.AndroidStudio2.3/config/options/
 	fi
 
   # Removing Android Studio zip file from Download folder.
