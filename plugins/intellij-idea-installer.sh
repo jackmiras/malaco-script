@@ -9,10 +9,10 @@ else
   sudo apt-get install lib32z1 lib32ncurses5 lib32stdc++6
 
   # Downloading IntelliJ IDEA.
-  wget -P $HOME/Downloads/ https://download-cf.jetbrains.com/idea/ideaIU-2017.1.5.tar.gz
+  wget -P $HOME/Downloads/ https://download-cf.jetbrains.com/idea/ideaIC-2017.1.5.tar.gz
 
   # Extracting IntelliJ IDEA into Download folder.
-  tar zxvf $HOME/Downloads/ideaIU-2017.1.5.tar.gz -C $HOME/Downloads/
+  tar zxvf $HOME/Downloads/ideaIC-2017.1.5.tar.gz -C $HOME/Downloads/
 
   # Renaming the folder to a simpler name.
   mv $HOME/Downloads/idea-IC* $HOME/Downloads/idea-IC
@@ -21,17 +21,14 @@ else
   sudo mv $HOME/Downloads/idea-IC /opt/
 
   # Setting up the IntelliJ IDEA launcher on Ubuntu dash.
-  echo "[Desktop Entry]" >> $HOME/jetbrains-idea.desktop
-  echo "Version=1.0" >> $HOME/jetbrains-idea.desktop
-  echo "Type=Application" >> $HOME/jetbrains-idea.desktop
-  echo "Name=IntelliJ IDEA" >> $HOME/jetbrains-idea.desktop
-  echo "Icon=/opt/idea-IC/bin/idea.png" >> $HOME/jetbrains-idea.desktop
-  echo "Exec="/opt/idea-IC/bin/idea.sh" %f" >> $HOME/jetbrains-idea.desktop
-  echo "Comment=Develop with pleasure!" >> $HOME/jetbrains-idea.desktop
-  echo "Categories=Development;IDE;" >> $HOME/jetbrains-idea.desktop
-
-  # Moving the jetbrains-studio.destop to the usr/share/applications folder.
-  sudo mv $HOME/jetbrains-idea.desktop /usr/share/applications/
+  sudo echo "[Desktop Entry]" >> /usr/share/applications/jetbrains-idea.desktop
+  sudo echo "Version=1.0" >> /usr/share/applications/jetbrains-idea.desktop
+  sudo echo "Type=Application" >> /usr/share/applications/jetbrains-idea.desktop
+  sudo echo "Name=IntelliJ IDEA" >> /usr/share/applications/jetbrains-idea.desktop
+  sudo echo "Icon=/opt/idea-IC/bin/idea.png" >> /usr/share/applications/jetbrains-idea.desktop
+  sudo echo "Exec="/opt/idea-IC/bin/idea.sh" %f" >> /usr/share/applications/jetbrains-idea.desktop
+  sudo echo "Comment=Develop with pleasure!" >> /usr/share/applications/jetbrains-idea.desktop
+  sudo echo "Categories=Development;IDE;" >> /usr/share/applications/jetbrains-idea.desktop
 
   # Executing Intellij IDEA to generate the .IdeaIC folder.
   sh /opt/idea-IC/bin/idea.sh
@@ -41,7 +38,7 @@ else
     cd $HOME/Projects && git clone git clone git@github.com:jackmiras/intellij-idea-config.git && cd $HOME
   fi
 
-  if[ -d "$HOME/Projects/intellij-idea-config" ]; then
+  if [ -d "$HOME/Projects/intellij-idea-config" ]; then
     # Removing current configurations of IntelliJ IDEA.
     rm -rf $HOME/.IdeaIC2017.1/config/codestyles
     rm -rf $HOME/.IdeaIC2017.1/config/colors
@@ -75,8 +72,7 @@ else
     ln -s $HOME/Projects/intellij-idea-config/options/vim_settings.xml $HOME/.IdeaIC2017.1/config/options/
   fi
   # Removing IntelliJ IDEA tar.gz file from Download folder.
-  rm -rf $HOME/Downloads/ideaIU-2017.1.5.tar.gz
+  rm -rf $HOME/Downloads/ideaIC-2017.1.5.tar.gz
 
   echo $'\n IntelliJ IDEA has been successfully installed.'
 fi
-
