@@ -21,14 +21,17 @@ else
   sudo mv $HOME/Downloads/idea-IC /opt/
 
   # Setting up the IntelliJ IDEA launcher on Ubuntu dash.
-  sudo echo "[Desktop Entry]" >> /usr/share/applications/jetbrains-idea.desktop
-  sudo echo "Version=1.0" >> /usr/share/applications/jetbrains-idea.desktop
-  sudo echo "Type=Application" >> /usr/share/applications/jetbrains-idea.desktop
-  sudo echo "Name=IntelliJ IDEA" >> /usr/share/applications/jetbrains-idea.desktop
-  sudo echo "Icon=/opt/idea-IC/bin/idea.png" >> /usr/share/applications/jetbrains-idea.desktop
-  sudo echo "Exec="/opt/idea-IC/bin/idea.sh" %f" >> /usr/share/applications/jetbrains-idea.desktop
-  sudo echo "Comment=Develop with pleasure!" >> /usr/share/applications/jetbrains-idea.desktop
-  sudo echo "Categories=Development;IDE;" >> /usr/share/applications/jetbrains-idea.desktop
+  echo "[Desktop Entry]" >> $HOME/jetbrains-idea.desktop
+  echo "Version=1.0" >> $HOME/jetbrains-idea.desktop
+  echo "Type=Application" >> $HOME/jetbrains-idea.desktop
+  echo "Name=IntelliJ IDEA" >> $HOME/jetbrains-idea.desktop
+  echo "Icon=/opt/idea-IC/bin/idea.png" >> $HOME/jetbrains-idea.desktop
+  echo "Exec="/opt/idea-IC/bin/idea.sh" %f" >> $HOME/jetbrains-idea.desktop
+  echo "Comment=Develop with pleasure!" >> $HOME/jetbrains-idea.desktop
+  echo "Categories=Development;IDE;" >> $HOME/jetbrains-idea.desktop
+
+  # Moving the jetbrains-studio.destop to the usr/share/applications folder.
+  sudo mv $HOME/jetbrains-idea.desktop /usr/share/applications/
 
   # Executing Intellij IDEA to generate the .IdeaIC folder.
   sh /opt/idea-IC/bin/idea.sh
