@@ -45,34 +45,42 @@ else
     # Removing current configurations of IntelliJ IDEA.
     rm -rf $HOME/.IdeaIC2017.2/config/codestyles
     rm -rf $HOME/.IdeaIC2017.2/config/colors
-    rm -rf $HOME/.IdeaIC2017.2/config/plugins
-    rm -rf $HOME/.IdeaIC2017.2/config/templates
+    rm -rf $HOME/.IdeaIC2017.2/config/fileTemplates
     rm -rf $HOME/.IdeaIC2017.2/config/options/colors.scheme.xml
     rm -rf $HOME/.IdeaIC2017.2/config/options/debugger.renderers.xml
     rm -rf $HOME/.IdeaIC2017.2/config/options/debugger.xml
     rm -rf $HOME/.IdeaIC2017.2/config/options/editor.codeinsight.xml
     rm -rf $HOME/.IdeaIC2017.2/config/options/editor.xml
+    rm -rf $HOME/.IdeaIC2017.2/config/options/find.xml
     rm -rf $HOME/.IdeaIC2017.2/config/options/ide.general.xml
-    rm -rf $HOME/.IdeaIC2017.2/config/options/markdown_navigator.local.xml
-    rm -rf $HOME/.IdeaIC2017.2/config/options/markdown_navigator.shared.xml
+    rm -rf $HOME/.IdeaIC2017.2/config/options/jdk.table.xml
+    rm -rf $HOME/.IdeaIC2017.2/config/options/laf.xml
+    rm -rf $HOME/.IdeaIC2017.2/config/options/other.xml
     rm -rf $HOME/.IdeaIC2017.2/config/options/path.macros.xml
-    rm -rf $HOME/.IdeaIC2017.2/config/options/vim_settings.xml
+    rm -rf $HOME/.IdeaIC2017.2/config/options/project.default.xml
+    rm -rf $HOME/.IdeaIC2017.2/config/options/ui.lnf.xml
+    rm -rf $HOME/.IdeaIC2017.2/config/templates
+    rm -rf $HOME/.IdeaIC2017.2/config/plugins
 
     # Creating a symbolic link of the new IntelliJ IDEA configurations into .IdeaIC folder.
     ln -s $HOME/Projects/intellij-idea-config/codestyles/ $HOME/.IdeaIC2017.2/config/
     ln -s $HOME/Projects/intellij-idea-config/colors/ $HOME/.IdeaIC2017.2/config/
-    ln -s $HOME/Projects/intellij-idea-config/plugins/ $HOME/.IdeaIC2017.2/config/
-    ln -s $HOME/Projects/intellij-idea-config/templates/ $HOME/.IdeaIC2017.2/config/
+    ln -s $HOME/Projects/intellij-idea-config/fileTemplates/ $HOME/.IdeaIC2017.2/config/
     ln -s $HOME/Projects/intellij-idea-config/options/colors.scheme.xml $HOME/.IdeaIC2017.2/config/options/
     ln -s $HOME/Projects/intellij-idea-config/options/debugger.renderers.xml $HOME/.IdeaIC2017.2/config/options/
     ln -s $HOME/Projects/intellij-idea-config/options/debugger.xml $HOME/.IdeaIC2017.2/config/options/
     ln -s $HOME/Projects/intellij-idea-config/options/editor.codeinsight.xml $HOME/.IdeaIC2017.2/config/options/
     ln -s $HOME/Projects/intellij-idea-config/options/editor.xml $HOME/.IdeaIC2017.2/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/options/find.xml $HOME/.IdeaIC2017.2/config/options/
     ln -s $HOME/Projects/intellij-idea-config/options/ide.general.xml $HOME/.IdeaIC2017.2/config/options/
-    ln -s $HOME/Projects/intellij-idea-config/options/markdown_navigator.local.xml $HOME/.IdeaIC2017.2/config/options/
-    ln -s $HOME/Projects/intellij-idea-config/options/markdown_navigator.shared.xml $HOME/.IdeaIC2017.2/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/options/jdk.local.xml $HOME/.IdeaIC2017.2/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/options/laf.xml $HOME/.IdeaIC2017.2/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/options/other.xml $HOME/.IdeaIC2017.2/config/options/
     ln -s $HOME/Projects/intellij-idea-config/options/path.macros.xml $HOME/.IdeaIC2017.2/config/options/
-    ln -s $HOME/Projects/intellij-idea-config/options/vim_settings.xml $HOME/.IdeaIC2017.2/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/options/project.default.xml $HOME/.IdeaIC2017.2/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/options/ui.lnf.xml $HOME/.IdeaIC2017.2/config/options/
+    ln -s $HOME/Projects/intellij-idea-config/templates/ $HOME/.IdeaIC2017.2/config/
+    ln -s $HOME/Projects/intellij-idea-config/plugins/ $HOME/.IdeaIC2017.2/config/
   fi
   # Removing IntelliJ IDEA tar.gz file from Download folder.
   rm -rf $HOME/Downloads/ideaIC-2017.2.tar.gz
