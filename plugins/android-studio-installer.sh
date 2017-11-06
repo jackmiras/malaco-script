@@ -62,6 +62,7 @@ else
     ln -s $HOME/Projects/android-studio-config/colors/ $HOME/.AndroidStudio3.0/config/
     ln -s $HOME/Projects/android-studio-config/options/androidStudioFirstRun.xml $HOME/.AndroidStudio3.0/config/options/
     ln -s $HOME/Projects/android-studio-config/options/colors.scheme.xml $HOME/.AndroidStudio3.0/config/options/
+    ln -s $HOME/Projects/android-studio-config/options/debugger.xml $HOME/.AndroidStudio3.0/config/options/
     ln -s $HOME/Projects/android-studio-config/options/debugger.renderers.xml $HOME/.AndroidStudio3.0/config/options/
     ln -s $HOME/Projects/android-studio-config/options/editor.codeinsight.xml $HOME/.AndroidStudio3.0/config/options/
     ln -s $HOME/Projects/android-studio-config/options/editor.xml $HOME/.AndroidStudio3.0/config/options/
