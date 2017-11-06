@@ -42,17 +42,15 @@ else
     # Removing current configurations of Android Studio.
 	  rm -rf $HOME/.AndroidStudio3.0/config/codestyles
     rm -rf $HOME/.AndroidStudio3.0/config/colors
-    rm -rf $HOME/.AndroidStudio3.0/config/fileTemplates
+    rm -rf $HOME/.AndroidStudio3.0/config/options/androidStudioFirstRun.xml
     rm -rf $HOME/.AndroidStudio3.0/config/options/colors.scheme.xml
-    rm -rf $HOME/.AndroidStudio3.0/config/options/debugger.renderers.xml
     rm -rf $HOME/.AndroidStudio3.0/config/options/debugger.xml
+    rm -rf $HOME/.AndroidStudio3.0/config/options/debugger.renderers.xml
     rm -rf $HOME/.AndroidStudio3.0/config/options/editor.codeinsight.xml
     rm -rf $HOME/.AndroidStudio3.0/config/options/editor.xml
-    rm -rf $HOME/.AndroidStudio3.0/config/options/find.xml
     rm -rf $HOME/.AndroidStudio3.0/config/options/ide.general.xml
     rm -rf $HOME/.AndroidStudio3.0/config/options/jdk.table.xml
     rm -rf $HOME/.AndroidStudio3.0/config/options/laf.xml
-    rm -rf $HOME/.AndroidStudio3.0/config/options/other.xml
     rm -rf $HOME/.AndroidStudio3.0/config/options/path.macros.xml
     rm -rf $HOME/.AndroidStudio3.0/config/options/project.default.xml
     rm -rf $HOME/.AndroidStudio3.0/config/options/ui.lnf.xml
@@ -62,17 +60,14 @@ else
 	  # Creating a symbolic link of the new Android Studio configurations into .AndroidStudio folder.
 	  ln -s $HOME/Projects/android-studio-config/codestyles/ $HOME/.AndroidStudio3.0/config/
     ln -s $HOME/Projects/android-studio-config/colors/ $HOME/.AndroidStudio3.0/config/
-    ln -s $HOME/Projects/android-studio-config/fileTemplates/ $HOME/.AndroidStudio3.0/config/
+    ln -s $HOME/Projects/android-studio-config/options/androidStudioFirstRun.xml $HOME/.AndroidStudio3.0/config/options/
     ln -s $HOME/Projects/android-studio-config/options/colors.scheme.xml $HOME/.AndroidStudio3.0/config/options/
     ln -s $HOME/Projects/android-studio-config/options/debugger.renderers.xml $HOME/.AndroidStudio3.0/config/options/
-    ln -s $HOME/Projects/android-studio-config/options/debugger.xml $HOME/.AndroidStudio3.0/config/options/
     ln -s $HOME/Projects/android-studio-config/options/editor.codeinsight.xml $HOME/.AndroidStudio3.0/config/options/
     ln -s $HOME/Projects/android-studio-config/options/editor.xml $HOME/.AndroidStudio3.0/config/options/
-    ln -s $HOME/Projects/android-studio-config/options/find.xml $HOME/.AndroidStudio3.0/config/options/
     ln -s $HOME/Projects/android-studio-config/options/ide.general.xml $HOME/.AndroidStudio3.0/config/options/
-    ln -s $HOME/Projects/android-studio-config/options/jdk.local.xml $HOME/.AndroidStudio3.0/config/options/
+    ln -s $HOME/Projects/android-studio-config/options/jdk.table.xml $HOME/.AndroidStudio3.0/config/options/
     ln -s $HOME/Projects/android-studio-config/options/laf.xml $HOME/.AndroidStudio3.0/config/options/
-    ln -s $HOME/Projects/android-studio-config/options/other.xml $HOME/.AndroidStudio3.0/config/options/
     ln -s $HOME/Projects/android-studio-config/options/path.macros.xml $HOME/.AndroidStudio3.0/config/options/
     ln -s $HOME/Projects/android-studio-config/options/project.default.xml $HOME/.AndroidStudio3.0/config/options/
     ln -s $HOME/Projects/android-studio-config/options/ui.lnf.xml $HOME/.AndroidStudio3.0/config/options/
