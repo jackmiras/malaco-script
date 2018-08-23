@@ -16,5 +16,9 @@ else
 
 	# Generating ssh key.
 	ssh-keygen -t rsa -b 4096
+
+  # Creating a Git log alias.
+  git config --global alias.logp "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+
 	echo $'\n Git was installed with success.'
 fi
