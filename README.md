@@ -1,7 +1,7 @@
 # Malaco Scrip - Ubuntu
 
 *This is a shell script written to install software on Ubuntu in a simpler 
-way, this script is also inspired by [Fedy](http://folkswithhats.org/) that is a software built to easily install another software on Fedora.*
+way, this script is also inspired by [Fedy](https://github.com/rpmfusion-infra/fedy) that is a software built to easily install another software on Fedora.*
 
 *The problem is that I haven't used Fedora for almost 3 years and I really enjoy the experience and the time saving that's provided by Fedy. With this in mind, I've decided to write my own version of Fedy but focused on my needs, and on Ubuntu that is my current Linux distribution.*
 
